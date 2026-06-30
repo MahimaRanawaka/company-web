@@ -1,0 +1,4 @@
+project_id = "ennobler-oolo"
+
+[functions.notify-contact]
+verify_jwt = false

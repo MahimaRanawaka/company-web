@@ -1,0 +1,31 @@
+# Dependencies / build output
+node_modules/
+dist/
+dist-ssr/
+**/dist/
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local Claude tooling state
+.claude/
+
+# Vercel
+.vercel/
+
+# Supabase local temp
+**/supabase/.temp/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+*.local
+Thumbs.db
+
+# Old app folder (if not yet deleted)
+app/

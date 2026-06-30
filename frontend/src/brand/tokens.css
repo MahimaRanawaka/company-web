@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BRAND TOKENS — values are space-separated RGB channels so
+   Tailwind's `rgb(var(--x) / <alpha-value>)` works.
+   Switch the whole theme by toggling <html data-brand="…">.
+
+   Architecture follows the Linear marketing system:
+   - a surface LADDER (canvas → surface → surface-2 → surface-3)
+     carries hierarchy instead of drop shadows;
+   - hairline + hairline-strong 1px borders mark lift;
+   - ONE chromatic accent per brand, used scarcely
+     (brand mark, primary CTA, focus ring, link emphasis).
+   Accents are anchored to the brand mascots:
+   En'nobler = tech-blue bunny, Oolo = orange-hoodie bunny.
+   ============================================================ */
+
+:root {
+  --brand-accent-fg: 255 255 255;
+  --radius: 0.75rem;
+}
+
+/* En'nobler — IT / cool light canvas / disciplined blue */
+[data-brand="ennobler"] {
+  --brand-canvas: 250 251 252; /* #FAFBFC — light, faint blue tint */
+  --brand-surface: 242 245 248; /* #F2F5F8 — surface-1: cards, panels */
+  --brand-surface-2: 233 238 243; /* #E9EEF3 — featured / hovered lift */
+  --brand-surface-3: 222 230 237; /* #DEE6ED — deepest lift */
+  --brand-border: 228 234 239; /* #E4EAEF — hairline */
+  --brand-border-strong: 198 211 221; /* #C6D3DD — hover / focus hairline */
+  --brand-text: 14 27 38; /* #0E1B26 — navy-black ink */
+  --brand-text-muted: 74 97 114; /* #4A6172 */
+  --brand-text-subtle: 130 153 169; /* #8299A9 */
+  --brand-accent: 20 116 190; /* #1474BE — mascot blue, deepened for light UI */
+  --brand-accent-hover: 15 94 156; /* #0F5E9C — darker on hover (light UI) */
+  --brand-accent-fg: 255 255 255; /* white on blue = AA contrast */
+  --brand-heading-style: normal;
+  --brand-heading-opsz: 32;
+  --brand-heading-weight: 600;
+}
+
+/* Oolo — Marketing / warm light canvas / mascot orange */
+[data-brand="oolo"] {
+  --brand-canvas: 250 250 248; /* #FAFAF8 */
+  --brand-surface: 244 241 236; /* #F4F1EC — surface-1 */
+  --brand-surface-2: 236 232 225; /* #ECE8E1 — featured / hovered lift */
+  --brand-surface-3: 227 222 213; /* #E3DED5 — deepest lift */
+  --brand-border: 231 226 218; /* #E7E2DA — hairline */
+  --brand-border-strong: 209 201 190; /* #D1C9BE — hover / focus hairline */
+  --brand-text: 26 23 20; /* #1A1714 */
+  --brand-text-muted: 107 100 96; /* #6B6460 */
+  --brand-text-subtle: 158 152 147; /* #9E9893 */
+  --brand-accent: 240 130 30; /* #F0821E — mascot hoodie orange */
+  --brand-accent-hover: 224 106 10; /* #E06A0A — darker on hover (light UI) */
+  --brand-accent-fg: 26 23 20; /* dark ink on orange = AA contrast */
+  --brand-heading-style: italic;
+  --brand-heading-opsz: 32;
+  --brand-heading-weight: 700;
+}
+
+@layer base {
+  * {
+    @apply border-hairline;
+  }
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    font-optical-sizing: auto;
+    font-style: var(--brand-heading-style);
+    font-weight: var(--brand-heading-weight);
+    font-variation-settings: "opsz" var(--brand-heading-opsz);
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-canvas;
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    @apply font-sans text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+  }
+  /* Emphasized hero word: accent gradient with a slow shimmer sweep. */
+  .gradient-em {
+    background-image: linear-gradient(
+      100deg,
+      rgb(var(--brand-accent)),
+      rgb(var(--brand-accent-hover)) 40%,
+      rgb(var(--brand-accent)) 80%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 5s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%,
+    100% {
+      background-position: 0% 0;
+    }
+    50% {
+      background-position: 100% 0;
+    }
+  }
+
+  /* Fade the edges of marquee strips so logos scroll in/out softly. */
+  .edge-fade {
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+  }
+
+  /* Linear-style card hover: surface lift + hairline-strong, 150ms,
+     plus a cursor-tracked accent spotlight (see lib/spotlight.ts). */
+  .lift {
+    position: relative;
+    transition:
+      border-color 150ms ease,
+      background-color 150ms ease,
+      transform 150ms ease;
+  }
+  .lift::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      200px circle at var(--mx, 50%) var(--my, 50%),
+      rgb(var(--brand-accent) / 0.1),
+      transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 200ms ease;
+    pointer-events: none;
+  }
+  .lift:hover::after {
+    opacity: 1;
+  }
+
+  /* Scroll-reveal: section starts hidden, .is-visible fades it up.
+     The hook only adds .reveal when motion is allowed, so no-JS or
+     reduced-motion users always see content. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Global motion gate — collapse every animation and transition. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

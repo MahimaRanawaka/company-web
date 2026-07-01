@@ -9,6 +9,7 @@ import Services from "@/pages/Services";
 import ServiceDetail from "@/pages/ServiceDetail";
 import Pricing from "@/pages/Pricing";
 import Portfolio from "@/pages/Portfolio";
+import CaseStudyDetail from "@/pages/CaseStudyDetail";
 import Careers from "@/pages/Careers";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
@@ -55,6 +56,7 @@ export const router = createBrowserRouter([
 
       // Shared (brand-aware layout)
       { path: "/portfolio", element: <Portfolio /> },
+      { path: "/portfolio/:slug", element: <CaseStudyDetail /> },
       { path: "/about", element: <About /> },
       { path: "/careers", element: <Careers /> },
       { path: "/contact", element: <Contact /> },

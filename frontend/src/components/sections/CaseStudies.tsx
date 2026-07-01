@@ -38,14 +38,12 @@ export function CaseStudies({ data }: { data: CaseStudiesSection }) {
         </div>
       </Container>
 
-      {/* horizontal snap track */}
-      <div className="mx-auto max-w-[1400px] overflow-x-auto px-6 pb-4 [scrollbar-width:none]">
-        {/* key on the active filter re-runs the fade when the set changes */}
-        <div key={active} className="flex snap-x gap-5 animate-fade-up motion-reduce:animate-none">
+      <Container>
+        <div key={active} className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 animate-fade-up motion-reduce:animate-none">
           {items.map((c) => (
             <article
               key={c.title}
-              className="lift w-80 flex-none snap-start overflow-hidden rounded-xl border border-hairline bg-canvas"
+              className="lift overflow-hidden rounded-xl border border-hairline bg-canvas"
             >
               <div className="relative h-44 overflow-hidden" style={{ background: "linear-gradient(140deg, rgb(var(--brand-accent) / 0.22), rgb(var(--brand-accent-hover) / 0.12))" }}>
                 {c.cover && (
@@ -66,7 +64,7 @@ export function CaseStudies({ data }: { data: CaseStudiesSection }) {
             </article>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

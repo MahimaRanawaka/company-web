@@ -11,7 +11,7 @@ export function Partners({ data }: { data: PartnersSection }) {
             {data.eyebrow}
           </p>
         )}
-        <div className="flex flex-wrap items-center justify-center gap-10 px-6">
+        <div className="mx-auto max-w-5xl flex flex-wrap items-center justify-center gap-8 px-6">
           {data.logos.map((logo, i) =>
             typeof logo === "string" ? (
               <span key={i} className="text-base font-semibold tracking-tight text-muted/70">
@@ -22,7 +22,7 @@ export function Partners({ data }: { data: PartnersSection }) {
                 key={i}
                 src={logo.src}
                 alt={logo.alt}
-                className="h-16 object-contain opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+                className="h-16 max-w-[160px] object-contain opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
               />
             ),
           )}

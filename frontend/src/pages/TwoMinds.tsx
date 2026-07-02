@@ -167,6 +167,9 @@ export default function TwoMinds() {
         }}
       />
 
+      {/* preload portal video in background */}
+      <video src="/experience/portal.mp4" preload="auto" muted playsInline aria-hidden className="hidden" />
+
       {/* brand character clips — revealed on focus */}
       <video
         ref={ennRef}

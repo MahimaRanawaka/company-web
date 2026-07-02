@@ -242,10 +242,10 @@ export default function TwoMinds() {
           >
             Two sides. One platform.
           </h1>
-          <p className="mt-4 text-lg text-[#9AA6B4] md:text-xl">
+          <p className="mt-4 text-lg text-[#C8D4E0] md:text-xl">
             Choose your intelligence.
           </p>
-          <p className="mx-auto mt-4 max-w-md text-sm text-[#6f7c8c]">
+          <p className="mx-auto mt-4 max-w-md text-sm text-[#A8B8C8]">
             On the left, we build and test technology. On the right, we grow
             brands.
           </p>

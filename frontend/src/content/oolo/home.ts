@@ -33,6 +33,20 @@ export const ooloHome: PageContent = {
       logos: [
         { src: "/partners/boc-logo-english.png", alt: "BOC" },
         { src: "/partners/boc-paymentgataway-logo-white.jpg", alt: "BOC Payment Gateway" },
+        { src: "/partners/bunny.png", alt: "Bunny" },
+        { src: "/partners/chandismaan.png", alt: "Chandismaan" },
+        { src: "/partners/ennobler.png", alt: "En'nobler" },
+        { src: "/partners/oolo.png", alt: "Oolo" },
+        { src: "/partners/leafy.jpeg", alt: "Leafy" },
+      ],
+    },
+    // §4b POWERED BY
+    {
+      type: "partners",
+      eyebrow: "Powered by",
+      logos: [
+        { src: "/partners/testchimp.png", alt: "TestChimp" },
+        { src: "/partners/mobilewright.png", alt: "MobileWright" },
       ],
     },
     // §5 PROBLEM → SOLUTION

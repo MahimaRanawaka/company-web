@@ -6,10 +6,12 @@ import { cn } from "@/lib/utils";
 
 export function CaseStudies({ data }: { data: CaseStudiesSection }) {
   const [active, setActive] = useState(data.filters[0]);
-  const items =
+  const limit = data.limit ?? Infinity;
+  const items = (
     active === data.filters[0]
       ? data.items
-      : data.items.filter((c) => c.tag.toLowerCase() === active.toLowerCase());
+      : data.items.filter((c) => c.tag.toLowerCase() === active.toLowerCase())
+  ).slice(0, limit);
 
   return (
     <section id={data.anchor} className="bg-surface py-20 md:py-24">
@@ -39,7 +41,12 @@ export function CaseStudies({ data }: { data: CaseStudiesSection }) {
       </Container>
 
       <Container>
-        <div key={active} className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 animate-fade-up motion-reduce:animate-none">
+        <div key={active} className={cn(
+          "grid grid-cols-1 gap-5 animate-fade-up motion-reduce:animate-none",
+          items.length === 1 && "max-w-sm mx-auto",
+          items.length === 2 && "sm:grid-cols-2 max-w-2xl mx-auto",
+          items.length >= 3 && "sm:grid-cols-2 lg:grid-cols-3",
+        )}>
           {items.map((c) => (
             <article
               key={c.title}
@@ -64,6 +71,16 @@ export function CaseStudies({ data }: { data: CaseStudiesSection }) {
             </article>
           ))}
         </div>
+        {data.viewAllTo && (
+          <div className="mt-10 text-center">
+            <a
+              href={data.viewAllTo}
+              className="inline-block rounded-full border border-hairline px-6 py-2.5 text-sm font-semibold text-muted transition-colors hover:border-accent hover:text-accent"
+            >
+              View all work →
+            </a>
+          </div>
+        )}
       </Container>
     </section>
   );

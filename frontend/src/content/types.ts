@@ -133,6 +133,8 @@ export interface CaseStudiesSection {
   title: string;
   subtitle?: string;
   filters: string[];
+  limit?: number;
+  viewAllTo?: string;
   items: { tag: string; title: string; body: string; metric: string; to: string; cover?: string }[];
 }
 

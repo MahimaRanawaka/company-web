@@ -18,6 +18,7 @@ const BRANDS: Record<
     base: string;
     accent: string;
     clip: string;
+    clipMobile: string;
     italic: boolean;
     kicker: string;
     tagline: string;
@@ -28,6 +29,7 @@ const BRANDS: Record<
     base: "/ennobler",
     accent: "#1474BE",
     clip: "/experience/ennobler.mp4",
+    clipMobile: "/experience/ennoblermobile.mp4",
     italic: false,
     kicker: "Engineering Intelligence",
     tagline: "Built to ship. Engineered to scale.",
@@ -37,6 +39,7 @@ const BRANDS: Record<
     base: "/oolo",
     accent: "#F0821E",
     clip: "/experience/oolo.mp4",
+    clipMobile: "/experience/oolomobile.mp4",
     italic: true,
     kicker: "Creative Growth Intelligence",
     tagline: "Creative-first. Strategy-led. Growth-obsessed.",
@@ -55,9 +58,22 @@ function usePrefersReducedMotion() {
   return reduce;
 }
 
+function useIsMobile() {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const on = () => setMobile(mq.matches);
+    on();
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, []);
+  return mobile;
+}
+
 export default function TwoMinds() {
   const navigate = useNavigate();
   const reduce = usePrefersReducedMotion();
+  const isMobile = useIsMobile();
 
   const ennRef = useRef<HTMLVideoElement>(null);
   const ooloRef = useRef<HTMLVideoElement>(null);
@@ -142,6 +158,8 @@ export default function TwoMinds() {
     ? `radial-gradient(circle at ${focus === "ennobler" ? "28%" : "72%"} 48%, ${BRANDS[focus].accent}26, transparent 55%)`
     : "transparent";
 
+  const portalSrc = isMobile ? "/experience/portalmobile.mp4" : "/experience/portal.mp4";
+
   return (
     <div className="relative h-[100svh] w-full overflow-hidden bg-[#080B12] text-[#E8ECF1]">
       {/* dark canvas: subtle technical grid + atmospheric depth */}
@@ -168,12 +186,12 @@ export default function TwoMinds() {
       />
 
       {/* preload portal video in background */}
-      <video src="/experience/portal.mp4" preload="auto" muted playsInline aria-hidden className="hidden" />
+      <video src={portalSrc} preload="auto" muted playsInline aria-hidden className="hidden" />
 
       {/* brand character clips — revealed on focus */}
       <video
         ref={ennRef}
-        src={BRANDS.ennobler.clip}
+        src={isMobile ? BRANDS.ennobler.clipMobile : BRANDS.ennobler.clip}
         muted
         playsInline
         loop
@@ -184,7 +202,7 @@ export default function TwoMinds() {
       />
       <video
         ref={ooloRef}
-        src={BRANDS.oolo.clip}
+        src={isMobile ? BRANDS.oolo.clipMobile : BRANDS.oolo.clip}
         muted
         playsInline
         loop
@@ -315,13 +333,13 @@ export default function TwoMinds() {
         <div className="absolute inset-0 z-40 bg-[#080B12]">
           <video
             ref={portalRef}
-            src="/experience/portal.mp4"
+            src={portalSrc}
             autoPlay
             muted
             playsInline
             className="h-full w-full object-cover"
             onCanPlay={(e) => {
-              (e.target as HTMLVideoElement).playbackRate = 15;
+              (e.target as HTMLVideoElement).playbackRate = 4;
             }}
             onEnded={() => navigate(BRANDS[leaving].base)}
           />

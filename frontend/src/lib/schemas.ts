@@ -1,11 +1,14 @@
 import { z } from "zod";
 
 export const contactSchema = z.object({
-  name: z.string().min(2, "Please enter your name."),
-  email: z.string().email("Enter a valid email."),
+  name: z.string().min(2, "Please enter your name.").max(120, "Name is too long."),
+  email: z.string().email("Enter a valid email.").max(254),
   company: z.string().max(120).optional().or(z.literal("")),
   brand_interest: z.enum(["ennobler", "oolo"]).optional(),
-  message: z.string().min(10, "Tell us a little more (10+ characters)."),
+  message: z
+    .string()
+    .min(10, "Tell us a little more (10+ characters).")
+    .max(5000, "Message is too long (5000 characters max)."),
   /** honeypot — must stay empty */
   website: z.string().max(0).optional(),
 });
@@ -13,8 +16,8 @@ export const contactSchema = z.object({
 export type ContactInput = z.infer<typeof contactSchema>;
 
 export const applySchema = z.object({
-  name: z.string().min(2, "Please enter your name."),
-  email: z.string().email("Enter a valid email."),
+  name: z.string().min(2, "Please enter your name.").max(120, "Name is too long."),
+  email: z.string().email("Enter a valid email.").max(254),
   phone: z.string().max(40).optional().or(z.literal("")),
   path: z.string().optional(),
   experience: z.string().optional(),
@@ -28,8 +31,8 @@ export type ApplyInput = z.infer<typeof applySchema>;
 
 export const strategyCallSchema = z.object({
   // Contact information
-  name: z.string().min(2, "Please enter your full name."),
-  email: z.string().email("Enter a valid email."),
+  name: z.string().min(2, "Please enter your full name.").max(120, "Name is too long."),
+  email: z.string().email("Enter a valid email.").max(254),
   phone: z.string().min(6, "Enter a phone / WhatsApp number."),
   company: z.string().max(120).optional().or(z.literal("")),
   link: z.string().max(200).optional().or(z.literal("")),
@@ -39,7 +42,10 @@ export const strategyCallSchema = z.object({
   teamSize: z.string().max(60).optional().or(z.literal("")),
   // Goals & challenges
   helpWith: z.array(z.string()).optional().default([]),
-  challenge: z.string().min(10, "Tell us a little more (10+ characters)."),
+  challenge: z
+    .string()
+    .min(10, "Tell us a little more (10+ characters).")
+    .max(2000, "Please keep this under 2000 characters."),
   outcome: z.string().max(2000).optional().or(z.literal("")),
   // Investment / readiness
   budget: z.enum(["under-1k", "1k-5k", "5k-plus", "unsure"]).nullish(),

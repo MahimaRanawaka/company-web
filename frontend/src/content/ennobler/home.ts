@@ -44,13 +44,13 @@ export const ennoblerHome: PageContent = {
       logos: [
         { src: "/partners/boc-logo-english.png", alt: "BOC" },
         {
-          src: "/partners/boc-paymentgataway-logo-white.jpg",
+          src: "/partners/boc-paymentgataway-logo-white.png",
           alt: "BOC Payment Gateway",
         },
         { src: "/partners/testchimp.png", alt: "TestChimp" },
 
         { src: "/partners/chandismaan.png", alt: "Chandismaan" },
-        { src: "/partners/leafy.jpeg", alt: "Leafy" },
+        { src: "/partners/leafy.png", alt: "Leafy" },
         { src: "/partners/chiku.png", alt: "Chiku" },
       ],
     },

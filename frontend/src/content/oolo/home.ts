@@ -14,9 +14,21 @@ export const ooloHome: PageContent = {
       primaryCta: { label: "Start a Campaign", to: "/contact" },
       secondaryCta: { label: "See What We Do", to: "/oolo/services" },
       chips: ["Campaign", "Brand", "Content", "Growth", "Audience"],
-      image: { src: "/heroes/oolo.webp", alt: "Chikku, the Oolo creative-growth mascot, holding a spray can amid upward growth arrows" },
+      image: {
+        src: "/heroes/oolo.webp",
+        alt: "Chikku, the Oolo creative-growth mascot, holding a spray can amid upward growth arrows",
+      },
     },
-    { type: "marquee", items: ["Creative First", "Strategy Led", "Growth Obsessed", "Brand Forward", "Always Shipping"] },
+    {
+      type: "marquee",
+      items: [
+        "Creative First",
+        "Strategy Led",
+        "Growth Obsessed",
+        "Brand Forward",
+        "Always Shipping",
+      ],
+    },
     // hero stats band
     {
       type: "stats",
@@ -32,12 +44,15 @@ export const ooloHome: PageContent = {
       eyebrow: "Trusted by brands growing with Oolo",
       logos: [
         { src: "/partners/boc-logo-english.png", alt: "BOC" },
-        { src: "/partners/boc-paymentgataway-logo-white.jpg", alt: "BOC Payment Gateway" },
-        { src: "/partners/bunny.png", alt: "Bunny" },
+        {
+          src: "/partners/boc-paymentgataway-logo-white.png",
+          alt: "BOC Payment Gateway",
+        },
+        { src: "/partners/testchimp.png", alt: "TestChimp" },
+
         { src: "/partners/chandismaan.png", alt: "Chandismaan" },
-        { src: "/partners/ennobler.png", alt: "En'nobler" },
-        { src: "/partners/oolo.png", alt: "Oolo" },
-        { src: "/partners/leafy.jpeg", alt: "Leafy" },
+        { src: "/partners/leafy.png", alt: "Leafy" },
+        { src: "/partners/chiku.png", alt: "Chiku" },
       ],
     },
     // §4b POWERED BY
@@ -45,8 +60,8 @@ export const ooloHome: PageContent = {
       type: "partners",
       eyebrow: "Powered by",
       logos: [
-        { src: "/partners/testchimp.png", alt: "TestChimp" },
-        { src: "/partners/mobilewright.png", alt: "MobileWright" },
+        { src: "/partners/bunny.png", alt: "Bunny" },
+        { src: "/partners/mwlogo.png", alt: "MobileWright" },
       ],
     },
     // §5 PROBLEM → SOLUTION
@@ -102,12 +117,48 @@ export const ooloHome: PageContent = {
       title: "Creative Growth Services",
       bento: true,
       items: [
-        { title: "Brand Strategy & Identity", summary: "Positioning, messaging, visual identity, and brand systems that make you instantly recognisable and impossible to ignore.", to: "/oolo/services/brand-strategy", icon: "palette" },
-        { title: "Social Media Marketing", summary: "Channel strategy, content calendars, community management, and paid social that turns followers into customers.", to: "/oolo/services/social-media", icon: "share-2" },
-        { title: "Content Creation", summary: "Copy, video, graphics, and editorial built around your brand voice — produced at scale, not as one-offs.", to: "/oolo/services/content", icon: "pen-tool" },
-        { title: "Creative Design", summary: "Campaign creative, ad sets, landing visuals, and design systems engineered to convert, not just to look good.", to: "/oolo/services/creative", icon: "sparkles" },
-        { title: "Campaign Planning", summary: "End-to-end campaign architecture — goals, channels, budgets, and timelines mapped to measurable outcomes.", to: "/oolo/services/campaign", icon: "megaphone" },
-        { title: "Digital Growth Support", summary: "SEO, performance marketing, funnel optimisation, and analytics that compound traffic into pipeline.", to: "/oolo/services/digital-growth", icon: "trending-up" },
+        {
+          title: "Brand Strategy & Identity",
+          summary:
+            "Positioning, messaging, visual identity, and brand systems that make you instantly recognisable and impossible to ignore.",
+          to: "/oolo/services/brand-strategy",
+          icon: "palette",
+        },
+        {
+          title: "Social Media Marketing",
+          summary:
+            "Channel strategy, content calendars, community management, and paid social that turns followers into customers.",
+          to: "/oolo/services/social-media",
+          icon: "share-2",
+        },
+        {
+          title: "Content Creation",
+          summary:
+            "Copy, video, graphics, and editorial built around your brand voice — produced at scale, not as one-offs.",
+          to: "/oolo/services/content",
+          icon: "pen-tool",
+        },
+        {
+          title: "Creative Design",
+          summary:
+            "Campaign creative, ad sets, landing visuals, and design systems engineered to convert, not just to look good.",
+          to: "/oolo/services/creative",
+          icon: "sparkles",
+        },
+        {
+          title: "Campaign Planning",
+          summary:
+            "End-to-end campaign architecture — goals, channels, budgets, and timelines mapped to measurable outcomes.",
+          to: "/oolo/services/campaign",
+          icon: "megaphone",
+        },
+        {
+          title: "Digital Growth Support",
+          summary:
+            "SEO, performance marketing, funnel optimisation, and analytics that compound traffic into pipeline.",
+          to: "/oolo/services/digital-growth",
+          icon: "trending-up",
+        },
       ],
     },
     // §7 ENGAGEMENT MODELS
@@ -120,14 +171,22 @@ export const ooloHome: PageContent = {
           badge: "Campaign",
           name: "Campaign Sprint",
           tagline: "Launch fast. Learn faster.",
-          features: ["Paid media launch", "Landing page & creative", "Performance reporting"],
+          features: [
+            "Paid media launch",
+            "Landing page & creative",
+            "Performance reporting",
+          ],
           cta: { label: "Start a Campaign", to: "/contact" },
         },
         {
           badge: "Retainer",
           name: "Growth Retainer",
           tagline: "Ongoing growth that compounds month after month.",
-          features: ["Full-funnel strategy", "Content & creative production", "Paid + organic management"],
+          features: [
+            "Full-funnel strategy",
+            "Content & creative production",
+            "Paid + organic management",
+          ],
           cta: { label: "Explore Packages", to: "/oolo/pricing" },
           highlighted: true,
           popular: "Most Popular",
@@ -136,7 +195,12 @@ export const ooloHome: PageContent = {
           badge: "Embedded",
           name: "Embedded Team",
           tagline: "Dedicated marketers inside your team.",
-          features: ["Brand overhaul", "GTM strategy & execution", "Market expansion", "Ongoing content operations"],
+          features: [
+            "Brand overhaul",
+            "GTM strategy & execution",
+            "Market expansion",
+            "Ongoing content operations",
+          ],
           cta: { label: "Request Proposal", to: "/contact" },
         },
       ],
@@ -147,7 +211,12 @@ export const ooloHome: PageContent = {
       eyebrow: "Oolo — Creative Growth Marketing",
       title: "Creative Growth Marketing Ecosystem.",
       body: "From brand positioning to paid performance and content at scale — we use AI to move faster, test smarter, and compound your growth. Four pillars, one growth engine.",
-      pills: ["Brand & Strategy", "Paid Performance", "Content at Scale", "Analytics & Optimisation"],
+      pills: [
+        "Brand & Strategy",
+        "Paid Performance",
+        "Content at Scale",
+        "Analytics & Optimisation",
+      ],
       cta: { label: "Get Free Growth Audit", to: "/contact" },
     },
     // §8 METRICS
@@ -171,10 +240,22 @@ export const ooloHome: PageContent = {
       numbered: true,
       bento: true,
       items: [
-        { title: "E-commerce", body: "Product launches, paid campaigns, conversion funnels, creative testing, and customer retention content." },
-        { title: "IT / SaaS", body: "Positioning, launch campaigns, content systems, founder-led marketing, and product growth communication." },
-        { title: "Fintech", body: "Trust-led campaigns, user education, product explainers, lead generation, and credibility-focused content." },
-        { title: "Startups & SMEs", body: "Brand identity, launch visibility, social content, campaign planning, and practical growth support." },
+        {
+          title: "E-commerce",
+          body: "Product launches, paid campaigns, conversion funnels, creative testing, and customer retention content.",
+        },
+        {
+          title: "IT / SaaS",
+          body: "Positioning, launch campaigns, content systems, founder-led marketing, and product growth communication.",
+        },
+        {
+          title: "Fintech",
+          body: "Trust-led campaigns, user education, product explainers, lead generation, and credibility-focused content.",
+        },
+        {
+          title: "Startups & SMEs",
+          body: "Brand identity, launch visibility, social content, campaign planning, and practical growth support.",
+        },
       ],
     },
     // §8B CHIKKU STORY
@@ -190,14 +271,16 @@ export const ooloHome: PageContent = {
     {
       type: "caseStudies",
       title: "The Proof in Motion",
-      subtitle: "A curated look at recent brand wins across our creative growth marketing ecosystem.",
+      subtitle:
+        "A curated look at recent brand wins across our creative growth marketing ecosystem.",
       filters: ["All Work", "Brand Strategy", "Character Design", "Campaign"],
       limit: 3,
       viewAllTo: "/portfolio",
       items: [
         {
           tag: "Brand Strategy",
-          title: "Ceylon Raga Reserve — Brand Identity & Cultural Campaign System",
+          title:
+            "Ceylon Raga Reserve — Brand Identity & Cultural Campaign System",
           body: "Building a complete brand universe for a new premium tea category — character-led storytelling, AI-assisted creative workflow, and a teaser-to-reveal campaign that reached 101K views on day one.",
           metric: "Brand Strategy · Campaign",
           to: "/portfolio/ceylon-raga-reserve-campaign",

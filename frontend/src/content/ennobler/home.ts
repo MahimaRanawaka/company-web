@@ -47,11 +47,11 @@ export const ennoblerHome: PageContent = {
           src: "/partners/boc-paymentgataway-logo-white.jpg",
           alt: "BOC Payment Gateway",
         },
-        { src: "/partners/bunny.png", alt: "Bunny" },
+        { src: "/partners/testchimp.png", alt: "TestChimp" },
+
         { src: "/partners/chandismaan.png", alt: "Chandismaan" },
-        { src: "/partners/ennobler.png", alt: "En'nobler" },
-        { src: "/partners/oolo.png", alt: "Oolo" },
         { src: "/partners/leafy.jpeg", alt: "Leafy" },
+        { src: "/partners/chiku.png", alt: "Chiku" },
       ],
     },
     // §4b POWERED BY
@@ -59,8 +59,8 @@ export const ennoblerHome: PageContent = {
       type: "partners",
       eyebrow: "Powered by",
       logos: [
-        { src: "/partners/testchimp.png", alt: "TestChimp" },
-        { src: "/partners/mobilewright.png", alt: "MobileWright" },
+        { src: "/partners/bunny.png", alt: "Bunny" },
+        { src: "/partners/mwlogo.png", alt: "MobileWright" },
       ],
     },
     // §5 PROBLEM → SOLUTION
@@ -302,11 +302,7 @@ export const ennoblerHome: PageContent = {
       title: "Work That Connects Strategy, Technology, QA, and Growth",
       subtitle:
         "A curated look across En'nobler's engineering and QA ecosystem.",
-      filters: [
-        "All Work",
-        "En'nobler Software Services",
-        "Quality Assurance",
-      ],
+      filters: ["All Work", "En'nobler Software Services", "Quality Assurance"],
       limit: 3,
       viewAllTo: "/portfolio",
       items: [

@@ -211,7 +211,7 @@ const DATA: EnService[] = [
       { title: "Prototype & Test", body: "Usability testing with target users." },
       { title: "Handoff", body: "Dev-ready Figma with specs and assets." },
     ],
-    tech: ["Figma", "FigJam", "Maze", "Hotjar", "Miro", "Zeroheight", "Storybook", "Lottie", "Principle", "UserTesting"],
+    tech: ["Figma", "FigJam", "Maze", "Hotjar", "Miro", "Zeroheight", "Storybook", "Lottie", "UserTesting"],
     deliverables: [
       { title: "Research Report", body: "User interview synthesis, personas, and key insight summary." },
       { title: "User Flow Diagrams", body: "End-to-end task flows for all primary user journeys." },

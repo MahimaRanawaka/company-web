@@ -13,7 +13,7 @@ export function IconGrid({ data }: { data: IconGridSection }) {
           {data.items.map((it) => (
             <div
               key={it.name}
-              className="lift group rounded-xl border border-hairline bg-canvas p-5 text-center"
+              className="lift group flex flex-col items-center justify-center rounded-xl border border-hairline bg-canvas p-5 text-center"
             >
               <span className="mb-2.5 inline-flex justify-center text-2xl text-accent transition-transform group-hover:scale-110">
                 <Icon name={it.icon} className="h-6 w-6" />

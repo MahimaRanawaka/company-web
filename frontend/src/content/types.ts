@@ -135,14 +135,26 @@ export interface CaseStudiesSection {
   filters: string[];
   limit?: number;
   viewAllTo?: string;
-  items: { tag: string; title: string; body: string; metric: string; to: string; cover?: string }[];
+  items: {
+    tag: string;
+    title: string;
+    body: string;
+    metric: string;
+    to: string;
+    cover?: string;
+  }[];
 }
 
 /** §12 — cross-brand bridge */
 export interface BridgeSection {
   type: "bridge";
   title: string;
-  halves: { tag: string; title: string; body: string; cta: { label: string; to: string } }[];
+  halves: {
+    tag: string;
+    title: string;
+    body: string;
+    cta: { label: string; to: string };
+  }[];
 }
 
 /** Long-form editorial section (alternating light/dark), with optional list + signoff. */
@@ -164,7 +176,13 @@ export interface PathwaysSection {
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  cards: { label: string; title: string; body: string; items: string[]; dark?: boolean }[];
+  cards: {
+    label: string;
+    title: string;
+    body: string;
+    items: string[];
+    dark?: boolean;
+  }[];
 }
 
 /** Side-by-side panels (e.g. En'nobler vs Oolo career areas), each a list of items with tags. */
@@ -174,7 +192,11 @@ export interface PanelsSection {
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  panels: { eyebrow: string; title: string; items: { title: string; body: string; tags: string[] }[] }[];
+  panels: {
+    eyebrow: string;
+    title: string;
+    items: { title: string; body: string; tags: string[] }[];
+  }[];
 }
 
 /** Numbered editorial rows (candidate qualities, principles…). */
@@ -196,7 +218,13 @@ export interface OpenRolesSection {
   subtitle?: string;
   filters: string[];
   /** `areas` lists every filter a role belongs to (besides the "All" filter). */
-  roles: { title: string; areas: string[]; meta: string[]; body: string; applyTo: string }[];
+  roles: {
+    title: string;
+    areas: string[];
+    meta: string[];
+    body: string;
+    applyTo: string;
+  }[];
 }
 
 /** Embedded lead / application form (posts via the contact mutation). */
@@ -244,7 +272,11 @@ export interface WhyGridSection {
   anchor?: string;
   eyebrow?: string;
   title: string;
-  featured: { title: string; body: string; cta?: { label: string; to: string } };
+  featured: {
+    title: string;
+    body: string;
+    cta?: { label: string; to: string };
+  };
   cards: { num: string; title: string; body: string }[];
 }
 

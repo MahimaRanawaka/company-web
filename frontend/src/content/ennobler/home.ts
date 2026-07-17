@@ -48,10 +48,10 @@ export const ennoblerHome: PageContent = {
           alt: "BOC Payment Gateway",
         },
         { src: "/partners/testchimp.png", alt: "TestChimp" },
-
         { src: "/partners/chandismaan.png", alt: "Chandismaan" },
         { src: "/partners/leafy.png", alt: "Leafy" },
         { src: "/partners/chiku.png", alt: "Chiku" },
+        { src: "/partners/360.jpeg", alt: "#360" },
       ],
     },
     // §4b POWERED BY

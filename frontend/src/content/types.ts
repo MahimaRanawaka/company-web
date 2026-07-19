@@ -27,7 +27,7 @@ export interface ServiceCardsSection {
   eyebrow?: string;
   title?: string;
   /** when omitted, the page pulls live services for the brand */
-  items?: { title: string; summary: string; to?: string; icon?: string }[];
+  items?: { title: string; summary: string; to?: string; icon?: string; illustration?: string }[];
   source?: "live";
   /** bento layout: first card renders as a large featured tile */
   bento?: boolean;
@@ -114,6 +114,8 @@ export interface QaPromoSection {
   body: string;
   pills: string[];
   cta: { label: string; to: string };
+  /** right-column visual; falls back to a decorative grid panel when omitted */
+  image?: { src: string; alt: string };
 }
 
 /** §9 — product preview cards */

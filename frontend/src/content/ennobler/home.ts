@@ -117,11 +117,12 @@ export const ennoblerHome: PageContent = {
       bento: true,
       items: [
         {
-          title: "AI-aided Engineering",
+          title: "AI & Automation",
           summary:
-            "AI-supported planning, development, review, testing, and technical decision-making for faster delivery.",
+            "Custom AI models, LLM integrations, and intelligent workflow automation — built to cut manual effort, surface insights, and speed up delivery across the stack.",
           to: "/ennobler/services/ai-automation",
           icon: "sparkles",
+          illustration: "node-network",
         },
         {
           title: "Quality Assurance",
@@ -129,6 +130,7 @@ export const ennoblerHome: PageContent = {
             "Manual testing, automation, regression checks, API testing, QA strategy, and release validation.",
           to: "/ennobler/services/quality-assurance",
           icon: "shield-check",
+          illustration: "shield-matrix",
         },
         {
           title: "Software Development",
@@ -136,6 +138,7 @@ export const ennoblerHome: PageContent = {
             "Custom web systems, internal platforms, dashboards, portals, and scalable business applications.",
           to: "/ennobler/services/software-development",
           icon: "code",
+          illustration: "code-brackets",
         },
         {
           title: "Digital Transformation",
@@ -143,6 +146,7 @@ export const ennoblerHome: PageContent = {
             "Modernize workflows, replace manual processes, and create practical digital systems for business teams.",
           to: "/ennobler/services/digital-transformation",
           icon: "refresh-cw",
+          illustration: "refresh-cycle",
         },
         {
           title: "Web / App Development",
@@ -150,6 +154,7 @@ export const ennoblerHome: PageContent = {
             "Responsive websites, mobile-friendly interfaces, web apps, admin panels, and user portals.",
           to: "/ennobler/services/web-platform-development",
           icon: "monitor-smartphone",
+          illustration: "browser-device",
         },
         {
           title: "Cloud / DevOps Support",
@@ -157,6 +162,7 @@ export const ennoblerHome: PageContent = {
             "Deployment, hosting support, CI/CD setup, infrastructure guidance, monitoring, and performance readiness.",
           to: "/ennobler/services/cloud-devops",
           icon: "cloud",
+          illustration: "cloud-pipeline",
         },
         {
           title: "UI/UX Design",
@@ -164,6 +170,7 @@ export const ennoblerHome: PageContent = {
             "User research, wireframing, interface design, design systems, and usability testing for products people enjoy using.",
           to: "/ennobler/services/ui-ux-design",
           icon: "pen-tool",
+          illustration: "pen-artboard",
         },
         {
           title: "Mobile App Development",
@@ -171,6 +178,7 @@ export const ennoblerHome: PageContent = {
             "Native and cross-platform mobile apps — from prototype to store launch — with performance and UX built in.",
           to: "/ennobler/services/mobile-app-development",
           icon: "smartphone",
+          illustration: "phone-touch",
         },
         {
           title: "API Development",
@@ -178,6 +186,7 @@ export const ennoblerHome: PageContent = {
             "REST and GraphQL APIs, third-party integrations, connectors, and secure, well-documented service layers.",
           to: "/ennobler/services/api-development",
           icon: "webhook",
+          illustration: "api-endpoints",
         },
         {
           title: "E-Commerce Solutions",
@@ -185,6 +194,7 @@ export const ennoblerHome: PageContent = {
             "Online stores, checkout flows, payment integration, and scalable commerce platforms built to convert.",
           to: "/ennobler/services/ecommerce-solutions",
           icon: "shopping-cart",
+          illustration: "cart-tags",
         },
       ],
     },
@@ -242,6 +252,7 @@ export const ennoblerHome: PageContent = {
       body: "From SaaS stability to AI workflow validation and compliance assurance, En'nobler.QaaS gives businesses a continuous quality layer for confident product delivery.",
       pills: ["SaaS Core", "Agentic QA", "AI Governance QA", "Enterprise QA"],
       cta: { label: "Explore QaaS", to: "/ennobler/qaas" },
+      image: { src: "/qaas/dashboard.png", alt: "En'nobler.QaaS quality dashboard" },
     },
     // §9 PRODUCTS PREVIEW
     {

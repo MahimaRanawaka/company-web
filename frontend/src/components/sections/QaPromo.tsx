@@ -26,13 +26,23 @@ export function QaPromo({ data }: { data: QaPromoSection }) {
           </div>
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-hairline bg-canvas">
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(120% 120% at 80% 10%, rgb(var(--brand-accent) / 0.22), transparent 60%), repeating-linear-gradient(0deg, rgb(var(--brand-border) / 0.5) 0 1px, transparent 1px 40px), repeating-linear-gradient(90deg, rgb(var(--brand-border) / 0.5) 0 1px, transparent 1px 40px)",
-              }}
-            />
+            {data.image ? (
+              <img
+                src={data.image.src}
+                alt={data.image.alt}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "radial-gradient(120% 120% at 80% 10%, rgb(var(--brand-accent) / 0.22), transparent 60%), repeating-linear-gradient(0deg, rgb(var(--brand-border) / 0.5) 0 1px, transparent 1px 40px), repeating-linear-gradient(90deg, rgb(var(--brand-border) / 0.5) 0 1px, transparent 1px 40px)",
+                }}
+              />
+            )}
             <div className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full bg-canvas/80 px-3 py-1.5 font-mono text-xs text-accent backdrop-blur">
               <span className="h-2 w-2 animate-pulse rounded-full bg-accent" /> live quality layer
             </div>

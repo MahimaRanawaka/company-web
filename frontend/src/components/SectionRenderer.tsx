@@ -30,6 +30,8 @@ import { Faq } from "./sections/Faq";
 import { CtaFinal } from "./sections/CtaFinal";
 import { LinkCards } from "./sections/LinkCards";
 import { PricingTable } from "./sections/PricingTable";
+import { PerformanceEnquiry } from "./sections/PerformanceEnquiry";
+import { GeneralEnquiry } from "./sections/GeneralEnquiry";
 
 export function SectionRenderer({ section }: { section: Section }) {
   switch (section.type) {
@@ -95,6 +97,10 @@ export function SectionRenderer({ section }: { section: Section }) {
       return <LinkCards data={section} />;
     case "pricingTable":
       return <PricingTable data={section} />;
+    case "performanceEnquiry":
+      return <PerformanceEnquiry data={section} />;
+    case "generalEnquiry":
+      return <GeneralEnquiry data={section} />;
     default: {
       const _never: never = section;
       return _never;

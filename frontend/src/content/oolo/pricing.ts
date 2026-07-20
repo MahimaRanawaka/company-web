@@ -316,11 +316,20 @@ export const ooloPricing: PageContent = {
     },
     // PERFORMANCE-BASED ENQUIRY
     {
-      type: "checklist",
+      type: "performanceEnquiry",
       anchor: "perf-form",
-      eyebrow: "Before we quote",
-      title: "What we agree first.",
-      items: [
+      eyebrow: "Performance-Based enquiry",
+      title: "Tell us the outcome you want.",
+      subtitle:
+        "This form is dedicated to performance-based marketing enquiries. The engagement model is already selected, so the conversation can focus on your KPI, current baseline, attribution, and timeline.",
+      serviceContext: "Marketing",
+      engagementModel: "Performance-Based",
+      planOptions: ["Campaign Performance Plan", "Content Growth Plan", "Growth Optimisation Partnership", "Not sure yet — recommend one"],
+      formEyebrow: "Enquiry form",
+      formTitle: "Performance-Based Proposal",
+      infoEyebrow: "Before we quote",
+      infoTitle: "What we agree first.",
+      infoItems: [
         {
           title: "The baseline",
           body: "Where your conversion rate, CPA, reach, or ROAS sits today, measured the same way by both sides.",
@@ -332,13 +341,12 @@ export const ooloPricing: PageContent = {
         },
         { title: "The review period", body: "How often results are reviewed and when the commercial component is settled." },
       ],
-    },
-    {
-      type: "contactForm",
-      eyebrow: "Performance-Based enquiry",
-      title: "Tell us the outcome you want.",
-      body: "Share your current baseline, target KPI, timeline, and monthly media budget (if any) in your message — plus which performance plan interests you: Campaign Performance, Content Growth, or Growth Optimisation.",
-      variant: "contact",
+      infoNote: {
+        label: "Typical metrics:",
+        body: "conversion-rate improvement, cost-per-acquisition, return on ad spend, qualified traffic, engagement, video completion rate, audience growth, and funnel performance.",
+      },
+      disclaimer:
+        "Performance outcomes are not guaranteed. The commercial model is confirmed only after both parties agree on the baseline, KPI definitions, attribution method, responsibilities, reporting process, and review period.",
     },
     // BUNDLES
     {
@@ -512,11 +520,19 @@ export const ooloPricing: PageContent = {
       eyebrow: "Get Started",
       title: "Ready to choose how you work with Oolo?",
       body: "Tell us your marketing requirement and we will recommend the most suitable project, retainer, team, bundle, or performance-based model.",
-      cta: { label: "Send Enquiry", to: "#enquiry-form" },
+      pills: [
+        { label: "Project-Based", to: "#enquiry-form", model: "Project-Based" },
+        { label: "Bundle Package", to: "#enquiry-form", model: "Bundle Package" },
+        { label: "Monthly Retainer", to: "#enquiry-form", model: "Monthly Retainer" },
+        { label: "Dedicated Team", to: "#enquiry-form", model: "Dedicated Team" },
+        { label: "Performance-Based", to: "#enquiry-form", model: "Performance-Based" },
+      ],
+      tightBottom: true,
     },
     {
       type: "features",
       columns: 3,
+      compact: true,
       items: [
         {
           title: "Start with a paid discovery sprint",
@@ -533,25 +549,33 @@ export const ooloPricing: PageContent = {
       ],
     },
     {
-      type: "checklist",
-      eyebrow: "What Happens Next",
-      title: "No obligation, no pressure.",
-      items: [
+      type: "generalEnquiry",
+      anchor: "enquiry-form",
+      tightTop: true,
+      modelOptions: [
+        "Not sure yet — recommend one",
+        "Project-Based",
+        "Bundle Package",
+        "Monthly Retainer",
+        "Dedicated Team",
+        "Performance-Based",
+      ],
+      budgetOptions: ["Under $1,000", "$1,000 – $5,000", "$5,000 – $12,000", "$12,000 – $20,000", "$20,000+", "Not defined yet"],
+      startOptions: ["Immediately", "Within 1 month", "1 – 3 months", "Just exploring"],
+      formEyebrow: "Enquiry form",
+      formTitle: "Request a proposal.",
+      formNote: "Sending this does not commit you to anything. You will receive a written proposal with fixed scope, revision rounds, and price before any work or payment.",
+      infoEyebrow: "What happens next",
+      infoTitle: "No obligation, no pressure.",
+      infoItems: [
         { title: "Within 1 business day", body: "We reply and ask any clarifying questions about scope and timeline." },
         { title: "A 30-minute call", body: "We walk through the brief, the channels, and what success looks like." },
-        {
-          title: "A written proposal",
-          body: "Fixed scope, deliverables, revision rounds, timeline, and price. Prefer email? Write to hello@en-nobler.com and mention the pricing model you're considering.",
-        },
+        { title: "A written proposal", body: "Fixed scope, deliverables, revision rounds, timeline, and price." },
       ],
-    },
-    {
-      type: "contactForm",
-      anchor: "enquiry-form",
-      eyebrow: "Enquiry Form",
-      title: "Request a proposal.",
-      body: "Tell us your requirement, indicative budget, and target start date. Sending this does not commit you to anything — you will receive a written proposal with fixed scope, revision rounds, and price before any work or payment.",
-      variant: "contact",
+      infoNote: {
+        label: "Prefer email?",
+        body: "Write to hello@en-nobler.com and mention the pricing model you are considering.",
+      },
     },
   ],
 };

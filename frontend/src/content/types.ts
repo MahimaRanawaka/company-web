@@ -45,6 +45,8 @@ export interface FeatureGridSection {
   dark?: boolean;
   /** bento layout: first item spans two columns as a featured tile */
   bento?: boolean;
+  /** reduces top and bottom padding — use when tight-spaced sections sandwich this one */
+  compact?: boolean;
 }
 
 export interface StepsSection {
@@ -61,7 +63,13 @@ export interface CtaSection {
   eyebrow?: string;
   title: string;
   body?: string;
-  cta: { label: string; to: string };
+  cta?: { label: string; to: string };
+  /** quick-select pills rendered below the body (replaces `cta` when set).
+   *  `model`, if present, is broadcast so a paired generalEnquiry form can
+   *  preselect its Engagement Model field. */
+  pills?: { label: string; to: string; model?: string }[];
+  /** reduces bottom padding — use when a tight-spaced section immediately follows */
+  tightBottom?: boolean;
 }
 
 export interface MarqueeSection {
@@ -368,6 +376,51 @@ export interface PricingTableSection {
   disclaimer?: string;
 }
 
+/** Structured lead-capture form (baseline, KPI, timeline, budget…) paired
+ *  side-by-side with a "what we agree first" info card. Posts through the
+ *  same contact pipeline as the simpler contactForm section. */
+export interface PerformanceEnquirySection {
+  type: "performanceEnquiry";
+  anchor?: string;
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  serviceContext: string;
+  engagementModel: string;
+  planOptions: string[];
+  formEyebrow?: string;
+  formTitle: string;
+  infoEyebrow?: string;
+  infoTitle: string;
+  infoItems: { title: string; body: string }[];
+  infoNote?: { label: string; body: string };
+  disclaimer?: string;
+}
+
+/** General lead-capture form (budget, timeline, source…) paired side-by-side
+ *  with a "what happens next" info card. Posts through the same contact
+ *  pipeline as the simpler contactForm section. */
+export interface GeneralEnquirySection {
+  type: "generalEnquiry";
+  anchor?: string;
+  /** section-level intro header; omit when a preceding section already introduces this block */
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  modelOptions: string[];
+  budgetOptions: string[];
+  startOptions: string[];
+  formEyebrow?: string;
+  formTitle: string;
+  formNote?: string;
+  infoEyebrow?: string;
+  infoTitle: string;
+  infoItems: { title: string; body: string }[];
+  infoNote?: { label: string; body: string };
+  /** reduces top padding — use when a tight-spaced section immediately precedes this one */
+  tightTop?: boolean;
+}
+
 /** Dark final CTA band with optional mini-stats. */
 export interface CtaFinalSection {
   type: "ctaFinal";
@@ -409,7 +462,9 @@ export type Section =
   | FaqSection
   | CtaFinalSection
   | LinkCardsSection
-  | PricingTableSection;
+  | PricingTableSection
+  | PerformanceEnquirySection
+  | GeneralEnquirySection;
 
 export interface PageContent {
   title: string;

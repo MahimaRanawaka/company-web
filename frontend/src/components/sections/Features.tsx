@@ -11,7 +11,10 @@ const COLS: Record<number, string> = {
 export function Features({ data }: { data: FeatureGridSection }) {
   const cols = COLS[data.columns ?? 3];
   return (
-    <section id={data.anchor} className={cn("py-20 md:py-24", data.dark ? "bg-surface-2" : "bg-surface")}>
+    <section
+      id={data.anchor}
+      className={cn(data.compact ? "py-6 md:py-8" : "py-20 md:py-24", data.dark ? "bg-surface-2" : "bg-surface")}
+    >
       <Container>
         {(data.eyebrow || data.title) && (
           <div className="mx-auto mb-12 max-w-2xl text-center">

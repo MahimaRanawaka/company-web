@@ -28,6 +28,8 @@ import { Testimonials } from "./sections/Testimonials";
 import { Tags } from "./sections/Tags";
 import { Faq } from "./sections/Faq";
 import { CtaFinal } from "./sections/CtaFinal";
+import { LinkCards } from "./sections/LinkCards";
+import { PricingTable } from "./sections/PricingTable";
 
 export function SectionRenderer({ section }: { section: Section }) {
   switch (section.type) {
@@ -89,6 +91,10 @@ export function SectionRenderer({ section }: { section: Section }) {
       return <Faq data={section} />;
     case "ctaFinal":
       return <CtaFinal data={section} />;
+    case "linkCards":
+      return <LinkCards data={section} />;
+    case "pricingTable":
+      return <PricingTable data={section} />;
     default: {
       const _never: never = section;
       return _never;

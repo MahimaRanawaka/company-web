@@ -6,7 +6,10 @@ import { cn } from "@/lib/utils";
 
 export function Engagement({ data }: { data: EngagementSection }) {
   return (
-    <section id={data.anchor} className="bg-canvas py-20 md:py-24">
+    <section
+      id={data.anchor}
+      className={cn("bg-canvas pt-20 md:pt-24", data.tightBottom ? "pb-6 md:pb-8" : "pb-20 md:pb-24")}
+    >
       <Container>
         <div className="mx-auto mb-14 max-w-2xl text-center">
           {data.eyebrow && <Eyebrow>{data.eyebrow}</Eyebrow>}
@@ -14,12 +17,12 @@ export function Engagement({ data }: { data: EngagementSection }) {
           {data.subtitle && <p className="mt-4 text-muted">{data.subtitle}</p>}
         </div>
 
-        <div className="grid items-stretch gap-6 md:grid-cols-3">
+        <div className="flex flex-wrap items-stretch justify-center gap-6">
           {data.plans.map((p) => (
             <div
               key={p.name}
               className={cn(
-                "relative flex flex-col rounded-xl border p-7",
+                "relative flex w-full flex-col rounded-xl border p-7 md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]",
                 p.highlighted
                   ? "border-accent bg-surface-2 shadow-lg md:-translate-y-3"
                   : "border-hairline bg-surface",
@@ -34,6 +37,7 @@ export function Engagement({ data }: { data: EngagementSection }) {
                 {p.badge}
               </span>
               <h3 className="text-xl">{p.name}</h3>
+              {p.price && <div className="mt-1.5 text-lg font-semibold text-ink">{p.price}</div>}
               <p className="mt-1.5 text-sm italic text-muted">{p.tagline}</p>
               <ul className="my-6 flex-1 space-y-0">
                 {p.features.map((f) => (

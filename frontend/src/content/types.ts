@@ -95,9 +95,14 @@ export interface EngagementSection {
   eyebrow?: string;
   title: string;
   subtitle?: string;
+  /** reduces bottom padding — use when a tight-spaced band (e.g. pricingTable's
+   *  standalone custom band) immediately follows this section */
+  tightBottom?: boolean;
   plans: {
     badge: string;
     name: string;
+    /** optional bold price line rendered between name and tagline, e.g. "$1,200 / month" */
+    price?: string;
     tagline: string;
     features: string[];
     cta: { label: string; to: string };
@@ -330,6 +335,39 @@ export interface TagsSection {
   items: string[];
 }
 
+/** Grid of clickable cards that link to page anchors or routes (e.g. a pricing decision guide). */
+export interface LinkCardsSection {
+  type: "linkCards";
+  anchor?: string;
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  columns?: 2 | 3;
+  items: { title: string; body: string; to: string }[];
+}
+
+/** Data table (e.g. project-based service pricing) with an optional trailing
+ *  "custom quote" band and a fine-print disclaimer. */
+export interface PricingTableSection {
+  type: "pricingTable";
+  anchor?: string;
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  /** omit both to render only the custom band (e.g. a standalone "Custom Retainer" note) */
+  columns?: [string, string, string];
+  rows?: { name: string; price: string; body: string }[];
+  custom?: {
+    eyebrow?: string;
+    title: string;
+    price?: string;
+    body: string;
+    features?: string[];
+    ctas: { label: string; to: string }[];
+  };
+  disclaimer?: string;
+}
+
 /** Dark final CTA band with optional mini-stats. */
 export interface CtaFinalSection {
   type: "ctaFinal";
@@ -369,7 +407,9 @@ export type Section =
   | TestimonialsSection
   | TagsSection
   | FaqSection
-  | CtaFinalSection;
+  | CtaFinalSection
+  | LinkCardsSection
+  | PricingTableSection;
 
 export interface PageContent {
   title: string;

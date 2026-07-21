@@ -213,6 +213,128 @@ const MOTIFS: Record<string, ReactNode> = {
       </g>
     </>
   ),
+
+  // Brand Strategy & Identity — palette with colour swatches + a brand mark
+  "palette-swatches": (
+    <>
+      <path
+        d="M56 20 a36 36 0 1 0 22 64 c4-3 2-9-3-9 h-6 a10 10 0 0 1-9-14 l2-4 a8 8 0 0 0-6-11 A36 36 0 0 0 56 20 Z"
+        fill="none"
+        stroke="currentColor"
+        strokeOpacity=".26"
+        strokeWidth="1.6"
+      />
+      <g fill="currentColor">
+        <circle cx="40" cy="42" r="5.5" fillOpacity=".55" />
+        <circle cx="66" cy="34" r="5.5" fillOpacity=".4" />
+        <circle cx="82" cy="52" r="5.5" fillOpacity=".28" />
+        <circle cx="44" cy="66" r="5.5" fillOpacity=".7" />
+      </g>
+      <path d="M30 92 L30 78 L44 78 Z" fill="currentColor" fillOpacity=".18" />
+    </>
+  ),
+
+  // Social Media Marketing — device with radiating share connections
+  "social-network": (
+    <>
+      <rect x="30" y="18" width="40" height="70" rx="7" fill="none" stroke="currentColor" strokeOpacity=".28" strokeWidth="1.6" />
+      <line x1="30" y1="72" x2="70" y2="72" stroke="currentColor" strokeOpacity=".22" strokeWidth="1.4" />
+      <g stroke="currentColor" strokeOpacity=".28" strokeWidth="1.2" fill="none">
+        <path d="M64 32 L92 20 M64 48 L98 48 M64 64 L92 82" />
+      </g>
+      <g fill="currentColor">
+        <circle cx="92" cy="20" r="4" fillOpacity=".5" />
+        <circle cx="98" cy="48" r="4" fillOpacity=".65" />
+        <circle cx="92" cy="82" r="4" fillOpacity=".4" />
+        <circle cx="64" cy="48" r="5" fillOpacity=".85" />
+      </g>
+    </>
+  ),
+
+  // Content Creation — stacked content cards with an active edit cursor
+  "content-blocks": (
+    <>
+      <g fill="currentColor">
+        <rect x="16" y="58" width="60" height="34" rx="6" fillOpacity=".08" stroke="currentColor" strokeOpacity=".2" strokeWidth="1.4" />
+        <rect x="28" y="44" width="60" height="34" rx="6" fillOpacity=".12" stroke="currentColor" strokeOpacity=".3" strokeWidth="1.4" />
+      </g>
+      <g stroke="currentColor" strokeOpacity=".4" strokeWidth="1.6" strokeLinecap="round">
+        <line x1="40" y1="58" x2="72" y2="58" />
+        <line x1="40" y1="68" x2="64" y2="68" />
+      </g>
+      <path
+        d="M78 34 L90 22 L98 30 L86 42 L76 44 Z"
+        fill="currentColor"
+        fillOpacity=".2"
+        stroke="currentColor"
+        strokeOpacity=".55"
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+      />
+    </>
+  ),
+
+  // Creative Design — artboard with a layered burst of shapes
+  "creative-burst": (
+    <>
+      <rect x="18" y="20" width="76" height="60" rx="6" fill="none" stroke="currentColor" strokeOpacity=".2" strokeWidth="1.4" />
+      <circle cx="56" cy="50" r="16" fill="currentColor" fillOpacity=".1" stroke="currentColor" strokeOpacity=".3" strokeWidth="1.3" />
+      <path
+        d="M56 30 L60 44 L74 50 L60 56 L56 70 L52 56 L38 50 L52 44 Z"
+        fill="currentColor"
+        fillOpacity=".5"
+      />
+      <g fill="currentColor" fillOpacity=".3">
+        <circle cx="26" cy="70" r="2.6" />
+        <circle cx="86" cy="30" r="2.6" />
+      </g>
+    </>
+  ),
+
+  // Campaign Planning — megaphone broadcasting over a schedule grid
+  "megaphone-waves": (
+    <>
+      <path
+        d="M20 60 V44 l30-14 v44 l-30-14 Z"
+        fill="currentColor"
+        fillOpacity=".16"
+        stroke="currentColor"
+        strokeOpacity=".4"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path d="M28 60 v14 a6 6 0 0 0 12 0 v-8" fill="none" stroke="currentColor" strokeOpacity=".4" strokeWidth="1.5" strokeLinecap="round" />
+      <g fill="none" stroke="currentColor" strokeLinecap="round">
+        <path d="M58 38 a20 20 0 0 1 0 24" strokeOpacity=".3" strokeWidth="1.4" />
+        <path d="M64 30 a30 30 0 0 1 0 40" strokeOpacity=".18" strokeWidth="1.4" />
+      </g>
+      <g fill="currentColor" fillOpacity=".2">
+        <rect x="78" y="70" width="9" height="9" rx="2" />
+        <rect x="91" y="70" width="9" height="9" rx="2" fillOpacity=".4" />
+      </g>
+    </>
+  ),
+
+  // Digital Growth Support — upward trend line over bar chart
+  "growth-arrow": (
+    <>
+      <g fill="currentColor">
+        <rect x="20" y="66" width="12" height="24" rx="2" fillOpacity=".18" />
+        <rect x="40" y="54" width="12" height="36" rx="2" fillOpacity=".28" />
+        <rect x="60" y="38" width="12" height="52" rx="2" fillOpacity=".4" />
+      </g>
+      <path
+        d="M20 62 L42 44 L58 54 L94 22"
+        fill="none"
+        stroke="currentColor"
+        strokeOpacity=".55"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M80 22 H94 V36" fill="none" stroke="currentColor" strokeOpacity=".55" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </>
+  ),
 };
 
 const GRID =

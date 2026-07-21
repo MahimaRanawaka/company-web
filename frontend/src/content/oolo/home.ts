@@ -123,6 +123,7 @@ export const ooloHome: PageContent = {
             "Positioning, messaging, visual identity, and brand systems that make you instantly recognisable and impossible to ignore.",
           to: "/oolo/services/brand-strategy",
           icon: "palette",
+          illustration: "palette-swatches",
         },
         {
           title: "Social Media Marketing",
@@ -130,6 +131,7 @@ export const ooloHome: PageContent = {
             "Channel strategy, content calendars, community management, and paid social that turns followers into customers.",
           to: "/oolo/services/social-media",
           icon: "share-2",
+          illustration: "social-network",
         },
         {
           title: "Content Creation",
@@ -137,6 +139,7 @@ export const ooloHome: PageContent = {
             "Copy, video, graphics, and editorial built around your brand voice — produced at scale, not as one-offs.",
           to: "/oolo/services/content",
           icon: "pen-tool",
+          illustration: "content-blocks",
         },
         {
           title: "Creative Design",
@@ -144,6 +147,7 @@ export const ooloHome: PageContent = {
             "Campaign creative, ad sets, landing visuals, and design systems engineered to convert, not just to look good.",
           to: "/oolo/services/creative",
           icon: "sparkles",
+          illustration: "creative-burst",
         },
         {
           title: "Campaign Planning",
@@ -151,6 +155,7 @@ export const ooloHome: PageContent = {
             "End-to-end campaign architecture — goals, channels, budgets, and timelines mapped to measurable outcomes.",
           to: "/oolo/services/campaign",
           icon: "megaphone",
+          illustration: "megaphone-waves",
         },
         {
           title: "Digital Growth Support",
@@ -158,6 +163,7 @@ export const ooloHome: PageContent = {
             "SEO, performance marketing, funnel optimisation, and analytics that compound traffic into pipeline.",
           to: "/oolo/services/digital-growth",
           icon: "trending-up",
+          illustration: "growth-arrow",
         },
       ],
     },

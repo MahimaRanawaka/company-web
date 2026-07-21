@@ -4,7 +4,13 @@ import { Container, Eyebrow } from "@/components/primitives";
 import { ButtonLink } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+const LG_WIDTH: Record<3 | 4, string> = {
+  3: "lg:w-[calc(33.333%-1rem)]",
+  4: "lg:w-[calc(25%-1.125rem)]",
+};
+
 export function Engagement({ data }: { data: EngagementSection }) {
+  const lgWidth = LG_WIDTH[data.columns ?? 3];
   return (
     <section
       id={data.anchor}
@@ -22,7 +28,8 @@ export function Engagement({ data }: { data: EngagementSection }) {
             <div
               key={p.name}
               className={cn(
-                "relative flex w-full flex-col rounded-xl border p-7 md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]",
+                "relative flex w-full flex-col rounded-xl border p-7 md:w-[calc(50%-0.75rem)]",
+                lgWidth,
                 p.highlighted
                   ? "border-accent bg-surface-2 shadow-lg md:-translate-y-3"
                   : "border-hairline bg-surface",

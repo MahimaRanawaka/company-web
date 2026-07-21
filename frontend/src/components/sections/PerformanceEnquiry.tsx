@@ -4,34 +4,38 @@ import { CheckCircle2 } from "lucide-react";
 import type { PerformanceEnquirySection } from "@/content/types";
 import { performanceEnquirySchema, type PerformanceEnquiryInput } from "@/lib/schemas";
 import { useContactMutation } from "@/hooks/useContactMutation";
+import { useBrand } from "@/brand/useBrand";
 import { Container, Eyebrow } from "@/components/primitives";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { EnquiryField, enquiryFieldClass as field, enquiryReadonlyFieldClass as readonlyField } from "./EnquiryField";
 import { EnquiryInfoCard } from "./EnquiryInfoCard";
 
-function composeMessage(d: PerformanceEnquiryInput, serviceContext: string, engagementModel: string): string {
+function composeMessage(
+  d: PerformanceEnquiryInput,
+  serviceContext: string | undefined,
+  engagementModel: string,
+  planFieldLabel: string,
+): string {
   const lines = [
-    `[Performance-Based Enquiry — ${serviceContext}]`,
+    `[Performance-Based Enquiry${serviceContext ? ` — ${serviceContext}` : ""}]`,
     "",
     `Engagement model: ${engagementModel}`,
-    `Selected plan: ${d.selectedPlan || "Not sure yet — recommend one"}`,
-    `Phone: ${d.phone}`,
+    `${planFieldLabel}: ${d.selectedPlan || "Not sure yet — recommend one"}`,
+    d.phone ? `Phone: ${d.phone}` : null,
     "",
-    `Current performance baseline: ${d.currentBaseline}`,
-    `Expected KPI: ${d.expectedKpi}`,
-    `Target timeline: ${d.targetTimeline}`,
-    `Monthly media budget: ${d.monthlyBudget || "—"}`,
-    "",
-    "Campaign / marketing requirement:",
-    d.requirement,
-    "",
-    d.additionalDetails ? `Additional details:\n${d.additionalDetails}` : null,
+    d.currentBaseline ? `Current baseline: ${d.currentBaseline}` : null,
+    `Expected KPI / outcome: ${d.expectedKpi}`,
+    d.targetTimeline ? `Target timeline: ${d.targetTimeline}` : null,
+    d.monthlyBudget ? `Monthly media budget: ${d.monthlyBudget}` : null,
+    d.requirement ? `\nRequirement:\n${d.requirement}` : null,
+    d.additionalDetails ? `\nAdditional details:\n${d.additionalDetails}` : null,
   ];
   return lines.filter((l) => l !== null).join("\n");
 }
 
 export function PerformanceEnquiry({ data }: { data: PerformanceEnquirySection }) {
+  const { brand } = useBrand();
   const mutation = useContactMutation();
   const {
     register,
@@ -39,13 +43,29 @@ export function PerformanceEnquiry({ data }: { data: PerformanceEnquirySection }
     formState: { errors, isSubmitting },
   } = useForm<PerformanceEnquiryInput>({ resolver: zodResolver(performanceEnquirySchema) });
 
+  const planFieldLabel = data.planFieldLabel ?? "Selected Performance Plan";
+  const showContactDetails = data.showContactDetails ?? true;
+  const requiredHints = data.requiredHints ?? true;
+  const baselineLabel = data.baselineLabel ?? "Current Performance Baseline";
+  const baselinePlaceholder = data.baselinePlaceholder ?? "e.g. Current conversion rate or CPA";
+  const kpiLabel = data.kpiLabel ?? "Expected KPI";
+  const kpiPlaceholder = data.kpiPlaceholder ?? "e.g. Improve conversion rate";
+  const timelineLabel = data.timelineLabel ?? "Target Timeline";
+  const timelinePlaceholder = data.timelinePlaceholder ?? "e.g. 3–6 months";
+  const showBudget = data.showBudget ?? true;
+  const showRequirement = data.showRequirement ?? true;
+  const requirementLabel = data.requirementLabel ?? "Campaign or Marketing Requirement";
+  const requirementPlaceholder = data.requirementPlaceholder ?? "Briefly describe the campaign or growth requirement...";
+  const showAdditionalDetails = data.showAdditionalDetails ?? true;
+  const submitLabel = data.submitLabel ?? "Request Performance Proposal";
+
   const onSubmit = (d: PerformanceEnquiryInput) =>
     mutation.mutate({
       name: d.name,
       email: d.email,
-      company: d.company,
-      brand_interest: "oolo",
-      message: composeMessage(d, data.serviceContext, data.engagementModel),
+      company: d.company || "",
+      brand_interest: brand,
+      message: composeMessage(d, data.serviceContext, data.engagementModel, planFieldLabel),
       website: d.website,
     });
 
@@ -76,14 +96,16 @@ export function PerformanceEnquiry({ data }: { data: PerformanceEnquirySection }
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
                   <input type="text" tabIndex={-1} autoComplete="off" className="hidden" {...register("website")} />
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <EnquiryField label="Service Context">
-                      <input className={readonlyField} value={data.serviceContext} readOnly />
-                    </EnquiryField>
+                    {data.serviceContext && (
+                      <EnquiryField label="Service Context">
+                        <input className={readonlyField} value={data.serviceContext} readOnly />
+                      </EnquiryField>
+                    )}
                     <EnquiryField label="Engagement Model">
                       <input className={readonlyField} value={data.engagementModel} readOnly />
                     </EnquiryField>
                   </div>
-                  <EnquiryField label="Selected Performance Plan">
+                  <EnquiryField label={planFieldLabel}>
                     <select className={field} {...register("selectedPlan")}>
                       {data.planOptions.map((p) => (
                         <option key={p}>{p}</option>
@@ -98,48 +120,56 @@ export function PerformanceEnquiry({ data }: { data: PerformanceEnquirySection }
                       <input className={field} type="email" {...register("email")} />
                     </EnquiryField>
                   </div>
+                  {showContactDetails && (
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <EnquiryField label="Phone Number" required={requiredHints} error={errors.phone?.message}>
+                        <input className={field} type="tel" {...register("phone")} />
+                      </EnquiryField>
+                      <EnquiryField label="Company" required={requiredHints} error={errors.company?.message}>
+                        <input className={field} {...register("company")} />
+                      </EnquiryField>
+                    </div>
+                  )}
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <EnquiryField label="Phone Number" required error={errors.phone?.message}>
-                      <input className={field} type="tel" {...register("phone")} />
+                    <EnquiryField label={baselineLabel} required={requiredHints} error={errors.currentBaseline?.message}>
+                      <input className={field} placeholder={baselinePlaceholder} {...register("currentBaseline")} />
                     </EnquiryField>
-                    <EnquiryField label="Company" required error={errors.company?.message}>
-                      <input className={field} {...register("company")} />
+                    <EnquiryField label={kpiLabel} required error={errors.expectedKpi?.message}>
+                      <input className={field} placeholder={kpiPlaceholder} {...register("expectedKpi")} />
                     </EnquiryField>
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <EnquiryField label="Current Performance Baseline" required error={errors.currentBaseline?.message}>
-                      <input className={field} placeholder="e.g. Current conversion rate or CPA" {...register("currentBaseline")} />
+                    <EnquiryField label={timelineLabel} required={requiredHints} error={errors.targetTimeline?.message}>
+                      <input className={field} placeholder={timelinePlaceholder} {...register("targetTimeline")} />
                     </EnquiryField>
-                    <EnquiryField label="Expected KPI" required error={errors.expectedKpi?.message}>
-                      <input className={field} placeholder="e.g. Improve conversion rate" {...register("expectedKpi")} />
-                    </EnquiryField>
+                    {showBudget && (
+                      <EnquiryField label="Monthly Media Budget">
+                        <input className={field} placeholder="Optional" {...register("monthlyBudget")} />
+                      </EnquiryField>
+                    )}
                   </div>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <EnquiryField label="Target Timeline" required error={errors.targetTimeline?.message}>
-                      <input className={field} placeholder="e.g. 3–6 months" {...register("targetTimeline")} />
+                  {showRequirement && (
+                    <EnquiryField label={requirementLabel} required={requiredHints} error={errors.requirement?.message}>
+                      <textarea
+                        rows={3}
+                        className={cn(field, "h-auto py-2.5")}
+                        placeholder={requirementPlaceholder}
+                        {...register("requirement")}
+                      />
                     </EnquiryField>
-                    <EnquiryField label="Monthly Media Budget">
-                      <input className={field} placeholder="Optional" {...register("monthlyBudget")} />
+                  )}
+                  {showAdditionalDetails && (
+                    <EnquiryField label="Additional Details">
+                      <textarea
+                        rows={3}
+                        className={cn(field, "h-auto py-2.5")}
+                        placeholder="Add attribution, reporting, or channel details..."
+                        {...register("additionalDetails")}
+                      />
                     </EnquiryField>
-                  </div>
-                  <EnquiryField label="Campaign or Marketing Requirement" required error={errors.requirement?.message}>
-                    <textarea
-                      rows={3}
-                      className={cn(field, "h-auto py-2.5")}
-                      placeholder="Briefly describe the campaign or growth requirement..."
-                      {...register("requirement")}
-                    />
-                  </EnquiryField>
-                  <EnquiryField label="Additional Details">
-                    <textarea
-                      rows={3}
-                      className={cn(field, "h-auto py-2.5")}
-                      placeholder="Add attribution, reporting, or channel details..."
-                      {...register("additionalDetails")}
-                    />
-                  </EnquiryField>
+                  )}
                   <Button type="submit" className="w-full" disabled={isSubmitting || mutation.isPending}>
-                    {mutation.isPending ? "Sending…" : "Request Performance Proposal"}
+                    {mutation.isPending ? "Sending…" : submitLabel}
                   </Button>
                 </form>
               </>

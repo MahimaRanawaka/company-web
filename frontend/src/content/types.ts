@@ -61,7 +61,7 @@ export interface CtaSection {
   type: "cta";
   anchor?: string;
   eyebrow?: string;
-  title: string;
+  title?: string;
   body?: string;
   cta?: { label: string; to: string };
   /** quick-select pills rendered below the body (replaces `cta` when set).
@@ -106,6 +106,8 @@ export interface EngagementSection {
   /** reduces bottom padding — use when a tight-spaced band (e.g. pricingTable's
    *  standalone custom band) immediately follows this section */
   tightBottom?: boolean;
+  /** max cards per row on wide screens; default 3 */
+  columns?: 3 | 4;
   plans: {
     badge: string;
     name: string;
@@ -352,6 +354,8 @@ export interface LinkCardsSection {
   subtitle?: string;
   columns?: 2 | 3;
   items: { title: string; body: string; to: string }[];
+  /** optional closing note + button rendered centered below the grid */
+  footer?: { body: string; cta: { label: string; to: string } };
 }
 
 /** Data table (e.g. project-based service pricing) with an optional trailing
@@ -362,9 +366,10 @@ export interface PricingTableSection {
   eyebrow?: string;
   title?: string;
   subtitle?: string;
-  /** omit both to render only the custom band (e.g. a standalone "Custom Retainer" note) */
-  columns?: [string, string, string];
-  rows?: { name: string; price: string; body: string }[];
+  /** omit both to render only the custom band (e.g. a standalone "Custom Retainer" note).
+   *  3 entries for [Service, Price, Included]; 4 to add a trailing "Best for" column. */
+  columns?: [string, string, string] | [string, string, string, string];
+  rows?: { name: string; price: string; body: string; bestFor?: string }[];
   custom?: {
     eyebrow?: string;
     title: string;
@@ -385,9 +390,36 @@ export interface PerformanceEnquirySection {
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  serviceContext: string;
+  /** first readonly context field; omit to show only engagementModel */
+  serviceContext?: string;
   engagementModel: string;
+  /** label for the plan/service-area select; default "Selected Performance Plan" */
+  planFieldLabel?: string;
   planOptions: string[];
+  /** default true — Phone Number / Company fields */
+  showContactDetails?: boolean;
+  /** default true — shows a red "*" on Phone/Company/Baseline/Timeline/Requirement */
+  requiredHints?: boolean;
+  /** default "Current Performance Baseline" */
+  baselineLabel?: string;
+  baselinePlaceholder?: string;
+  /** default "Expected KPI" */
+  kpiLabel?: string;
+  kpiPlaceholder?: string;
+  /** default "Target Timeline" */
+  timelineLabel?: string;
+  timelinePlaceholder?: string;
+  /** default true — Monthly Media Budget field */
+  showBudget?: boolean;
+  /** default true — a separate free-text requirement field beyond the KPI field */
+  showRequirement?: boolean;
+  /** default "Campaign or Marketing Requirement" */
+  requirementLabel?: string;
+  requirementPlaceholder?: string;
+  /** default true — Additional Details field */
+  showAdditionalDetails?: boolean;
+  /** default "Request Performance Proposal" */
+  submitLabel?: string;
   formEyebrow?: string;
   formTitle: string;
   infoEyebrow?: string;
@@ -410,9 +442,16 @@ export interface GeneralEnquirySection {
   modelOptions: string[];
   budgetOptions: string[];
   startOptions: string[];
+  /** default "Full Name" */
+  nameLabel?: string;
   formEyebrow?: string;
   formTitle: string;
   formNote?: string;
+  /** default "What do you want to achieve?" */
+  requirementLabel?: string;
+  requirementPlaceholder?: string;
+  /** default "Send Enquiry" */
+  submitLabel?: string;
   infoEyebrow?: string;
   infoTitle: string;
   infoItems: { title: string; body: string }[];

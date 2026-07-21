@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { LinkCardsSection } from "@/content/types";
 import { Container, Eyebrow } from "@/components/primitives";
+import { ButtonLink } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const COLS: Record<number, string> = {
@@ -56,6 +57,17 @@ export function LinkCards({ data }: { data: LinkCardsSection }) {
             </GuideCard>
           ))}
         </div>
+
+        {data.footer && (
+          <div className="mx-auto mt-8 max-w-xl text-center">
+            <p className="text-muted">{data.footer.body}</p>
+            <div className="mt-5 flex justify-center">
+              <ButtonLink to={data.footer.cta.to} size="lg">
+                {data.footer.cta.label}
+              </ButtonLink>
+            </div>
+          </div>
+        )}
       </Container>
     </section>
   );

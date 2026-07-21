@@ -13,7 +13,7 @@ export function Cta({ data }: { data: CtaSection }) {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           {data.eyebrow && <p className="eyebrow mb-3">{data.eyebrow}</p>}
-          <h2 className="text-3xl md:text-4xl">{data.title}</h2>
+          {data.title && <h2 className="text-3xl md:text-4xl">{data.title}</h2>}
           {data.body && <p className="mx-auto mt-4 max-w-xl text-muted">{data.body}</p>}
 
           {data.pills && data.pills.length > 0 && (

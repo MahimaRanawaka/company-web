@@ -40,6 +40,9 @@ export function PricingTable({ data }: { data: PricingTableSection }) {
                     <td className="px-5 py-4 align-top text-base font-semibold text-ink">{r.name}</td>
                     <td className="whitespace-nowrap px-5 py-4 align-top text-sm font-semibold text-ink">{r.price}</td>
                     <td className="px-5 py-4 align-top text-sm leading-relaxed text-muted">{r.body}</td>
+                    {data.columns!.length === 4 && (
+                      <td className="px-5 py-4 align-top text-sm leading-relaxed text-muted">{r.bestFor}</td>
+                    )}
                   </tr>
                 ))}
               </tbody>

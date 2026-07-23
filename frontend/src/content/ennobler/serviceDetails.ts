@@ -6,10 +6,10 @@ interface EnService {
   title: string;
   sub: string;
   stats: { value: string; label: string }[];
-  included: { title: string; body: string }[];
+  included: { title: string; body: string; icon?: string }[];
   process: { title: string; body: string }[];
   tech: string[];
-  deliverables: { title: string; body: string }[];
+  deliverables: { title: string; body: string; icon?: string }[];
   ctaTitle: string;
   ctaBody: string;
 }
@@ -86,12 +86,12 @@ const DATA: EnService[] = [
       { value: "< 2 wks", label: "to first sprint" },
     ],
     included: [
-      { title: "Requirements & Architecture", body: "We map your business logic, data flows, and system boundaries before writing a single line of code." },
-      { title: "Full-Stack Engineering", body: "Frontend, backend, database — all built in-house by a single cohesive team with no outsourcing." },
-      { title: "API-First Design", body: "Every module is built with clean APIs so integrations and future extensions are straightforward." },
-      { title: "Code Quality & Reviews", body: "Peer-reviewed code, linting, automated tests, and CI checks at every pull request." },
-      { title: "DevOps & Deployment", body: "We set up your CI/CD pipelines and deploy to your cloud environment of choice." },
-      { title: "Ongoing Support", body: "Post-launch bug fixes, performance monitoring, and incremental feature development." },
+      { title: "Requirements & Architecture", body: "We map your business logic, data flows, and system boundaries before writing a single line of code.", icon: "compass" },
+      { title: "Full-Stack Engineering", body: "Frontend, backend, database — all built in-house by a single cohesive team with no outsourcing.", icon: "layers" },
+      { title: "API-First Design", body: "Every module is built with clean APIs so integrations and future extensions are straightforward.", icon: "plug" },
+      { title: "Code Quality & Reviews", body: "Peer-reviewed code, linting, automated tests, and CI checks at every pull request.", icon: "check-check" },
+      { title: "DevOps & Deployment", body: "We set up your CI/CD pipelines and deploy to your cloud environment of choice.", icon: "rocket" },
+      { title: "Ongoing Support", body: "Post-launch bug fixes, performance monitoring, and incremental feature development.", icon: "life-buoy" },
     ],
     process: [
       { title: "Discovery", body: "Understand business goals, users, and constraints." },
@@ -123,12 +123,12 @@ const DATA: EnService[] = [
       { value: "100%", label: "mobile responsive" },
     ],
     included: [
-      { title: "UX-Driven Frontend", body: "Pixel-perfect, accessible interfaces built with modern frameworks — fast by default." },
-      { title: "CMS Integration", body: "Headless CMS setup so your team can update content without touching code." },
-      { title: "Performance Optimization", body: "Core Web Vitals tuning, lazy loading, CDN setup, and image optimization." },
-      { title: "SEO Architecture", body: "Semantic HTML, meta strategy, sitemap, and structured data from day one." },
-      { title: "Authentication & Multi-tenancy", body: "Role-based access, SSO, and multi-tenant architecture for SaaS products." },
-      { title: "Analytics & Tracking", body: "GA4, Mixpanel, or custom event tracking — wired in and tested before launch." },
+      { title: "UX-Driven Frontend", body: "Pixel-perfect, accessible interfaces built with modern frameworks — fast by default.", icon: "layout" },
+      { title: "CMS Integration", body: "Headless CMS setup so your team can update content without touching code.", icon: "layout-template" },
+      { title: "Performance Optimization", body: "Core Web Vitals tuning, lazy loading, CDN setup, and image optimization.", icon: "gauge" },
+      { title: "SEO Architecture", body: "Semantic HTML, meta strategy, sitemap, and structured data from day one.", icon: "search" },
+      { title: "Authentication & Multi-tenancy", body: "Role-based access, SSO, and multi-tenant architecture for SaaS products.", icon: "lock" },
+      { title: "Analytics & Tracking", body: "GA4, Mixpanel, or custom event tracking — wired in and tested before launch.", icon: "line-chart" },
     ],
     process: [
       { title: "Audit & Plan", body: "Review existing site or define new platform requirements." },
@@ -160,12 +160,12 @@ const DATA: EnService[] = [
       { value: "95%", label: "first-submission approval" },
     ],
     included: [
-      { title: "iOS & Android Native", body: "Swift and Kotlin for performance-critical apps where native UX matters." },
-      { title: "Cross-Platform (React Native)", body: "Single codebase for both platforms — faster delivery, lower cost, same quality feel." },
-      { title: "Offline-First Architecture", body: "Local data sync, background jobs, and conflict resolution for apps that work without internet." },
-      { title: "Push Notifications", body: "Targeted, scheduled, and behaviour-triggered notifications that drive retention." },
-      { title: "App Store Optimisation", body: "Screenshots, descriptions, and metadata crafted for maximum visibility and conversion." },
-      { title: "Analytics & Crash Reporting", body: "Mixpanel, Firebase, or Sentry wired in so you know exactly what users do." },
+      { title: "iOS & Android Native", body: "Swift and Kotlin for performance-critical apps where native UX matters.", icon: "smartphone" },
+      { title: "Cross-Platform (React Native)", body: "Single codebase for both platforms — faster delivery, lower cost, same quality feel.", icon: "layers" },
+      { title: "Offline-First Architecture", body: "Local data sync, background jobs, and conflict resolution for apps that work without internet.", icon: "wifi-off" },
+      { title: "Push Notifications", body: "Targeted, scheduled, and behaviour-triggered notifications that drive retention.", icon: "bell" },
+      { title: "App Store Optimisation", body: "Screenshots, descriptions, and metadata crafted for maximum visibility and conversion.", icon: "store" },
+      { title: "Analytics & Crash Reporting", body: "Mixpanel, Firebase, or Sentry wired in so you know exactly what users do.", icon: "bug" },
     ],
     process: [
       { title: "Scoping", body: "Define user journeys, platform targets, and MVP feature set." },
@@ -197,12 +197,12 @@ const DATA: EnService[] = [
       { value: "100%", label: "handoff-ready Figma" },
     ],
     included: [
-      { title: "User Research", body: "Interviews, surveys, and usability tests to understand what users actually need." },
-      { title: "Information Architecture", body: "Sitemaps, user flows, and navigation structures before any visuals are drawn." },
-      { title: "Wireframing", body: "Low-fidelity layouts that map out every screen and interaction state." },
-      { title: "High-Fidelity UI Design", body: "Polished Figma designs with typography, colour, spacing, and component states." },
-      { title: "Prototyping & Testing", body: "Clickable prototypes tested with real users before development starts." },
-      { title: "Design System", body: "Reusable component library with documented tokens for consistent scaling." },
+      { title: "User Research", body: "Interviews, surveys, and usability tests to understand what users actually need.", icon: "users" },
+      { title: "Information Architecture", body: "Sitemaps, user flows, and navigation structures before any visuals are drawn.", icon: "network" },
+      { title: "Wireframing", body: "Low-fidelity layouts that map out every screen and interaction state.", icon: "layout-grid" },
+      { title: "High-Fidelity UI Design", body: "Polished Figma designs with typography, colour, spacing, and component states.", icon: "palette" },
+      { title: "Prototyping & Testing", body: "Clickable prototypes tested with real users before development starts.", icon: "mouse-pointer-click" },
+      { title: "Design System", body: "Reusable component library with documented tokens for consistent scaling.", icon: "component" },
     ],
     process: [
       { title: "Research", body: "User interviews and competitor audit." },
@@ -234,12 +234,12 @@ const DATA: EnService[] = [
       { value: "Zero", label: "manual release steps" },
     ],
     included: [
-      { title: "Cloud Architecture", body: "Right-sized AWS, GCP, or Azure infrastructure — no over-provisioning, no single points of failure." },
-      { title: "CI/CD Pipelines", body: "Automated build, test, and deploy pipelines from commit to production." },
-      { title: "Containerisation", body: "Docker and Kubernetes setup for consistent, portable, scalable workloads." },
-      { title: "Infrastructure as Code", body: "Terraform or Pulumi so your infra is version-controlled and repeatable." },
-      { title: "Monitoring & Alerting", body: "Datadog, Grafana, or CloudWatch dashboards with on-call alerting." },
-      { title: "Cost Optimisation", body: "Reserved instances, spot fleets, and resource right-sizing to cut cloud bills." },
+      { title: "Cloud Architecture", body: "Right-sized AWS, GCP, or Azure infrastructure — no over-provisioning, no single points of failure.", icon: "cloud" },
+      { title: "CI/CD Pipelines", body: "Automated build, test, and deploy pipelines from commit to production.", icon: "git-branch" },
+      { title: "Containerisation", body: "Docker and Kubernetes setup for consistent, portable, scalable workloads.", icon: "container" },
+      { title: "Infrastructure as Code", body: "Terraform or Pulumi so your infra is version-controlled and repeatable.", icon: "file-code" },
+      { title: "Monitoring & Alerting", body: "Datadog, Grafana, or CloudWatch dashboards with on-call alerting.", icon: "activity" },
+      { title: "Cost Optimisation", body: "Reserved instances, spot fleets, and resource right-sizing to cut cloud bills.", icon: "dollar-sign" },
     ],
     process: [
       { title: "Audit", body: "Review existing infra, bottlenecks, and security posture." },
@@ -271,12 +271,12 @@ const DATA: EnService[] = [
       { value: "100%", label: "documented endpoints" },
     ],
     included: [
-      { title: "REST API Design", body: "Resource-based API design following OpenAPI 3.0 spec with versioning from day one." },
-      { title: "GraphQL APIs", body: "Flexible, query-efficient APIs for products with complex, varied data requirements." },
-      { title: "Third-Party Integrations", body: "Stripe, Salesforce, HubSpot, Twilio, Xero, or any REST/webhook-based service." },
-      { title: "Authentication & Security", body: "OAuth 2.0, JWT, API key management, rate limiting, and input validation." },
-      { title: "Webhooks & Event Streams", body: "Outbound webhooks and event-driven integrations for real-time data flows." },
-      { title: "API Testing & Monitoring", body: "Automated contract tests, load tests, and uptime monitoring in production." },
+      { title: "REST API Design", body: "Resource-based API design following OpenAPI 3.0 spec with versioning from day one.", icon: "webhook" },
+      { title: "GraphQL APIs", body: "Flexible, query-efficient APIs for products with complex, varied data requirements.", icon: "git-fork" },
+      { title: "Third-Party Integrations", body: "Stripe, Salesforce, HubSpot, Twilio, Xero, or any REST/webhook-based service.", icon: "puzzle" },
+      { title: "Authentication & Security", body: "OAuth 2.0, JWT, API key management, rate limiting, and input validation.", icon: "shield-check" },
+      { title: "Webhooks & Event Streams", body: "Outbound webhooks and event-driven integrations for real-time data flows.", icon: "radio" },
+      { title: "API Testing & Monitoring", body: "Automated contract tests, load tests, and uptime monitoring in production.", icon: "activity" },
     ],
     process: [
       { title: "Requirements", body: "Map data flows, consumers, and integration points." },
@@ -308,12 +308,12 @@ const DATA: EnService[] = [
       { value: "GPT-4 + Claude", label: "LLM expertise" },
     ],
     included: [
-      { title: "LLM Integration", body: "Embed GPT-4, Claude, or Gemini into your products — with prompt engineering and context management done right." },
-      { title: "AI-Aided Engineering", body: "Copilot tooling, code review bots, and AI-assisted QA wired into your dev workflow." },
-      { title: "Process Automation", body: "Replace repetitive manual tasks with robust, auditable automated workflows." },
-      { title: "Document Intelligence", body: "Extract, classify, and summarise data from PDFs, emails, and scanned documents." },
-      { title: "ML Model Development", body: "Custom classification, prediction, and recommendation models trained on your data." },
-      { title: "RAG & Knowledge Bases", body: "Retrieval-augmented generation pipelines so your AI answers questions from your own data." },
+      { title: "LLM Integration", body: "Embed GPT-4, Claude, or Gemini into your products — with prompt engineering and context management done right.", icon: "brain" },
+      { title: "AI-Aided Engineering", body: "Copilot tooling, code review bots, and AI-assisted QA wired into your dev workflow.", icon: "bot" },
+      { title: "Process Automation", body: "Replace repetitive manual tasks with robust, auditable automated workflows.", icon: "workflow" },
+      { title: "Document Intelligence", body: "Extract, classify, and summarise data from PDFs, emails, and scanned documents.", icon: "file-search" },
+      { title: "ML Model Development", body: "Custom classification, prediction, and recommendation models trained on your data.", icon: "cpu" },
+      { title: "RAG & Knowledge Bases", body: "Retrieval-augmented generation pipelines so your AI answers questions from your own data.", icon: "database" },
     ],
     process: [
       { title: "Discovery", body: "Map manual processes and identify automation ROI." },
@@ -345,12 +345,12 @@ const DATA: EnService[] = [
       { value: "Zero", label: "critical bugs in prod (target)" },
     ],
     included: [
-      { title: "Manual Exploratory Testing", body: "Skilled QA engineers who think like users — finding edge cases automated scripts miss." },
-      { title: "Test Automation", body: "Selenium, Playwright, or Cypress suites that run on every PR and block bad merges." },
-      { title: "API Testing", body: "Contract and load testing for every endpoint with Postman, k6, or custom scripts." },
-      { title: "Mobile QA", body: "Real-device testing across iOS and Android versions, screen sizes, and network conditions." },
-      { title: "Performance Testing", body: "Load, stress, and soak tests to find bottlenecks before go-live." },
-      { title: "Security Testing", body: "OWASP Top 10 checks, penetration testing basics, and dependency CVE scanning." },
+      { title: "Manual Exploratory Testing", body: "Skilled QA engineers who think like users — finding edge cases automated scripts miss.", icon: "eye" },
+      { title: "Test Automation", body: "Selenium, Playwright, or Cypress suites that run on every PR and block bad merges.", icon: "bot" },
+      { title: "API Testing", body: "Contract and load testing for every endpoint with Postman, k6, or custom scripts.", icon: "webhook" },
+      { title: "Mobile QA", body: "Real-device testing across iOS and Android versions, screen sizes, and network conditions.", icon: "smartphone" },
+      { title: "Performance Testing", body: "Load, stress, and soak tests to find bottlenecks before go-live.", icon: "gauge" },
+      { title: "Security Testing", body: "OWASP Top 10 checks, penetration testing basics, and dependency CVE scanning.", icon: "shield-check" },
     ],
     process: [
       { title: "Test Planning", body: "Review requirements and define test scope, types, and exit criteria." },
@@ -382,12 +382,12 @@ const DATA: EnService[] = [
       { value: "Multi-vendor", label: "marketplace capable" },
     ],
     included: [
-      { title: "Custom Storefront", body: "Tailored, brand-led shopping experiences — not template-constrained Shopify themes." },
-      { title: "Payment Gateways", body: "Stripe, PayHere, PayPal, and local payment methods integrated and tested." },
-      { title: "Inventory Management", body: "Real-time stock tracking, low-stock alerts, and multi-warehouse support." },
-      { title: "Order Management System", body: "End-to-end order lifecycle — placed, packed, shipped, returned — with status tracking." },
-      { title: "Multi-Vendor Marketplace", body: "Vendor onboarding, commission management, and split payments for marketplace models." },
-      { title: "Search & Recommendations", body: "Fast faceted search and AI-powered product recommendations to increase basket size." },
+      { title: "Custom Storefront", body: "Tailored, brand-led shopping experiences — not template-constrained Shopify themes.", icon: "store" },
+      { title: "Payment Gateways", body: "Stripe, PayHere, PayPal, and local payment methods integrated and tested.", icon: "credit-card" },
+      { title: "Inventory Management", body: "Real-time stock tracking, low-stock alerts, and multi-warehouse support.", icon: "package" },
+      { title: "Order Management System", body: "End-to-end order lifecycle — placed, packed, shipped, returned — with status tracking.", icon: "clipboard-list" },
+      { title: "Multi-Vendor Marketplace", body: "Vendor onboarding, commission management, and split payments for marketplace models.", icon: "building-2" },
+      { title: "Search & Recommendations", body: "Fast faceted search and AI-powered product recommendations to increase basket size.", icon: "search" },
     ],
     process: [
       { title: "Discovery", body: "Map buyer journeys, product catalogue, and fulfilment workflows." },
@@ -419,12 +419,12 @@ const DATA: EnService[] = [
       { value: "6 weeks", label: "to actionable roadmap" },
     ],
     included: [
-      { title: "Technology Audit", body: "A clear-eyed review of your current stack — what works, what doesn't, and what's holding you back." },
-      { title: "Roadmap Planning", body: "Prioritised, costed transformation roadmap aligned to your business timeline." },
-      { title: "Legacy Modernisation", body: "Strangler fig, re-platform, or greenfield — the right migration approach for your risk tolerance." },
-      { title: "Vendor Selection", body: "Unbiased evaluation of platforms, tools, and partners so you choose with confidence." },
-      { title: "Team Advisory", body: "Fractional CTO support, architecture reviews, and developer mentoring." },
-      { title: "Change Management", body: "Stakeholder alignment, training plans, and adoption metrics so the change actually sticks." },
+      { title: "Technology Audit", body: "A clear-eyed review of your current stack — what works, what doesn't, and what's holding you back.", icon: "clipboard-check" },
+      { title: "Roadmap Planning", body: "Prioritised, costed transformation roadmap aligned to your business timeline.", icon: "map" },
+      { title: "Legacy Modernisation", body: "Strangler fig, re-platform, or greenfield — the right migration approach for your risk tolerance.", icon: "refresh-cw" },
+      { title: "Vendor Selection", body: "Unbiased evaluation of platforms, tools, and partners so you choose with confidence.", icon: "handshake" },
+      { title: "Team Advisory", body: "Fractional CTO support, architecture reviews, and developer mentoring.", icon: "users" },
+      { title: "Change Management", body: "Stakeholder alignment, training plans, and adoption metrics so the change actually sticks.", icon: "trending-up" },
     ],
     process: [
       { title: "Discovery", body: "Stakeholder interviews and technical audit." },

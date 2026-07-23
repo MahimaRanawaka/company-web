@@ -1,5 +1,6 @@
 import type { FeatureGridSection } from "@/content/types";
 import { Container, Eyebrow } from "@/components/primitives";
+import { Icon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 const COLS: Record<number, string> = {
@@ -32,10 +33,16 @@ export function Features({ data }: { data: FeatureGridSection }) {
                 data.bento && i === 0 && "sm:col-span-2 md:p-8",
               )}
             >
-              {data.numbered && (
-                <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-md border border-hairline font-mono text-xs text-subtle">
-                  {String(i + 1).padStart(2, "0")}
+              {f.icon ? (
+                <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-surface text-accent">
+                  <Icon name={f.icon} className="h-5 w-5" />
                 </span>
+              ) : (
+                data.numbered && (
+                  <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-md border border-hairline font-mono text-xs text-subtle">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                )
               )}
               <h3 className="text-lg">{f.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{f.body}</p>

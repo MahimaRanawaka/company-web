@@ -131,6 +131,7 @@ export const ennoblerHome: PageContent = {
           to: "/ennobler/services/quality-assurance",
           icon: "shield-check",
           illustration: "shield-matrix",
+          cardVariant: "compact",
         },
         {
           title: "Software Development",
@@ -139,6 +140,7 @@ export const ennoblerHome: PageContent = {
           to: "/ennobler/services/software-development",
           icon: "code",
           illustration: "code-brackets",
+          cardVariant: "compact",
         },
         {
           title: "Digital Transformation",
@@ -147,6 +149,7 @@ export const ennoblerHome: PageContent = {
           to: "/ennobler/services/digital-transformation",
           icon: "refresh-cw",
           illustration: "refresh-cycle",
+          cardVariant: "compact",
         },
         {
           title: "Web / App Development",
@@ -155,6 +158,7 @@ export const ennoblerHome: PageContent = {
           to: "/ennobler/services/web-platform-development",
           icon: "monitor-smartphone",
           illustration: "browser-device",
+          cardVariant: "compact",
         },
         {
           title: "Cloud / DevOps Support",
@@ -163,6 +167,7 @@ export const ennoblerHome: PageContent = {
           to: "/ennobler/services/cloud-devops",
           icon: "cloud",
           illustration: "cloud-pipeline",
+          cardVariant: "compact",
         },
         {
           title: "UI/UX Design",
@@ -171,6 +176,7 @@ export const ennoblerHome: PageContent = {
           to: "/ennobler/services/ui-ux-design",
           icon: "pen-tool",
           illustration: "pen-artboard",
+          cardVariant: "compact",
         },
         {
           title: "Mobile App Development",
@@ -179,6 +185,7 @@ export const ennoblerHome: PageContent = {
           to: "/ennobler/services/mobile-app-development",
           icon: "smartphone",
           illustration: "phone-touch",
+          cardVariant: "compact",
         },
         {
           title: "API Development",
@@ -187,6 +194,7 @@ export const ennoblerHome: PageContent = {
           to: "/ennobler/services/api-development",
           icon: "webhook",
           illustration: "api-endpoints",
+          cardVariant: "compact",
         },
         {
           title: "E-Commerce Solutions",
@@ -195,6 +203,7 @@ export const ennoblerHome: PageContent = {
           to: "/ennobler/services/ecommerce-solutions",
           icon: "shopping-cart",
           illustration: "cart-tags",
+          cardVariant: "compact",
         },
       ],
     },

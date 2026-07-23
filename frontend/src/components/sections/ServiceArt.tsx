@@ -380,7 +380,7 @@ function ParticleField({ seed }: { seed: string }) {
   );
 }
 
-export function ServiceArt({ name, featured }: { name?: string; featured?: boolean }) {
+export function ServiceArt({ name, featured, bold }: { name?: string; featured?: boolean; bold?: boolean }) {
   const motif = name ? MOTIFS[name] : undefined;
   if (!motif) return null;
 
@@ -416,6 +416,17 @@ export function ServiceArt({ name, featured }: { name?: string; featured?: boole
             </svg>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  // Trial: bigger, fainter, bolder-stroked motif bleeding off the top-right corner.
+  if (bold) {
+    return (
+      <div aria-hidden className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 text-accent opacity-[0.14] [&_path]:stroke-[3]">
+        <svg viewBox="0 0 112 112" className="h-full w-full">
+          {motif}
+        </svg>
       </div>
     );
   }

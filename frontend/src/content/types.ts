@@ -27,7 +27,15 @@ export interface ServiceCardsSection {
   eyebrow?: string;
   title?: string;
   /** when omitted, the page pulls live services for the brand */
-  items?: { title: string; summary: string; to?: string; icon?: string; illustration?: string }[];
+  items?: {
+    title: string;
+    summary: string;
+    to?: string;
+    icon?: string;
+    illustration?: string;
+    /** "compact": trial style — tighter card spacing + a bigger, fainter, bolder-stroked watermark */
+    cardVariant?: "compact";
+  }[];
   source?: "live";
   /** bento layout: first card renders as a large featured tile */
   bento?: boolean;

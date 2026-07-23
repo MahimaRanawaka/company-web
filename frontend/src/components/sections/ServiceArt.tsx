@@ -423,7 +423,10 @@ export function ServiceArt({ name, featured, bold }: { name?: string; featured?:
   // Trial: bigger, fainter, bolder-stroked motif bleeding off the top-right corner.
   if (bold) {
     return (
-      <div aria-hidden className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 text-accent opacity-[0.14] [&_path]:stroke-[3]">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 text-accent opacity-[0.14] [&_circle]:stroke-[3] [&_ellipse]:stroke-[3] [&_line]:stroke-[3] [&_path]:stroke-[3] [&_polyline]:stroke-[3] [&_rect]:stroke-[3]"
+      >
         <svg viewBox="0 0 112 112" className="h-full w-full">
           {motif}
         </svg>

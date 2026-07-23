@@ -132,6 +132,7 @@ export const ooloHome: PageContent = {
           to: "/oolo/services/social-media",
           icon: "share-2",
           illustration: "social-network",
+          cardVariant: "compact",
         },
         {
           title: "Content Creation",
@@ -140,6 +141,7 @@ export const ooloHome: PageContent = {
           to: "/oolo/services/content",
           icon: "pen-tool",
           illustration: "content-blocks",
+          cardVariant: "compact",
         },
         {
           title: "Creative Design",
@@ -148,6 +150,7 @@ export const ooloHome: PageContent = {
           to: "/oolo/services/creative",
           icon: "sparkles",
           illustration: "creative-burst",
+          cardVariant: "compact",
         },
         {
           title: "Campaign Planning",
@@ -156,6 +159,7 @@ export const ooloHome: PageContent = {
           to: "/oolo/services/campaign",
           icon: "megaphone",
           illustration: "megaphone-waves",
+          cardVariant: "compact",
         },
         {
           title: "Digital Growth Support",
@@ -164,6 +168,7 @@ export const ooloHome: PageContent = {
           to: "/oolo/services/digital-growth",
           icon: "trending-up",
           illustration: "growth-arrow",
+          cardVariant: "compact",
         },
       ],
     },

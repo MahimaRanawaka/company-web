@@ -8,7 +8,9 @@ interface OoloService {
   scopeTitle: string;
   covers: { title: string; body: string; icon?: string }[];
   process: string[];
-  outcomes: string[];
+  outcomes: { title: string; icon?: string }[];
+  /** "inline": trial layout for the outcomes cards — small icon left of title, single row */
+  outcomesLayout?: "inline";
   ctaTitle: string;
 }
 
@@ -49,7 +51,8 @@ function build(s: OoloService): PageContent {
         subtitle: "The practical business value of this service, not just a list of activities.",
         columns: 4,
         dark: true,
-        items: s.outcomes.map((title) => ({ title, body: "" })),
+        layout: s.outcomesLayout,
+        items: s.outcomes.map((o) => ({ title: o.title, body: "", icon: o.icon })),
       },
       {
         type: "cta",
@@ -75,7 +78,13 @@ const DATA: OoloService[] = [
       { title: "Brand Launch Setup", body: "Prepare the brand foundation for website, social media, campaigns, and marketing assets.", icon: "rocket" },
     ],
     process: ["Discover business and audience", "Define positioning", "Shape identity direction", "Prepare brand guidelines", "Support launch communication"],
-    outcomes: ["Clear brand direction", "Stronger market positioning", "Consistent visual identity", "Better customer trust"],
+    outcomesLayout: "inline",
+    outcomes: [
+      { title: "Clear brand direction", icon: "compass" },
+      { title: "Stronger market positioning", icon: "trending-up" },
+      { title: "Consistent visual identity", icon: "palette" },
+      { title: "Better customer trust", icon: "heart-handshake" },
+    ],
     ctaTitle: "Need Brand Strategy & Identity support?",
   },
   {
@@ -91,7 +100,13 @@ const DATA: OoloService[] = [
       { title: "Performance Review", body: "Review reach, engagement, and campaign response to improve the next cycle.", icon: "bar-chart-3" },
     ],
     process: ["Audit current social presence", "Define content pillars", "Plan monthly calendar", "Create post direction", "Review and improve"],
-    outcomes: ["Consistent posting plan", "Stronger audience engagement", "Clear brand voice", "Better social visibility"],
+    outcomesLayout: "inline",
+    outcomes: [
+      { title: "Consistent posting plan", icon: "calendar" },
+      { title: "Stronger audience engagement", icon: "heart-handshake" },
+      { title: "Clear brand voice", icon: "message-square" },
+      { title: "Better social visibility", icon: "eye" },
+    ],
     ctaTitle: "Need Social Media Marketing support?",
   },
   {
@@ -107,7 +122,13 @@ const DATA: OoloService[] = [
       { title: "Storytelling", body: "Humanize the brand through stories, founder messages, customer angles, and creative narratives.", icon: "book-open" },
     ],
     process: ["Identify content goal", "Define audience angle", "Create content ideas", "Prepare copy and direction", "Optimize after feedback"],
-    outcomes: ["Better content clarity", "More campaign-ready assets", "Stronger storytelling", "Reduced content confusion"],
+    outcomesLayout: "inline",
+    outcomes: [
+      { title: "Better content clarity", icon: "file-text" },
+      { title: "More campaign-ready assets", icon: "package" },
+      { title: "Stronger storytelling", icon: "book-open" },
+      { title: "Reduced content confusion", icon: "circle-check" },
+    ],
     ctaTitle: "Need Content Creation support?",
   },
   {
@@ -123,7 +144,13 @@ const DATA: OoloService[] = [
       { title: "Presentation & Promo Design", body: "Pitch visuals, campaign decks, event posters, and promotional materials.", icon: "presentation" },
     ],
     process: ["Understand visual goal", "Set creative direction", "Create design concepts", "Refine visual system", "Prepare final assets"],
-    outcomes: ["Cleaner visual identity", "More professional campaigns", "Reusable creative assets", "Better brand recall"],
+    outcomesLayout: "inline",
+    outcomes: [
+      { title: "Cleaner visual identity", icon: "palette" },
+      { title: "More professional campaigns", icon: "megaphone" },
+      { title: "Reusable creative assets", icon: "package" },
+      { title: "Better brand recall", icon: "sparkles" },
+    ],
     ctaTitle: "Need Creative Design support?",
   },
   {
@@ -139,7 +166,13 @@ const DATA: OoloService[] = [
       { title: "Launch Timeline", body: "Structure the campaign from teaser to launch, follow-up, and review.", icon: "clock" },
     ],
     process: ["Set campaign objective", "Map target audience", "Plan message and channels", "Prepare launch assets", "Measure and refine"],
-    outcomes: ["Clear campaign direction", "Reduced execution confusion", "Better launch readiness", "More measurable results"],
+    outcomesLayout: "inline",
+    outcomes: [
+      { title: "Clear campaign direction", icon: "compass" },
+      { title: "Reduced execution confusion", icon: "circle-check" },
+      { title: "Better launch readiness", icon: "rocket" },
+      { title: "More measurable results", icon: "bar-chart-3" },
+    ],
     ctaTitle: "Need Campaign Planning support?",
   },
   {
@@ -155,7 +188,13 @@ const DATA: OoloService[] = [
       { title: "Performance Reporting", body: "Summarize progress in a clear, business-friendly format for decision-making.", icon: "bar-chart-3" },
     ],
     process: ["Review current performance", "Find improvement gaps", "Recommend growth actions", "Support implementation", "Track next results"],
-    outcomes: ["Ongoing improvement", "Better marketing decisions", "Clear monthly direction", "Sustainable brand growth"],
+    outcomesLayout: "inline",
+    outcomes: [
+      { title: "Ongoing improvement", icon: "trending-up" },
+      { title: "Better marketing decisions", icon: "brain" },
+      { title: "Clear monthly direction", icon: "calendar" },
+      { title: "Sustainable brand growth", icon: "leaf" },
+    ],
     ctaTitle: "Need Digital Growth Support?",
   },
 ];

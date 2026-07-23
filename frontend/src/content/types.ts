@@ -47,6 +47,9 @@ export interface FeatureGridSection {
   bento?: boolean;
   /** reduces top and bottom padding — use when tight-spaced sections sandwich this one */
   compact?: boolean;
+  /** "split": icon sits left of title+body instead of stacked above it.
+   *  "inline": compact single-row tile — icon left of title only, no body. */
+  layout?: "split" | "inline";
 }
 
 export interface StepsSection {

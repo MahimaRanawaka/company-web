@@ -14,6 +14,13 @@ export interface HeroSection {
   facts?: { label: string; value: string }[];
   /** right-column hero key-art (highest-priority visual; e.g. brand mascot art) */
   image?: { src: string; alt: string };
+  /** renders `image` bare — no MediaFrame border/background/padding */
+  imageUnframed?: boolean;
+  /** adds soft blurred contact-shadow ellipses under a figure's feet — one
+   *  entry per figure, positioned in % of the rendered image box. */
+  imageGroundShadow?: { left: number; bottom: number; width: number; height: number }[];
+  /** adds a soft layered drop-shadow around the whole (unframed) image */
+  imageShadow?: boolean;
 }
 
 export interface StatsSection {

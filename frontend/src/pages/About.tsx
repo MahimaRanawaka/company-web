@@ -13,7 +13,15 @@ const about: PageContent = {
         "We sit at the intersection of creative strategy and technical execution — the space most companies try to bridge with handoffs and Slack messages. We built a company that lives there instead.",
       primaryCta: { label: "Our Story", to: "#who" },
       secondaryCta: { label: "What We Do", to: "#what-we-do" },
-      image: { src: "/heroes/about.webp", alt: "Byte and Chikku — the En'nobler and Oolo mascots — side by side, engineering and creative intelligence as one team" },
+      image: {
+        src: "/heroes/about.png",
+        alt: "Byte and Chikku — the En'nobler and Oolo mascots — side by side, engineering and creative intelligence as one team",
+      },
+      imageUnframed: true,
+      imageGroundShadow: [
+        { left: 25, bottom: 6, width: 20, height: 4 },
+        { left: 75, bottom: 6, width: 20, height: 4 },
+      ],
     },
     // INTRO
     {
@@ -21,7 +29,8 @@ const about: PageContent = {
       anchor: "who",
       dark: true,
       eyebrow: "About En'nobler / Oolo",
-      title: "We're built for the space between brilliant ideas and the technology that makes them work.",
+      title:
+        "We're built for the space between brilliant ideas and the technology that makes them work.",
       paragraphs: [
         "En'nobler / Oolo is a venture of en'nobler PVT LTD — a Sri Lankan company built around a conviction that the next decade of digital business won't be won by those with the loudest creative ideas or the most advanced technology stack. It will be won by those who can put both in the same room and make them talk to each other.",
         "That's the work we do.",
@@ -32,7 +41,8 @@ const about: PageContent = {
       type: "prose",
       anchor: "problem",
       eyebrow: "The problem we set out to solve",
-      title: "The split between creative work and technical systems is where growth gets lost.",
+      title:
+        "The split between creative work and technical systems is where growth gets lost.",
       paragraphs: [
         "Walk into most digital businesses today and you'll find a familiar split.",
         "On one side, marketing teams produce campaigns that look beautiful, tell strong stories, and connect with audiences — but live disconnected from the technical systems that should be carrying them. Great creative gets stuck inside slow workflows, manual processes, and tools that can't scale.",
@@ -92,15 +102,25 @@ const about: PageContent = {
       anchor: "ai",
       dark: true,
       eyebrow: "How we think about AI",
-      title: "We use AI extensively. We're also clear about what it is and isn't for.",
+      title:
+        "We use AI extensively. We're also clear about what it is and isn't for.",
       paragraphs: [
         "AI doesn't have ideas. It doesn't understand a brand the way a person who has sat with the founder for three hours understands it. It doesn't know which version of a campaign will actually move the people you're trying to reach. What it does — exceptionally well — is take the things humans have decided to do and help us do more of them, faster, with better measurement and tighter iteration.",
         "So our model is straightforward:",
       ],
       bullets: [
-        { strong: "Humans lead the creative work.", text: "Strategy, concepts, brand voice, design direction, narrative — these come from people. We don't generate campaigns from a prompt and call it creative." },
-        { strong: "AI carries the load.", text: "Once the human decisions are made, we use AI to scale production, automate the repetitive parts of execution, run faster testing cycles, and free our team to spend their time on the work that actually requires judgment." },
-        { strong: "The output is more human, not less.", text: "When AI handles the mechanical work, the people on our team have more capacity for the work only people can do. That's the point." },
+        {
+          strong: "Humans lead the creative work.",
+          text: "Strategy, concepts, brand voice, design direction, narrative — these come from people. We don't generate campaigns from a prompt and call it creative.",
+        },
+        {
+          strong: "AI carries the load.",
+          text: "Once the human decisions are made, we use AI to scale production, automate the repetitive parts of execution, run faster testing cycles, and free our team to spend their time on the work that actually requires judgment.",
+        },
+        {
+          strong: "The output is more human, not less.",
+          text: "When AI handles the mechanical work, the people on our team have more capacity for the work only people can do. That's the point.",
+        },
       ],
     },
     // JOBS
@@ -126,10 +146,22 @@ const about: PageContent = {
         "If you're a marketing-led business that needs technical depth, we're built for you. If you're a product-led business that needs to be seen and understood, we're built for you. If you're somewhere in between trying to make both sides work together, we're especially built for you.",
       ],
       bullets: [
-        { strong: "Strategy and brand work", text: "that gives your business a coherent story to tell." },
-        { strong: "Digital marketing execution", text: "— content, campaigns, performance, social, SEO — built to scale through AI-assisted workflows." },
-        { strong: "Software development", text: "for the products, platforms, and internal tools your business needs to operate." },
-        { strong: "The connecting layer", text: "— integrating your marketing systems with your product, your data, and your operations so nothing falls through the cracks between teams." },
+        {
+          strong: "Strategy and brand work",
+          text: "that gives your business a coherent story to tell.",
+        },
+        {
+          strong: "Digital marketing execution",
+          text: "— content, campaigns, performance, social, SEO — built to scale through AI-assisted workflows.",
+        },
+        {
+          strong: "Software development",
+          text: "for the products, platforms, and internal tools your business needs to operate.",
+        },
+        {
+          strong: "The connecting layer",
+          text: "— integrating your marketing systems with your product, your data, and your operations so nothing falls through the cracks between teams.",
+        },
       ],
     },
     // WHERE WE'RE GOING
@@ -137,19 +169,24 @@ const about: PageContent = {
       type: "prose",
       anchor: "where-going",
       eyebrow: "Where we're going",
-      title: "We're early. We're Sri Lankan. We're betting on the creative-technical bridge.",
+      title:
+        "We're early. We're Sri Lankan. We're betting on the creative-technical bridge.",
       paragraphs: [
         "We're early. We're Sri Lankan. We're betting that a company designed from the start around the creative-technical bridge — rather than one bolted together from two separate practices — will produce work that the older model simply can't match.",
         "If that's the kind of partner you're looking for, we'd like to hear from you.",
       ],
-      signoff: { title: "En'nobler / Oolo", note: "A venture of en'nobler PVT LTD" },
+      signoff: {
+        title: "En'nobler / Oolo",
+        note: "A venture of en'nobler PVT LTD",
+      },
     },
     // FINAL — LET'S TALK + FORM
     {
       type: "contactForm",
       anchor: "final",
       eyebrow: "Let's Talk",
-      title: "If this is the kind of partner you are looking for, we'd like to hear from you.",
+      title:
+        "If this is the kind of partner you are looking for, we'd like to hear from you.",
       body: "Tell us what you are trying to build, grow, fix, test, or connect. No pitch deck required — just a clear conversation about the problem and whether En'nobler / Oolo is the right team to help.",
       variant: "contact",
       secondaryCta: { label: "Book a Strategy Call", to: "/strategy-call" },

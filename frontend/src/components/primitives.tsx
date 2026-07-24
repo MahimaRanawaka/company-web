@@ -1,7 +1,13 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-export function Container({ className, children }: { className?: string; children: ReactNode }) {
+export function Container({
+  className,
+  children,
+}: {
+  className?: string;
+  children: ReactNode;
+}) {
   return <div className={cn("container", className)}>{children}</div>;
 }
 
@@ -17,7 +23,14 @@ export function SectionShell({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className={cn("py-14 md:py-20 lg:py-24", alt ? "bg-surface" : "bg-canvas", className)}>
+    <section
+      id={id}
+      className={cn(
+        "py-14 md:py-20 lg:py-24",
+        alt ? "bg-surface" : "bg-canvas",
+        className,
+      )}
+    >
       <Container>{children}</Container>
     </section>
   );

@@ -6,13 +6,18 @@ export const ennoblerServices: PageContent = {
     {
       type: "hero",
       eyebrow: "Services",
-      title: "Specialized services for engineering, quality, and digital transformation.",
+      title:
+        "Specialized services for engineering, quality, and digital transformation.",
       subtitle:
         "A focused set of engineering, quality, automation, and transformation services designed to help businesses build reliable digital products and scalable technology systems.",
       primaryCta: { label: "Start a Project", to: "/contact" },
       secondaryCta: { label: "See Our Work", to: "/portfolio" },
       chips: ["Engineering", "QA", "Cloud", "AI"],
-      image: { src: "/showcase/ennobler-services.webp", alt: "Software engineering systems — connected architecture, modules, and reliability" },
+      image: {
+        src: "/showcase/ennobler-services.png",
+        alt: "Software engineering systems — connected architecture, modules, and reliability",
+      },
+      imageUnframed: true,
     },
     {
       type: "services",
@@ -25,11 +30,26 @@ export const ennoblerServices: PageContent = {
       eyebrow: "How We Deliver Value",
       title: "From business need to reliable delivery",
       items: [
-        { title: "Discover", body: "We understand your business, users, workflows, and challenges." },
-        { title: "Plan", body: "We define the right solution structure, scope, and roadmap." },
-        { title: "Build", body: "We build with quality, transparency, and practical delivery focus." },
-        { title: "Test & Deploy", body: "We validate the solution and deploy with confidence." },
-        { title: "Support & Grow", body: "We provide ongoing improvement, support, and optimization." },
+        {
+          title: "Discover",
+          body: "We understand your business, users, workflows, and challenges.",
+        },
+        {
+          title: "Plan",
+          body: "We define the right solution structure, scope, and roadmap.",
+        },
+        {
+          title: "Build",
+          body: "We build with quality, transparency, and practical delivery focus.",
+        },
+        {
+          title: "Test & Deploy",
+          body: "We validate the solution and deploy with confidence.",
+        },
+        {
+          title: "Support & Grow",
+          body: "We provide ongoing improvement, support, and optimization.",
+        },
       ],
     },
     {
@@ -41,10 +61,22 @@ export const ennoblerServices: PageContent = {
       columns: 4,
       numbered: true,
       items: [
-        { title: "Critical Thinking", body: "Evaluating complexity, trade-offs, and context that data alone cannot surface." },
-        { title: "Intuition", body: "Reading what a client or a user actually needs — beyond what they say." },
-        { title: "Creativity", body: "Generating ideas that are genuinely new — not recombinations of what already exists." },
-        { title: "Adaptation", body: "Responding to change in real time — pivoting when the plan meets reality." },
+        {
+          title: "Critical Thinking",
+          body: "Evaluating complexity, trade-offs, and context that data alone cannot surface.",
+        },
+        {
+          title: "Intuition",
+          body: "Reading what a client or a user actually needs — beyond what they say.",
+        },
+        {
+          title: "Creativity",
+          body: "Generating ideas that are genuinely new — not recombinations of what already exists.",
+        },
+        {
+          title: "Adaptation",
+          body: "Responding to change in real time — pivoting when the plan meets reality.",
+        },
       ],
     },
     {

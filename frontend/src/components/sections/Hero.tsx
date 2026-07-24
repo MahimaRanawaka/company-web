@@ -46,14 +46,44 @@ export function Hero({ data }: { data: HeroSection }) {
           </div>
 
           {data.image ? (
-            <MediaFrame className="animate-fade-up">
-              <Image
-                src={data.image.src}
-                alt={data.image.alt}
-                aspect="4/3"
-                eager
-              />
-            </MediaFrame>
+            data.imageUnframed ? (
+              data.imageGroundShadow ? (
+                <div className="relative animate-fade-up">
+                  {data.imageGroundShadow.map((s, i) => (
+                    <div
+                      key={i}
+                      aria-hidden
+                      className="absolute rounded-full bg-black/25 blur-md"
+                      style={{
+                        left: `${s.left}%`,
+                        bottom: `${s.bottom}%`,
+                        width: `${s.width}%`,
+                        height: `${s.height}%`,
+                        transform: "translateX(-50%)",
+                      }}
+                    />
+                  ))}
+                  <div className="relative">
+                    <Image src={data.image.src} alt={data.image.alt} aspect="4/3" eager />
+                  </div>
+                </div>
+              ) : data.imageShadow ? (
+                <div className="animate-fade-up shadow-[0_1px_2px_rgba(15,27,38,0.10),0_20px_32px_-8px_rgba(15,27,38,0.16)]">
+                  <Image src={data.image.src} alt={data.image.alt} aspect="4/3" eager />
+                </div>
+              ) : (
+                <Image src={data.image.src} alt={data.image.alt} aspect="4/3" eager className="animate-fade-up" />
+              )
+            ) : (
+              <MediaFrame className="animate-fade-up">
+                <Image
+                  src={data.image.src}
+                  alt={data.image.alt}
+                  aspect="4/3"
+                  eager
+                />
+              </MediaFrame>
+            )
           ) : data.facts && data.facts.length > 0 ? (
             <ul className="flex flex-col gap-5">
               {data.facts.map((f) => (

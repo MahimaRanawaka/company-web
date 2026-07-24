@@ -14,9 +14,11 @@ export const ennoblerHome: PageContent = {
       secondaryCta: { label: "Explore En'nobler.QaaS", to: "/ennobler/qaas" },
       chips: ["QA", "AI", "Cloud", "API", "Build"],
       image: {
-        src: "/heroes/ennobler.webp",
+        src: "/heroes/ennobler.png",
         alt: "Byte, the En'nobler engineering mascot, holding a glowing intelligence orb amid software architecture panels",
       },
+      imageUnframed: true,
+      imageGroundShadow: [{ left: 47, bottom: 15, width: 28, height: 4 }],
     },
     {
       type: "marquee",
@@ -261,7 +263,10 @@ export const ennoblerHome: PageContent = {
       body: "From SaaS stability to AI workflow validation and compliance assurance, En'nobler.QaaS gives businesses a continuous quality layer for confident product delivery.",
       pills: ["SaaS Core", "Agentic QA", "AI Governance QA", "Enterprise QA"],
       cta: { label: "Explore QaaS", to: "/ennobler/qaas" },
-      image: { src: "/qaas/dashboard.png", alt: "En'nobler.QaaS quality dashboard" },
+      image: {
+        src: "/qaas/dashboard.png",
+        alt: "En'nobler.QaaS quality dashboard",
+      },
     },
     // §9 PRODUCTS PREVIEW
     {

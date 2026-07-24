@@ -21,6 +21,9 @@ export interface HeroSection {
   imageGroundShadow?: { left: number; bottom: number; width: number; height: number }[];
   /** adds a soft layered drop-shadow around the whole (unframed) image */
   imageShadow?: boolean;
+  /** hand-coded "connected dashboard" diagram (see HeroArt.tsx) — takes
+   *  priority over `image` when set */
+  heroArt?: string;
 }
 
 export interface StatsSection {

@@ -14,7 +14,7 @@ export const ennoblerHome: PageContent = {
       secondaryCta: { label: "Explore En'nobler.QaaS", to: "/ennobler/qaas" },
       chips: ["QA", "AI", "Cloud", "API", "Build"],
       image: {
-        src: "/heroes/ennobler.png",
+        src: "/heroes/ennobler.webp",
         alt: "Byte, the En'nobler engineering mascot, holding a glowing intelligence orb amid software architecture panels",
       },
       imageUnframed: true,

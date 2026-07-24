@@ -14,6 +14,8 @@ export const ooloChikku: PageContent = {
       secondaryCta: { label: "Meet the Crew", to: "#crew" },
       chips: ["Creative", "Human", "Bold", "Alive"],
       image: { src: "/heroes/chikku.webp", alt: "Chikku, the Oolo creative mascot, spraying a vivid orange creative burst" },
+      imageUnframed: true,
+      imageGroundShadow: [{ left: 49, bottom: 15, width: 26, height: 4 }],
     },
     // CONCEPT
     {

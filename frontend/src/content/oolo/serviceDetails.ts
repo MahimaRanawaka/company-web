@@ -11,6 +11,8 @@ interface OoloService {
   outcomes: { title: string; icon?: string }[];
   /** "inline": trial layout for the outcomes cards — small icon left of title, single row */
   outcomesLayout?: "inline";
+  /** hand-coded hero diagram (see HeroArt.tsx) instead of the chip visual */
+  heroArt?: string;
   ctaTitle: string;
 }
 
@@ -25,6 +27,7 @@ function build(s: OoloService): PageContent {
         subtitle: s.sub,
         secondaryCta: { label: "Back to Services", to: "/oolo/services" },
         chips: ["Strategy", "Creative", "Growth"],
+        heroArt: s.heroArt,
       },
       {
         type: "features",
@@ -71,6 +74,7 @@ const DATA: OoloService[] = [
     title: "Build a brand people understand, remember, and trust.",
     sub: "We define the strategic foundation of your brand: positioning, voice, visual direction, messaging, and market fit — turning raw business ideas into a clear brand system.",
     scopeTitle: "Brand Strategy & Identity",
+    heroArt: "brand-strategy-diagram",
     covers: [
       { title: "Brand Positioning", body: "Clarify where the brand stands, who it serves, and why customers should choose it.", icon: "target" },
       { title: "Voice & Messaging", body: "Define tone, key messages, value propositions, and campaign language.", icon: "message-square" },
@@ -93,6 +97,7 @@ const DATA: OoloService[] = [
     title: "Turn social channels into consistent brand growth touchpoints.",
     sub: "We plan, structure, and guide social media communication so the brand does not post randomly — content direction, platform strategy, campaign rhythm, and audience engagement.",
     scopeTitle: "Social Media Marketing",
+    heroArt: "social-media-diagram",
     covers: [
       { title: "Platform Strategy", body: "Choose the right platforms and define how the brand should communicate on each one.", icon: "share-2" },
       { title: "Content Calendar", body: "Plan weekly and monthly content themes, post types, and campaign moments.", icon: "calendar" },
@@ -115,6 +120,7 @@ const DATA: OoloService[] = [
     title: "Create content that explains, attracts, and converts.",
     sub: "We help brands produce purposeful content for digital platforms: captions, campaign messages, reel ideas, storytelling concepts, website content support, and content systems.",
     scopeTitle: "Content Creation",
+    heroArt: "content-diagram",
     covers: [
       { title: "Copywriting", body: "Captions, ad copy, website content direction, campaign lines, and brand messages.", icon: "pen-tool" },
       { title: "Reels & Short-form Ideas", body: "Concepts for short videos, hooks, scripts, and story-led content formats.", icon: "clapperboard" },
@@ -137,6 +143,7 @@ const DATA: OoloService[] = [
     title: "Design visuals that make the brand feel clear, modern, and memorable.",
     sub: "We create digital design direction for social media, campaigns, presentations, ads, brand assets, and promotional materials — visual communication with purpose, not just decoration.",
     scopeTitle: "Creative Design",
+    heroArt: "creative-diagram",
     covers: [
       { title: "Social Media Creatives", body: "Post designs, story layouts, carousel structure, and campaign-ready social visuals.", icon: "image" },
       { title: "Ad Creatives", body: "Performance-focused static and digital ad concepts for paid campaigns.", icon: "megaphone" },
@@ -159,6 +166,7 @@ const DATA: OoloService[] = [
     title: "Plan campaigns with structure, message, channel, and outcome clearly connected.",
     sub: "We help businesses plan campaign journeys before execution: objective, audience segment, key message, channel plan, creative requirements, timeline, and success indicators.",
     scopeTitle: "Campaign Planning",
+    heroArt: "campaign-diagram",
     covers: [
       { title: "Campaign Strategy", body: "Define what the campaign should achieve and how it connects to business goals.", icon: "target" },
       { title: "Audience & Message Mapping", body: "Match campaign messages to customer segments, needs, and buying stages.", icon: "users" },
@@ -181,6 +189,7 @@ const DATA: OoloService[] = [
     title: "Support ongoing marketing growth with insight, consistency, and practical improvement.",
     sub: "We support brands after campaigns and content go live — analysis, optimization, content improvement, growth recommendations, and practical marketing support for continuous progress.",
     scopeTitle: "Digital Growth Support",
+    heroArt: "digital-growth-diagram",
     covers: [
       { title: "Growth Review", body: "Review marketing activity, content performance, campaign response, and improvement areas.", icon: "trending-up" },
       { title: "Optimization Support", body: "Improve messaging, content angles, creative direction, and funnel performance.", icon: "sliders-horizontal" },

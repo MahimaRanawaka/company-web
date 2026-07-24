@@ -12,6 +12,8 @@ interface EnService {
   deliverables: { title: string; body: string; icon?: string }[];
   /** "split": trial layout for the Deliverables cards — icon left, text right */
   deliverablesLayout?: "split";
+  /** trial: hand-coded hero diagram (see HeroArt.tsx) instead of the chip visual */
+  heroArt?: string;
   ctaTitle: string;
   ctaBody: string;
 }
@@ -28,6 +30,7 @@ function build(s: EnService): PageContent {
         primaryCta: { label: "Start a Project", to: "/contact" },
         secondaryCta: { label: "See What's Included", to: "#features" },
         chips: ["Discover", "Build", "Test", "Ship"],
+        heroArt: s.heroArt,
       },
       { type: "stats", items: s.stats },
       {
@@ -83,6 +86,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / Custom Software Development",
     title: "Software built exactly for your business.",
     sub: "We design and build custom software from scratch — tailored to your workflows, integrated with your systems, and engineered to scale.",
+    heroArt: "software-development-diagram",
     stats: [
       { value: "50+", label: "projects shipped" },
       { value: "4.9★", label: "client satisfaction" },
@@ -121,6 +125,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / Web & Platform Development",
     title: "Fast, scalable web platforms that perform.",
     sub: "From marketing sites to complex SaaS platforms — we build web products that load fast, rank well, and convert visitors into customers.",
+    heroArt: "web-platform-diagram",
     stats: [
       { value: "40+", label: "platforms launched" },
       { value: "< 1s", label: "avg load time target" },
@@ -159,6 +164,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / Mobile App Development",
     title: "Mobile apps users actually keep on their phones.",
     sub: "iOS, Android, and cross-platform apps — built for performance, offline resilience, and app store approval from the first submission.",
+    heroArt: "mobile-app-diagram",
     stats: [
       { value: "30+", label: "apps shipped" },
       { value: "4.8★", label: "avg app store rating" },
@@ -197,6 +203,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / UI/UX & Product Design",
     title: "Design that makes complex things feel simple.",
     sub: "User research, information architecture, wireframes, and high-fidelity prototypes — so your product ships with a clear, tested experience.",
+    heroArt: "ui-ux-design-diagram",
     stats: [
       { value: "25+", label: "products designed" },
       { value: "3×", label: "avg conversion uplift" },
@@ -235,6 +242,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / Cloud & DevOps Solutions",
     title: "Infrastructure that ships faster and breaks less.",
     sub: "Cloud architecture, CI/CD automation, containerisation, and monitoring — so your team can deploy with confidence every single day.",
+    heroArt: "cloud-devops-diagram",
     stats: [
       { value: "99.9%", label: "uptime SLA target" },
       { value: "10×", label: "faster deployments" },
@@ -273,6 +281,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / API Development & Integrations",
     title: "APIs that connect your systems reliably.",
     sub: "Secure, well-documented REST and GraphQL APIs — plus third-party integrations that keep your products, tools, and data in sync.",
+    heroArt: "api-development-diagram",
     stats: [
       { value: "< 100ms", label: "avg API response" },
       { value: "99.95%", label: "uptime target" },
@@ -311,6 +320,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / AI & Automation Solutions",
     title: "Automate the work. Amplify the team.",
     sub: "Custom AI models, LLM integrations, and intelligent workflow automation — built to reduce manual effort and surface insights that drive decisions.",
+    heroArt: "ai-automation-diagram",
     stats: [
       { value: "60%", label: "avg manual effort cut" },
       { value: "3×", label: "faster data processing" },
@@ -349,6 +359,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / Software Quality Assurance",
     title: "Bugs caught before your users find them.",
     sub: "Manual and automated testing across web, mobile, and APIs — so every release ships with confidence, not crossed fingers.",
+    heroArt: "quality-assurance-diagram",
     stats: [
       { value: "98%", label: "defect detection rate" },
       { value: "5×", label: "faster regression cycles" },
@@ -387,6 +398,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / E-Commerce Solutions",
     title: "Online stores built to convert and scale.",
     sub: "Custom storefronts, seamless checkout, and robust backend systems — from D2C brands to complex multi-vendor marketplaces.",
+    heroArt: "ecommerce-diagram",
     stats: [
       { value: "20+", label: "stores launched" },
       { value: "+35%", label: "avg conversion uplift" },
@@ -425,6 +437,7 @@ const DATA: EnService[] = [
     eyebrow: "Services / IT Consulting & Digital Transformation",
     title: "Technology strategy that moves the business forward.",
     sub: "Hands-on consulting to modernise legacy systems, align your tech stack with business goals, and build the internal capability to sustain growth.",
+    heroArt: "digital-transformation-diagram",
     stats: [
       { value: "15+", label: "transformations led" },
       { value: "30%", label: "avg infra cost reduction" },

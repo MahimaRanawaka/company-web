@@ -2,6 +2,7 @@ import type { HeroSection } from "@/content/types";
 import { Container, RichTitle } from "@/components/primitives";
 import { ButtonLink } from "@/components/ui/button";
 import { Image, MediaFrame } from "@/components/Image";
+import { HeroArt } from "./HeroArt";
 
 export function Hero({ data }: { data: HeroSection }) {
   return (
@@ -45,7 +46,11 @@ export function Hero({ data }: { data: HeroSection }) {
             )}
           </div>
 
-          {data.image ? (
+          {data.heroArt ? (
+            <div className="animate-fade-up">
+              <HeroArt name={data.heroArt} />
+            </div>
+          ) : data.image ? (
             data.imageUnframed ? (
               data.imageGroundShadow ? (
                 <div className="relative animate-fade-up">

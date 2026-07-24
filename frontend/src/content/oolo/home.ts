@@ -18,6 +18,8 @@ export const ooloHome: PageContent = {
         src: "/heroes/oolo.webp",
         alt: "Chikku, the Oolo creative-growth mascot, holding a spray can amid upward growth arrows",
       },
+      imageUnframed: true,
+      imageGroundShadow: [{ left: 47, bottom: 14, width: 26, height: 4 }],
     },
     {
       type: "marquee",

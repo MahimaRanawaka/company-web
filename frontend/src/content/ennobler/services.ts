@@ -14,7 +14,7 @@ export const ennoblerServices: PageContent = {
       secondaryCta: { label: "See Our Work", to: "/portfolio" },
       chips: ["Engineering", "QA", "Cloud", "AI"],
       image: {
-        src: "/showcase/ennobler-services.png",
+        src: "/showcase/ennobler-services.webp",
         alt: "Software engineering systems — connected architecture, modules, and reliability",
       },
       imageUnframed: true,

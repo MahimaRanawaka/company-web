@@ -12,6 +12,7 @@ export const ooloServices: PageContent = {
       primaryCta: { label: "Explore Services", to: "#core-services" },
       secondaryCta: { label: "How We Work", to: "#how-we-work" },
       image: { src: "/showcase/oolo-services.webp", alt: "Creative growth marketing — flowing brand and campaign systems with a rising growth curve" },
+      imageUnframed: true,
     },
     {
       type: "features",

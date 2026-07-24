@@ -14,7 +14,7 @@ const about: PageContent = {
       primaryCta: { label: "Our Story", to: "#who" },
       secondaryCta: { label: "What We Do", to: "#what-we-do" },
       image: {
-        src: "/heroes/about.png",
+        src: "/heroes/about.webp",
         alt: "Byte and Chikku — the En'nobler and Oolo mascots — side by side, engineering and creative intelligence as one team",
       },
       imageUnframed: true,

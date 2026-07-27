@@ -213,7 +213,7 @@ export const ennoblerHome: PageContent = {
     {
       type: "engagement",
       title: "Choose How to Work With Us",
-      subtitle: "Three engagement models. One technology team. Your call.",
+      subtitle: "Five engagement models. One technology team. Your call.",
       plans: [
         {
           badge: "Project",
@@ -225,7 +225,7 @@ export const ennoblerHome: PageContent = {
             "QA & testing",
             "Launch support",
           ],
-          cta: { label: "Start a Project", to: "/contact" },
+          cta: { label: "Go to Project Pricing →", to: "/ennobler/pricing#project" },
         },
         {
           badge: "Retainer",
@@ -237,7 +237,7 @@ export const ennoblerHome: PageContent = {
             "Sprint-based delivery",
             "Maintenance & optimization",
           ],
-          cta: { label: "Explore Packages", to: "/ennobler/pricing" },
+          cta: { label: "Go to Retainers →", to: "/ennobler/pricing#retainer" },
           highlighted: true,
           popular: "Most Popular",
         },
@@ -251,7 +251,31 @@ export const ennoblerHome: PageContent = {
             "DevOps support",
             "Product team extension",
           ],
-          cta: { label: "Request Proposal", to: "/contact" },
+          cta: { label: "Go to Team Hiring →", to: "/ennobler/pricing#team" },
+        },
+        {
+          badge: "Performance",
+          name: "Performance-Based",
+          tagline: "Commercial terms linked to agreed measurable outcomes.",
+          features: [
+            "Test coverage improvement",
+            "Defect reduction targets",
+            "Automation coverage growth",
+            "Outcome-linked payment",
+          ],
+          cta: { label: "Go to Outcomes →", to: "/ennobler/pricing#performance" },
+        },
+        {
+          badge: "Bundle",
+          name: "Bundle Packages",
+          tagline: "Build, QA, branding, and launch as one coordinated engagement.",
+          features: [
+            "SaaS development",
+            "QA setup included",
+            "Branding included",
+            "Marketing launch campaign",
+          ],
+          cta: { label: "See Bundles →", to: "/ennobler/pricing#bundles" },
         },
       ],
     },

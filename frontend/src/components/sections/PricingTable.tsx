@@ -2,6 +2,7 @@ import { Check } from "lucide-react";
 import type { PricingTableSection } from "@/content/types";
 import { Container, Eyebrow } from "@/components/primitives";
 import { ButtonLink } from "@/components/ui/button";
+import { broadcastEngagementModel } from "@/lib/engagementModelSignal";
 import { cn } from "@/lib/utils";
 
 export function PricingTable({ data }: { data: PricingTableSection }) {
@@ -72,7 +73,13 @@ export function PricingTable({ data }: { data: PricingTableSection }) {
             )}
             <div className="flex flex-wrap gap-3 md:flex-col">
               {data.custom.ctas.map((cta, i) => (
-                <ButtonLink key={cta.label} to={cta.to} variant={i === 0 ? "primary" : "outline"} className="w-full">
+                <ButtonLink
+                  key={cta.label}
+                  to={cta.to}
+                  variant={i === 0 ? "primary" : "outline"}
+                  className="w-full"
+                  onClick={cta.model ? () => broadcastEngagementModel(cta.model!) : undefined}
+                >
                   {cta.label}
                 </ButtonLink>
               ))}

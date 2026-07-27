@@ -71,7 +71,7 @@ export const performanceEnquirySchema = z.object({
   name: z.string().min(2, "Please enter your full name.").max(120, "Name is too long."),
   email: z.string().email("Enter a valid email.").max(254),
   phone: z.string().min(6, "Enter a valid phone number.").max(40),
-  company: z.string().max(120).optional().or(z.literal("")),
+  company: z.string().min(2, "Please enter your company name.").max(120),
   currentBaseline: z.string().max(300).optional().or(z.literal("")),
   expectedKpi: z.string().min(5, "Please share the outcome you're after.").max(1000),
   targetTimeline: z.string().max(120).optional().or(z.literal("")),

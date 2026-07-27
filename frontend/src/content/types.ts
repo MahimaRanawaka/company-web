@@ -136,7 +136,9 @@ export interface EngagementSection {
     price?: string;
     tagline: string;
     features: string[];
-    cta: { label: string; to: string };
+    /** `model`, when set, preselects the Engagement Model field on a paired
+     *  generalEnquiry form elsewhere on the same page (see engagementModelSignal). */
+    cta: { label: string; to: string; model?: string };
     highlighted?: boolean;
     popular?: string;
   }[];
@@ -397,7 +399,9 @@ export interface PricingTableSection {
     price?: string;
     body: string;
     features?: string[];
-    ctas: { label: string; to: string }[];
+    /** `model`, when set, preselects the Engagement Model field on a paired
+     *  generalEnquiry form elsewhere on the same page (see engagementModelSignal). */
+    ctas: { label: string; to: string; model?: string }[];
   };
   disclaimer?: string;
 }

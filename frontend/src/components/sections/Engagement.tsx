@@ -2,6 +2,7 @@ import { Check } from "lucide-react";
 import type { EngagementSection } from "@/content/types";
 import { Container, Eyebrow } from "@/components/primitives";
 import { ButtonLink } from "@/components/ui/button";
+import { broadcastEngagementModel } from "@/lib/engagementModelSignal";
 import { cn } from "@/lib/utils";
 
 const LG_WIDTH: Record<3 | 4, string> = {
@@ -58,6 +59,7 @@ export function Engagement({ data }: { data: EngagementSection }) {
                 to={p.cta.to}
                 className="w-full"
                 variant={p.highlighted ? "primary" : "outline"}
+                onClick={p.cta.model ? () => broadcastEngagementModel(p.cta.model!) : undefined}
               >
                 {p.cta.label}
               </ButtonLink>

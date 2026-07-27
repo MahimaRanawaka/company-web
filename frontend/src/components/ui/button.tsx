@@ -42,7 +42,8 @@ export function ButtonLink({
   variant,
   size,
   children,
-}: CommonProps & { to: string; children: React.ReactNode }) {
+  onClick,
+}: CommonProps & { to: string; children: React.ReactNode; onClick?: () => void }) {
   const external = /^https?:\/\//.test(to);
   const protocol = /^(mailto:|tel:)/.test(to);
   if (external || protocol) {
@@ -50,6 +51,7 @@ export function ButtonLink({
       <a
         href={to}
         className={cn(buttonVariants({ variant, size }), className)}
+        onClick={onClick}
         {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
       >
         {children}
@@ -69,6 +71,7 @@ export function ButtonLink({
             el.scrollIntoView({ behavior: "smooth", block: "start" });
             history.replaceState(null, "", to);
           }
+          onClick?.();
         }}
       >
         {children}
@@ -76,7 +79,7 @@ export function ButtonLink({
     );
   }
   return (
-    <Link to={to} className={cn(buttonVariants({ variant, size }), className)}>
+    <Link to={to} className={cn(buttonVariants({ variant, size }), className)} onClick={onClick}>
       {children}
     </Link>
   );

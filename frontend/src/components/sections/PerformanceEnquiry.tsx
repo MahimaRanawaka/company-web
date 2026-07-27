@@ -129,7 +129,7 @@ export function PerformanceEnquiry({ data }: { data: PerformanceEnquirySection }
                         </EnquiryField>
                       )}
                       {showCompany && (
-                        <EnquiryField label="Company" required={requiredHints} error={errors.company?.message}>
+                        <EnquiryField label="Company" required error={errors.company?.message}>
                           <input className={field} {...register("company")} />
                         </EnquiryField>
                       )}

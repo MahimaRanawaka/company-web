@@ -20,6 +20,7 @@ export function useContactMutation() {
         company: input.company || null,
         brand_interest: input.brand_interest ?? null,
         message: input.message,
+        cv_path: input.cv_path || null,
       });
       if (error) throw error;
 

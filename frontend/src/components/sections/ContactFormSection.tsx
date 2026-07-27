@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2 } from "lucide-react";
@@ -6,6 +6,7 @@ import type { ContactFormSection } from "@/content/types";
 import { applySchema, contactSchema, type ApplyInput, type ContactInput } from "@/lib/schemas";
 import { useContactMutation } from "@/hooks/useContactMutation";
 import { useBrand } from "@/brand/useBrand";
+import { supabase } from "@/lib/supabase";
 import { Container } from "@/components/primitives";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -107,6 +108,7 @@ function LeadForm() {
 
 function ApplyForm() {
   const mutation = useContactMutation();
+  const [uploadError, setUploadError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -118,7 +120,21 @@ function ApplyForm() {
 
   if (mutation.isSuccess) return <Success title="Application received." note="We'll review your details and get back to you with next steps." />;
 
-  const onSubmit = (d: ApplyInput) =>
+  const onSubmit = async (d: ApplyInput) => {
+    setUploadError(null);
+
+    let cvPath: string | undefined;
+    const file = d.cv?.[0];
+    if (file && supabase) {
+      const path = `${crypto.randomUUID()}-${file.name}`;
+      const { error } = await supabase.storage.from("cv-uploads").upload(path, file);
+      if (error) {
+        setUploadError("Couldn't upload your CV — please try again.");
+        return;
+      }
+      cvPath = path;
+    }
+
     mutation.mutate({
       name: d.name,
       email: d.email,
@@ -133,8 +149,10 @@ function ApplyForm() {
       ]
         .filter(Boolean)
         .join("\n") || "Career application",
+      cv_path: cvPath,
       website: d.website,
     });
+  };
 
   return (
     <Shell>
@@ -183,6 +201,7 @@ function ApplyForm() {
             {...register("cv")}
           />
           {cvName && <span className="mt-1 block text-xs text-subtle">Selected: {cvName}</span>}
+          {uploadError && <span className="mt-1 block text-xs text-red-500">{uploadError}</span>}
         </Field>
         <Field label="Portfolio / LinkedIn / GitHub">
           <input className={field} placeholder="Paste link here" {...register("portfolio")} />

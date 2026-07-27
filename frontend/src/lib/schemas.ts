@@ -9,6 +9,8 @@ export const contactSchema = z.object({
     .string()
     .min(10, "Tell us a little more (10+ characters).")
     .max(5000, "Message is too long (5000 characters max)."),
+  /** storage object path for an uploaded CV, set after upload — not user-entered */
+  cv_path: z.string().optional(),
   /** honeypot — must stay empty */
   website: z.string().max(0).optional(),
 });

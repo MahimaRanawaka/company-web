@@ -82,6 +82,7 @@ export interface Database {
           company: string | null;
           brand_interest: Brand | null;
           message: string;
+          cv_path: string | null;
           created_at: string;
         };
         Insert: Omit<Database["public"]["Tables"]["contact_submissions"]["Row"], "id" | "created_at">;

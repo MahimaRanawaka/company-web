@@ -1,8 +1,10 @@
 // Supabase Edge Function — sends contact-form notifications via Resend.
 // Deploy: supabase functions deploy notify-contact
 // Secrets: supabase secrets set RESEND_API_KEY=... CONTACT_TO_EMAIL=... CONTACT_FROM_EMAIL=...
+// SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are auto-injected by the platform.
 
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
+import { createClient } from "npm:@supabase/supabase-js@2";
 
 interface ContactPayload {
   name: string;
@@ -10,8 +12,11 @@ interface ContactPayload {
   company?: string;
   brand_interest?: "ennobler" | "oolo";
   message: string;
+  cv_path?: string;
   website?: string; // honeypot
 }
+
+const CV_LINK_TTL_SECONDS = 60 * 60 * 24 * 7; // 7 days
 
 const cors = {
   "Access-Control-Allow-Origin": "*",
@@ -40,6 +45,21 @@ serve(async (req) => {
   const FROM = Deno.env.get("CONTACT_FROM_EMAIL") ?? "hello@ennobler.com";
   if (!RESEND_API_KEY || !TO) return json({ error: "Email not configured" }, 500);
 
+  let cvLinkHtml = "";
+  if (payload.cv_path) {
+    const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
+    const SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    if (SUPABASE_URL && SERVICE_ROLE_KEY) {
+      const admin = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
+      const { data, error } = await admin.storage
+        .from("cv-uploads")
+        .createSignedUrl(payload.cv_path, CV_LINK_TTL_SECONDS);
+      if (!error && data?.signedUrl) {
+        cvLinkHtml = `<p><strong>CV:</strong> <a href="${data.signedUrl}">Download (link expires in 7 days)</a></p>`;
+      }
+    }
+  }
+
   const brand = payload.brand_interest === "oolo" ? "Oolo" : "En'nobler";
   const subject = `New ${brand} enquiry — ${payload.name}`;
   const html = `
@@ -48,6 +68,7 @@ serve(async (req) => {
     <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
     <p><strong>Company:</strong> ${escapeHtml(payload.company ?? "—")}</p>
     <p><strong>Interested in:</strong> ${brand}</p>
+    ${cvLinkHtml}
     <p><strong>Message:</strong></p>
     <p>${escapeHtml(payload.message).replace(/\n/g, "<br>")}</p>`;
 

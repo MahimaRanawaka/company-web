@@ -295,7 +295,7 @@ export const ennoblerPricing: PageContent = {
       engagementModel: "Performance-Based",
       planFieldLabel: "Service Area",
       planOptions: ["QA Improvement", "Test Automation", "Platform Performance"],
-      showContactDetails: false,
+      showCompany: false,
       requiredHints: false,
       baselineLabel: "Current Baseline",
       baselinePlaceholder: "e.g. 35% automation coverage",
@@ -309,13 +309,26 @@ export const ennoblerPricing: PageContent = {
       submitLabel: "Request Performance-Based Proposal",
       formEyebrow: "Enquiry form",
       formTitle: "Performance-Based Proposal",
-      infoEyebrow: "Performance-Based enquiry",
-      infoTitle: "Focused on your outcome",
-      infoItems: [],
+      infoEyebrow: "Before we quote",
+      infoTitle: "What we agree first.",
+      infoItems: [
+        {
+          title: "The baseline",
+          body: "Where your test coverage, defect rate, or automation coverage sits today, measured the same way by both sides.",
+        },
+        { title: "The measurement method", body: "Which test suite, tool, or report decides whether a result counts." },
+        {
+          title: "Responsibilities",
+          body: "What sits with En'nobler and what stays with your team — environments, test data, releases, sign-off.",
+        },
+        { title: "The review period", body: "How often results are reviewed and when the commercial component is settled." },
+      ],
       infoNote: {
         label: "Typical metrics:",
         body: "test coverage improvement, automation coverage, defect reduction, release confidence, cycle-time improvement, and QA maturity.",
       },
+      disclaimer:
+        "Performance outcomes are not guaranteed. The commercial model is confirmed only after both parties agree on the baseline, KPI definitions, measurement method, responsibilities, reporting process, and review period.",
     },
     // BUNDLES
     {

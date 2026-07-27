@@ -417,8 +417,10 @@ export interface PerformanceEnquirySection {
   /** label for the plan/service-area select; default "Selected Performance Plan" */
   planFieldLabel?: string;
   planOptions: string[];
-  /** default true — Phone Number / Company fields */
-  showContactDetails?: boolean;
+  /** default true — Phone Number field */
+  showPhone?: boolean;
+  /** default true — Company field */
+  showCompany?: boolean;
   /** default true — shows a red "*" on Phone/Company/Baseline/Timeline/Requirement */
   requiredHints?: boolean;
   /** default "Current Performance Baseline" */

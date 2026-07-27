@@ -44,7 +44,8 @@ export function PerformanceEnquiry({ data }: { data: PerformanceEnquirySection }
   } = useForm<PerformanceEnquiryInput>({ resolver: zodResolver(performanceEnquirySchema) });
 
   const planFieldLabel = data.planFieldLabel ?? "Selected Performance Plan";
-  const showContactDetails = data.showContactDetails ?? true;
+  const showPhone = data.showPhone ?? true;
+  const showCompany = data.showCompany ?? true;
   const requiredHints = data.requiredHints ?? true;
   const baselineLabel = data.baselineLabel ?? "Current Performance Baseline";
   const baselinePlaceholder = data.baselinePlaceholder ?? "e.g. Current conversion rate or CPA";
@@ -120,14 +121,18 @@ export function PerformanceEnquiry({ data }: { data: PerformanceEnquirySection }
                       <input className={field} type="email" {...register("email")} />
                     </EnquiryField>
                   </div>
-                  {showContactDetails && (
+                  {(showPhone || showCompany) && (
                     <div className="grid gap-4 sm:grid-cols-2">
-                      <EnquiryField label="Phone Number" required={requiredHints} error={errors.phone?.message}>
-                        <input className={field} type="tel" {...register("phone")} />
-                      </EnquiryField>
-                      <EnquiryField label="Company" required={requiredHints} error={errors.company?.message}>
-                        <input className={field} {...register("company")} />
-                      </EnquiryField>
+                      {showPhone && (
+                        <EnquiryField label="Phone Number" required error={errors.phone?.message}>
+                          <input className={field} type="tel" {...register("phone")} />
+                        </EnquiryField>
+                      )}
+                      {showCompany && (
+                        <EnquiryField label="Company" required={requiredHints} error={errors.company?.message}>
+                          <input className={field} {...register("company")} />
+                        </EnquiryField>
+                      )}
                     </div>
                   )}
                   <div className="grid gap-4 sm:grid-cols-2">

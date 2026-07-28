@@ -8,7 +8,7 @@ export function Hero({ data }: { data: HeroSection }) {
   return (
     <section className="bg-canvas py-12 md:py-20 lg:py-24">
       <Container>
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="animate-fade-up">
             {data.eyebrow && <p className="eyebrow mb-4">{data.eyebrow}</p>}
             <RichTitle

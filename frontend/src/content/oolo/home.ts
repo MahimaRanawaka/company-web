@@ -43,7 +43,7 @@ export const ooloHome: PageContent = {
     // §4 PARTNERS
     {
       type: "partners",
-      eyebrow: "Trusted by brands growing with Oolo",
+      eyebrow: "Trusted by brands partnering with Oolo",
       logos: [
         { src: "/partners/boc-logo-english.png", alt: "BOC" },
         {
@@ -231,6 +231,10 @@ export const ooloHome: PageContent = {
         "Analytics & Optimisation",
       ],
       cta: { label: "Get Free Growth Audit", to: "/contact" },
+      image: {
+        src: "/growth/ecosystem.webp",
+        alt: "Chikku at the centre of Oolo's growth ecosystem — ideas, campaigns, audience, targeting, growth, and reporting connected in a continuous cycle",
+      },
     },
     // §8 METRICS
     {

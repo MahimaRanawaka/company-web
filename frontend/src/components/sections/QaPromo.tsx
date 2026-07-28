@@ -25,7 +25,7 @@ export function QaPromo({ data }: { data: QaPromoSection }) {
             </div>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-hairline bg-canvas">
+          <div className="relative aspect-[4/3] overflow-hidden">
             {data.image ? (
               <img
                 src={data.image.src}
@@ -43,9 +43,6 @@ export function QaPromo({ data }: { data: QaPromoSection }) {
                 }}
               />
             )}
-            <div className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full bg-canvas/80 px-3 py-1.5 font-mono text-xs text-accent backdrop-blur">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-accent" /> live quality layer
-            </div>
           </div>
         </div>
       </Container>

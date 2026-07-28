@@ -12,6 +12,11 @@ export const portfolioContent: PageContent = {
       primaryCta: { label: "View Selected Work", to: "#work" },
       secondaryCta: { label: "Start a Project", to: "/contact" },
       chips: ["IT Digital Systems", "QA Tested Delivery", "Oolo Creative Growth"],
+      image: {
+        src: "/heroes/portfolio.webp",
+        alt: "Portfolio work spanning IT digital systems, QA tested delivery, and Oolo creative growth",
+      },
+      imageUnframed: true,
     },
     {
       type: "pathways",

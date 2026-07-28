@@ -14,6 +14,11 @@ const careers: PageContent = {
       primaryCta: { label: "View Open Roles", to: "#open-roles" },
       secondaryCta: { label: "Send Your CV", to: "#apply" },
       chips: ["Learn", "Build", "Test", "Grow", "Ship"],
+      image: {
+        src: "/heroes/careers.webp",
+        alt: "Careers at En'nobler / Oolo — learn, build, test, grow, and ship together",
+      },
+      imageUnframed: true,
     },
     // WHY WORK WITH US — 4 values
     {

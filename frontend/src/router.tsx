@@ -4,7 +4,13 @@ import { RootLayout } from "@/components/layout/RootLayout";
 import StudioLanding from "@/pages/StudioLanding";
 import TwoMinds from "@/pages/TwoMinds";
 import EnnoblerHome from "@/pages/ennobler/Home";
+import Qaas from "@/pages/ennobler/Qaas";
+import Products from "@/pages/ennobler/Products";
+import EcommerceProduct from "@/pages/ennobler/EcommerceProduct";
+import TourismProduct from "@/pages/ennobler/TourismProduct";
 import OoloHome from "@/pages/oolo/Home";
+import BizReg from "@/pages/oolo/BizReg";
+import Chikku from "@/pages/oolo/Chikku";
 import Services from "@/pages/Services";
 import ServiceDetail from "@/pages/ServiceDetail";
 import Pricing from "@/pages/Pricing";
@@ -17,15 +23,6 @@ import StrategyCall from "@/pages/StrategyCall";
 import NotFound from "@/pages/NotFound";
 import RouteError from "@/pages/RouteError";
 import Legal from "@/pages/Legal";
-import { Page } from "@/components/Page";
-import {
-  ennoblerProducts,
-  ennoblerEcommerceProduct,
-  ennoblerTourismProduct,
-} from "@/content/misc";
-import { ennoblerQaas } from "@/content/ennobler/qaas";
-import { ooloBizReg } from "@/content/oolo/bizReg";
-import { ooloChikku } from "@/content/oolo/chikku";
 
 export const router = createBrowserRouter([
   // Pre-landing "Two Minds" experience — standalone, no site chrome.
@@ -40,18 +37,18 @@ export const router = createBrowserRouter([
       { path: "/ennobler", element: <EnnoblerHome /> },
       { path: "/ennobler/services", element: <Services /> },
       { path: "/ennobler/services/:slug", element: <ServiceDetail /> },
-      { path: "/ennobler/products", element: <Page content={ennoblerProducts} /> },
-      { path: "/ennobler/products/ecommerce-product", element: <Page content={ennoblerEcommerceProduct} /> },
-      { path: "/ennobler/products/tourism-product", element: <Page content={ennoblerTourismProduct} /> },
-      { path: "/ennobler/qaas", element: <Page content={ennoblerQaas} /> },
+      { path: "/ennobler/products", element: <Products /> },
+      { path: "/ennobler/products/ecommerce-product", element: <EcommerceProduct /> },
+      { path: "/ennobler/products/tourism-product", element: <TourismProduct /> },
+      { path: "/ennobler/qaas", element: <Qaas /> },
       { path: "/ennobler/pricing", element: <Pricing /> },
 
       // Oolo
       { path: "/oolo", element: <OoloHome /> },
       { path: "/oolo/services", element: <Services /> },
       { path: "/oolo/services/:slug", element: <ServiceDetail /> },
-      { path: "/oolo/business-registration", element: <Page content={ooloBizReg} /> },
-      { path: "/oolo/chikku", element: <Page content={ooloChikku} /> },
+      { path: "/oolo/business-registration", element: <BizReg /> },
+      { path: "/oolo/chikku", element: <Chikku /> },
       { path: "/oolo/pricing", element: <Pricing /> },
 
       // Shared (brand-aware layout)

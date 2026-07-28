@@ -1,5 +1,19 @@
 import { Page } from "@/components/Page";
+import { ScrollMap } from "@/components/ScrollMap";
 import type { PageContent } from "@/content/types";
+
+const scrollSections = [
+  { id: "section-0", label: "Overview" },
+  { id: "section-1", label: "Why Work With Us" },
+  { id: "section-2", label: "Career Pathways" },
+  { id: "section-3", label: "Career Areas" },
+  { id: "section-4", label: "Internships" },
+  { id: "section-5", label: "Open Roles" },
+  { id: "section-6", label: "Hiring Process" },
+  { id: "section-7", label: "Life Here" },
+  { id: "section-8", label: "What We Look For" },
+  { id: "section-9", label: "Apply Now" },
+];
 
 const careers: PageContent = {
   title: "Careers",
@@ -174,5 +188,10 @@ const careers: PageContent = {
 };
 
 export default function Careers() {
-  return <Page content={careers} />;
+  return (
+    <>
+      <Page content={careers} />
+      <ScrollMap sections={scrollSections} />
+    </>
+  );
 }

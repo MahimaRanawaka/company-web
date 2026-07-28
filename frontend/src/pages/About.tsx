@@ -1,5 +1,18 @@
 import { Page } from "@/components/Page";
+import { ScrollMap } from "@/components/ScrollMap";
 import type { PageContent } from "@/content/types";
+
+const scrollSections = [
+  { id: "section-0", label: "Overview" },
+  { id: "section-1", label: "Who We Are" },
+  { id: "section-2", label: "The Problem" },
+  { id: "section-3", label: "Our Approach" },
+  { id: "section-4", label: "AI Philosophy" },
+  { id: "section-5", label: "Jobs & Talent" },
+  { id: "section-6", label: "What We Do" },
+  { id: "section-7", label: "Where We're Going" },
+  { id: "section-8", label: "Get In Touch" },
+];
 
 const about: PageContent = {
   title: "About Us",
@@ -195,5 +208,10 @@ const about: PageContent = {
 };
 
 export default function About() {
-  return <Page content={about} />;
+  return (
+    <>
+      <Page content={about} />
+      <ScrollMap sections={scrollSections} />
+    </>
+  );
 }

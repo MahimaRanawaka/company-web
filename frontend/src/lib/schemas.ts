@@ -9,8 +9,6 @@ export const contactSchema = z.object({
     .string()
     .min(10, "Tell us a little more (10+ characters).")
     .max(5000, "Message is too long (5000 characters max)."),
-  /** storage object path for an uploaded CV, set after upload — not user-entered */
-  cv_path: z.string().optional(),
   /** honeypot — must stay empty */
   website: z.string().max(0).optional(),
 });
@@ -30,6 +28,21 @@ export const applySchema = z.object({
 });
 
 export type ApplyInput = z.infer<typeof applySchema>;
+
+/** Payload shape for the career_applications table / notify-career-application
+ *  function — derived from ApplyInput after the CV file has been uploaded and
+ *  replaced with its storage path. */
+export interface CareerApplicationInput {
+  name: string;
+  email: string;
+  phone?: string;
+  preferred_path?: string;
+  experience_level?: string;
+  portfolio_url?: string;
+  cv_path?: string;
+  message?: string;
+  website?: string;
+}
 
 export const strategyCallSchema = z.object({
   // Contact information

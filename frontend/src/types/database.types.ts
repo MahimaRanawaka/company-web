@@ -82,11 +82,27 @@ export interface Database {
           company: string | null;
           brand_interest: Brand | null;
           message: string;
-          cv_path: string | null;
           created_at: string;
         };
         Insert: Omit<Database["public"]["Tables"]["contact_submissions"]["Row"], "id" | "created_at">;
         Update: Partial<Database["public"]["Tables"]["contact_submissions"]["Insert"]>;
+        Relationships: [];
+      };
+      career_applications: {
+        Row: {
+          id: string;
+          name: string;
+          email: string;
+          phone: string | null;
+          preferred_path: string | null;
+          experience_level: string | null;
+          portfolio_url: string | null;
+          cv_path: string | null;
+          message: string | null;
+          created_at: string;
+        };
+        Insert: Omit<Database["public"]["Tables"]["career_applications"]["Row"], "id" | "created_at">;
+        Update: Partial<Database["public"]["Tables"]["career_applications"]["Insert"]>;
         Relationships: [];
       };
     };

@@ -5,6 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 import type { ContactFormSection } from "@/content/types";
 import { applySchema, contactSchema, type ApplyInput, type ContactInput } from "@/lib/schemas";
 import { useContactMutation } from "@/hooks/useContactMutation";
+import { useCareerApplicationMutation } from "@/hooks/useCareerApplicationMutation";
 import { useBrand } from "@/brand/useBrand";
 import { supabase } from "@/lib/supabase";
 import { Container } from "@/components/primitives";
@@ -107,7 +108,7 @@ function LeadForm() {
 }
 
 function ApplyForm() {
-  const mutation = useContactMutation();
+  const mutation = useCareerApplicationMutation();
   const [uploadError, setUploadError] = useState<string | null>(null);
   const {
     register,
@@ -138,18 +139,12 @@ function ApplyForm() {
     mutation.mutate({
       name: d.name,
       email: d.email,
-      company: d.path || undefined,
-      message: [
-        d.message,
-        d.phone ? `Phone: ${d.phone}` : "",
-        d.path ? `Preferred path: ${d.path}` : "",
-        d.experience ? `Experience: ${d.experience}` : "",
-        d.portfolio ? `Portfolio: ${d.portfolio}` : "",
-        d.cv?.[0]?.name ? `CV file: ${d.cv[0].name}` : "",
-      ]
-        .filter(Boolean)
-        .join("\n") || "Career application",
+      phone: d.phone || undefined,
+      preferred_path: d.path || undefined,
+      experience_level: d.experience || undefined,
+      portfolio_url: d.portfolio || undefined,
       cv_path: cvPath,
+      message: d.message || undefined,
       website: d.website,
     });
   };

@@ -361,6 +361,7 @@ export const ennoblerHome: PageContent = {
           body: "A complete UI/UX design and engineering project translating a heritage tea brand into a custom digital experience — hand-crafted illustration system, design system, and e-commerce UX.",
           metric: "UI/UX · Design System",
           to: "/portfolio/ceylon-raga-reserve-website",
+          cover: "/portfolio/ceylon-raga-reserve-website.webp",
         },
         {
           tag: "Quality Assurance",
@@ -368,6 +369,7 @@ export const ennoblerHome: PageContent = {
           body: "A hybrid QA process combining AI-assisted test exploration and human-led validation to ensure a premium branded website met real-world reliability and usability standards.",
           metric: "QA · AI Testing",
           to: "/portfolio/ceylon-raga-reserve-qa",
+          cover: "/portfolio/ceylon-raga-reserve-qa.webp",
         },
       ],
     },

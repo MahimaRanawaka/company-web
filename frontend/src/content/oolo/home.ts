@@ -302,6 +302,7 @@ export const ooloHome: PageContent = {
           body: "Building a complete brand universe for a new premium tea category — character-led storytelling, AI-assisted creative workflow, and a teaser-to-reveal campaign that reached 101K views on day one.",
           metric: "Brand Strategy · Campaign",
           to: "/portfolio/ceylon-raga-reserve-campaign",
+          cover: "/portfolio/ceylon-raga-reserve-campaign.webp",
         },
         {
           tag: "Character Design",

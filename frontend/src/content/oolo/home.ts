@@ -309,6 +309,7 @@ export const ooloHome: PageContent = {
           body: "Designing a complete 3D brand character for Ceylon Raga Reserve — from initial concept through costume, accessories, and a full character universe built to anchor a long-term brand identity.",
           metric: "Character · 3D Design",
           to: "/portfolio/raga-master-character",
+          cover: "/portfolio/raga-master-character.webp",
         },
         {
           tag: "Campaign",
@@ -316,6 +317,7 @@ export const ooloHome: PageContent = {
           body: "A warmth-first Halloween campaign for a student community brand — 'A Little Kindness Creates a Bigger Celebration' brought to life through AI-assisted character animation and storytelling.",
           metric: "Animation · Campaign",
           to: "/portfolio/lias-halloween-campaign",
+          cover: "/portfolio/lias-halloween-campaign.webp",
         },
       ],
     },

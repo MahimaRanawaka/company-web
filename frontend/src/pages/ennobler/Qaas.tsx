@@ -9,8 +9,7 @@ const scrollSections = [
   { id: "section-4", label: "Why En'nobler" },
   { id: "section-5", label: "Industries" },
   { id: "section-6", label: "How It Works" },
-  { id: "section-7", label: "Results" },
-  { id: "section-8", label: "Get Started" },
+  { id: "section-7", label: "Get Started" },
 ];
 
 export default function Qaas() {

@@ -193,8 +193,8 @@ export const ennoblerQaas: PageContent = {
         { title: "Continuous improvement loop", body: "Every cycle, our AI platform analyses real user behaviour, test results, and coverage data to evolve your test suite. Monthly quality reports with plain-English insights, not just dashboards. Quarterly maturity reviews to keep raising the bar.", chips: ["Monthly QA reports", "RUM-informed testing", "Quarterly reviews"] },
       ],
     },
-    // TESTIMONIALS
-    {
+    // TESTIMONIALS — commented out until we have real client quotes
+    /* {
       type: "testimonials",
       eyebrow: "Client Results",
       title: "What happens when QA stops being an afterthought.",
@@ -203,7 +203,7 @@ export const ennoblerQaas: PageContent = {
         { quote: "The dedicated team model meant we had senior QA engineers in our standups from day one. They felt like our own hires — but we could scale down instantly after a big launch.", author: "Sarah Chen", role: "VP Engineering · E-Commerce Platform", rating: 5 },
         { quote: "The performance-based model was the deciding factor. We'd been burned by QA vendors before. Knowing their fee was tied to our defect reduction made the decision easy.", author: "Omar Al-Hassan", role: "Product Director · Healthcare App", rating: 5 },
       ],
-    },
+    }, */
     // FINAL CTA
     {
       type: "ctaFinal",

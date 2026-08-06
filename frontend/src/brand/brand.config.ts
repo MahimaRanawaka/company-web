@@ -3,6 +3,7 @@ import type { Brand, BrandConfig } from "./types";
 export const ENNOBLER: BrandConfig = {
   id: "ennobler",
   name: "En'nobler",
+  logo: { src: "/logo/ennobler.png", alt: "En'nobler" },
   base: "/ennobler",
   tagline: "Built to ship. Engineered to scale.",
   nav: [
@@ -49,6 +50,7 @@ export const ENNOBLER: BrandConfig = {
 export const OOLO: BrandConfig = {
   id: "oolo",
   name: "Oolo",
+  logo: { src: "/logo/oolo.png", alt: "Oolo" },
   base: "/oolo",
   tagline: "Creative-first. Strategy-led. Growth-obsessed.",
   nav: [

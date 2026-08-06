@@ -352,7 +352,14 @@ export interface FunnelSection {
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  steps: { title: string; body: string; chips: string[] }[];
+  steps: {
+    title: string;
+    body: string;
+    chips: string[];
+    /** optional plain stacked list rendered between body and chips, e.g.
+     *  "Label — detail" lines (bolds the part before the em dash) */
+    list?: string[];
+  }[];
 }
 
 /** Rated testimonial cards. */

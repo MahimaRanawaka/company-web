@@ -18,6 +18,20 @@ export function Funnel({ data }: { data: FunnelSection }) {
               <div className="max-w-2xl">
                 <h3 className="font-display text-2xl">{s.title}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{s.body}</p>
+                {s.list && (
+                  <ul className="mt-4 space-y-2 border-t border-hairline pt-4">
+                    {s.list.map((item) => {
+                      const [label, ...rest] = item.split(" — ");
+                      const value = rest.join(" — ");
+                      return (
+                        <li key={item} className="text-sm leading-relaxed text-muted">
+                          <strong className="font-semibold text-ink">{label}</strong>
+                          {value && ` — ${value}`}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
                 <div className="mt-4 flex flex-wrap gap-2">
                   {s.chips.map((c) => (
                     <span key={c} className="rounded-full bg-surface px-3.5 py-1.5 text-xs font-medium text-muted">{c}</span>

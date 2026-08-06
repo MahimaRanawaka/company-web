@@ -10,6 +10,8 @@ export interface NavItem {
 export interface BrandConfig {
   id: Brand;
   name: string;
+  /** header wordmark image; falls back to rendering `name` as text when omitted */
+  logo?: { src: string; alt: string };
   /** path prefix for this brand's section, e.g. "/ennobler" */
   base: string;
   tagline: string;

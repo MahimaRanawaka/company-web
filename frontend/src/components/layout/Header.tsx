@@ -17,7 +17,11 @@ export function Header() {
       <header className="sticky top-0 z-40 border-b border-hairline bg-canvas/85 backdrop-blur">
         <div className="container flex h-[68px] items-center gap-4">
           <Link to={config.base} className="font-display text-xl tracking-tight">
-            {config.name}
+            {config.logo ? (
+              <img src={config.logo.src} alt={config.logo.alt} className="h-8 w-auto" />
+            ) : (
+              config.name
+            )}
           </Link>
 
           {/* desktop nav — shown at xl where the full item set fits; below that

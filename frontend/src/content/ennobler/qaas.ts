@@ -22,7 +22,7 @@ export const ennoblerQaas: PageContent = {
         { value: "40%", label: "Fewer defect escapes" },
         { value: "10×", label: "Faster test authoring" },
         { value: "80%", label: "More coverage" },
-        { value: "72h", label: "To first results" },
+        { value: "72h", label: "To first findings" },
       ],
     },
     // ENGAGEMENT MODEL
@@ -45,7 +45,7 @@ export const ennoblerQaas: PageContent = {
             pills: ["Scoped in 48h", "Clear deliverables", "No ongoing commitment", "Starts from $2,500"],
           },
           services: [
-            { icon: "search", name: "QA Audit & Process Review", body: "Scored maturity assessment of your current QA practices, tooling, and coverage gaps. Delivered as an actionable report with a prioritised roadmap.", tag: "Fixed deliverable" },
+            { icon: "search", name: "QA Audit & Process Review", body: "Scored maturity assessment of your current QA practices, tooling, and coverage gaps. Delivered as an actionable report with a prioritised roadmap — yours to keep and act on with any team. Fee credited in full against your first three months if you engage within 30 days.", tag: "Fixed deliverable" },
             { icon: "shield-check", name: "Security Penetration Testing", body: "OWASP-aligned pen testing across your app, API, network, and cloud surfaces. Findings report with severity ratings and a remediation roadmap.", tag: "Scoped engagement" },
             { icon: "rocket", name: "Pre-Release Test Sprint", body: "Manual and AI-augmented test execution against a defined build. Defect triage, regression sign-off, and a go/no-go recommendation.", tag: "Per sprint" },
             { icon: "smartphone", name: "Mobile App Testing (iOS/Android)", body: "End-to-end functional, compatibility, and UX validation across a real device matrix. Covers OS versions, screen sizes, and network conditions.", tag: "Per release" },
@@ -151,7 +151,7 @@ export const ennoblerQaas: PageContent = {
         cta: { label: "See performance models →", to: "#engagement" },
       },
       cards: [
-        { num: "72h", title: "Onboarding, not onboarding theatre", body: "Most QA vendors take weeks to get a single tester productive. We have your first test results within 72 hours of scope sign-off. No lengthy discovery phases, no padded timelines." },
+        { num: "72h", title: "Onboarding, not onboarding theatre", body: "Most QA vendors take weeks to get a single tester productive. We're producing findings within 72 hours of scope sign-off. Full regression coverage on a mature platform takes longer — we'll give you that number at kickoff rather than discover it later." },
         { num: "AI", title: "Human judgment backed by autonomous intelligence", body: "Our engineers are backed by an AI platform that plans, executes, and evolves tests autonomously — giving you 10× the coverage at the same cost as a traditional manual team." },
         { num: "Sri Lanka", title: "Global QA expertise, strategic timezone advantage", body: "Based in Colombo — we overlap with Asia-Pacific, Middle East, and European business hours, making us ideal for round-the-clock testing cycles across global release teams." },
         { num: "0", title: "Zero lock-in, full transparency", body: "Every artefact we produce — test plans, scripts, reports — is yours from day one. No proprietary formats, no vendor lock-in. Built in your stack, stored in your repo." },
@@ -183,13 +183,23 @@ export const ennoblerQaas: PageContent = {
       type: "funnel",
       anchor: "how-it-works",
       eyebrow: "How It Works",
-      title: "From first call to first results in 72 hours.",
+      title: "From first call to first findings in days, not weeks.",
       subtitle:
-        "Our funnel is built to move fast. No multi-week discovery, no proposal theatre. Just structured onboarding that gets quality results into your hands immediately.",
+        "Our funnel is built to move fast without pretending every product is the same size. No multi-week discovery, no proposal theatre — structured onboarding, then a timeline scoped to what you've actually built.",
       steps: [
-        { title: "Free 30-minute QA audit call", body: "We ask the right questions about your product, tech stack, release velocity, and current pain points. No sales pitch — just a structured discovery that gives you immediate value, whether you engage with us or not. We'll identify your top 3 risk areas on the call.", chips: ["30 minutes", "No commitment", "Immediate insights"] },
+        { title: "Free 30-minute QA readiness call", body: "We ask the right questions about your product, tech stack, release velocity, and current pain points. No sales pitch — a structured conversation that names the areas most likely to break, whether you engage with us or not. You'll leave knowing your top three risk areas and whether you need QA support yet at all.", chips: ["30 minutes", "No commitment", "Honest read"] },
         { title: "Tailored scope & engagement model", body: "Based on your stage, team size, and risk profile, we propose the right engagement model — project, retainer, dedicated, or performance-based. You get a clear scope document within 24 hours, with transparent pricing and zero hidden fees.", chips: ["24h turnaround", "Transparent pricing", "Choose your model"] },
-        { title: "Rapid onboarding & first results", body: "We integrate with your tools (Jira, Linear, GitHub, Slack), access your codebase, and start producing test plans and initial findings within 72 hours. No weeks of setup. No lengthy knowledge transfer sessions before any testing begins.", chips: ["72h to first results", "Your toolchain", "AI-assisted setup"] },
+        {
+          title: "Rapid onboarding & first findings",
+          body: "We integrate with your tools (Jira, Linear, GitHub, Slack), access your codebase, and start producing test plans and initial findings within 72 hours of access. No weeks of setup, no lengthy knowledge transfer before any testing begins. How quickly we reach full coverage depends on your regression surface — scoped and agreed before we start.",
+          list: [
+            "Bug retest & verification — same business day",
+            "Sprint or feature cycle, defined scope — findings in 72h",
+            "Full regression, established product — 5–10 business days",
+            "Enterprise platform onboarding — 2–3 weeks to a stable suite, then continuous",
+          ],
+          chips: ["72h to first findings", "Your toolchain", "AI-assisted setup"],
+        },
         { title: "Continuous improvement loop", body: "Every cycle, our AI platform analyses real user behaviour, test results, and coverage data to evolve your test suite. Monthly quality reports with plain-English insights, not just dashboards. Quarterly maturity reviews to keep raising the bar.", chips: ["Monthly QA reports", "RUM-informed testing", "Quarterly reviews"] },
       ],
     },
@@ -209,14 +219,14 @@ export const ennoblerQaas: PageContent = {
       type: "ctaFinal",
       anchor: "contact",
       title: "Stop hoping your software works. {Know that it does.}",
-      body: "Get a free 30-minute QA audit call. We'll identify your top three quality risks and recommend the right engagement model — no commitment, no pitch, just clarity.",
+      body: "Start with a free 30-minute readiness call. We'll name your top three quality risks and recommend the right engagement model — no commitment, no pitch, just clarity.",
       ctas: [
-        { label: "Book a free audit call →", to: "mailto:hello@en-nobler.com", variant: "white" },
+        { label: "Book a readiness call →", to: "mailto:hello@en-nobler.com", variant: "white" },
         { label: "Explore services", to: "#engagement", variant: "outline" },
       ],
       stats: [
-        { value: "72h", label: "To first results" },
-        { value: "$0", label: "Cost to audit" },
+        { value: "24h", label: "To a scoped proposal" },
+        { value: "72h", label: "To first findings" },
         { value: "100%", label: "Artefacts are yours" },
       ],
     },

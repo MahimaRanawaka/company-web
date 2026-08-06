@@ -10,10 +10,15 @@ export function QaPromo({ data }: { data: QaPromoSection }) {
           <div>
             {data.eyebrow && <p className="eyebrow mb-3">{data.eyebrow}</p>}
             <h2 className="text-3xl md:text-4xl">{data.title}</h2>
-            <p className="mt-5 max-w-xl leading-relaxed text-muted">{data.body}</p>
+            <p className="mt-5 max-w-xl leading-relaxed text-muted">
+              {data.body}
+            </p>
             <div className="mt-6 flex flex-wrap gap-2.5">
               {data.pills.map((p) => (
-                <span key={p} className="rounded-full border border-hairline px-4 py-1.5 text-xs text-muted">
+                <span
+                  key={p}
+                  className="rounded-full border border-hairline px-4 py-1.5 text-xs text-muted"
+                >
                   {p}
                 </span>
               ))}
@@ -25,14 +30,17 @@ export function QaPromo({ data }: { data: QaPromoSection }) {
             </div>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden">
+          <div
+            className="relative overflow-hidden"
+            style={{ aspectRatio: data.imageAspect ?? "4/3" }}
+          >
             {data.image ? (
               <img
                 src={data.image.src}
                 alt={data.image.alt}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover"
+                className="relative h-full w-full object-cover"
               />
             ) : (
               <div

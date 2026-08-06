@@ -18,9 +18,23 @@ export interface HeroSection {
   imageUnframed?: boolean;
   /** adds soft blurred contact-shadow ellipses under a figure's feet — one
    *  entry per figure, positioned in % of the rendered image box. */
-  imageGroundShadow?: { left: number; bottom: number; width: number; height: number }[];
+  imageGroundShadow?: {
+    left: number;
+    bottom: number;
+    width: number;
+    height: number;
+  }[];
   /** adds a soft layered drop-shadow around the whole (unframed) image */
   imageShadow?: boolean;
+  /** CSS aspect-ratio for the image box, e.g. "4/3" (default) or the image's
+   *  own pixel ratio (e.g. "1744/2019") to avoid cropping a tall figure */
+  imageAspect?: string;
+  /** caps the rendered width of an unframed image (e.g. "380px") so a tall
+   *  figure doesn't stretch the hero section's height */
+  imageMaxWidth?: string;
+  /** raw Tailwind grid-template-columns utility for the text/image split,
+   *  e.g. "lg:grid-cols-[0.85fr_1.15fr]" to give the image more room; default is an even 2-col split */
+  gridColumns?: string;
   /** hand-coded "connected dashboard" diagram (see HeroArt.tsx) — takes
    *  priority over `image` when set */
   heroArt?: string;
@@ -154,6 +168,8 @@ export interface QaPromoSection {
   cta: { label: string; to: string };
   /** right-column visual; falls back to a decorative grid panel when omitted */
   image?: { src: string; alt: string };
+  /** CSS aspect-ratio for the image box, e.g. "4/3" (default) or "4/5" for a taller crop */
+  imageAspect?: string;
 }
 
 /** §9 — product preview cards */

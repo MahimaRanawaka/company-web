@@ -225,7 +225,10 @@ export const ennoblerHome: PageContent = {
             "QA & testing",
             "Launch support",
           ],
-          cta: { label: "Go to Project Pricing →", to: "/ennobler/pricing#project" },
+          cta: {
+            label: "Go to Project Pricing →",
+            to: "/ennobler/pricing#project",
+          },
         },
         {
           badge: "Retainer",
@@ -263,12 +266,16 @@ export const ennoblerHome: PageContent = {
             "Automation coverage growth",
             "Outcome-linked payment",
           ],
-          cta: { label: "Go to Outcomes →", to: "/ennobler/pricing#performance" },
+          cta: {
+            label: "Go to Outcomes →",
+            to: "/ennobler/pricing#performance",
+          },
         },
         {
           badge: "Bundle",
           name: "Bundle Packages",
-          tagline: "Build, QA, branding, and launch as one coordinated engagement.",
+          tagline:
+            "Build, QA, branding, and launch as one coordinated engagement.",
           features: [
             "SaaS development",
             "QA setup included",
@@ -288,9 +295,10 @@ export const ennoblerHome: PageContent = {
       pills: ["SaaS Core", "Agentic QA", "AI Governance QA", "Enterprise QA"],
       cta: { label: "Explore QaaS", to: "/ennobler/qaas" },
       image: {
-        src: "/qaas/dashboard.png",
+        src: "/qaas/dashboard.webp",
         alt: "En'nobler.QaaS quality dashboard",
       },
+      imageAspect: "9/8",
     },
     // §9 PRODUCTS PREVIEW
     {

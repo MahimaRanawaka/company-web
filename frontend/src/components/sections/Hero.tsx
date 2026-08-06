@@ -3,12 +3,13 @@ import { Container, RichTitle } from "@/components/primitives";
 import { ButtonLink } from "@/components/ui/button";
 import { Image, MediaFrame } from "@/components/Image";
 import { HeroArt } from "./HeroArt";
+import { cn } from "@/lib/utils";
 
 export function Hero({ data }: { data: HeroSection }) {
   return (
     <section className="bg-canvas py-12 md:py-20 lg:py-24">
       <Container>
-        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className={cn("grid items-start gap-8 lg:gap-12", data.gridColumns ?? "lg:grid-cols-2")}>
           <div className="animate-fade-up">
             {data.eyebrow && <p className="eyebrow mb-4">{data.eyebrow}</p>}
             <RichTitle
@@ -69,22 +70,27 @@ export function Hero({ data }: { data: HeroSection }) {
                     />
                   ))}
                   <div className="relative">
-                    <Image src={data.image.src} alt={data.image.alt} aspect="4/3" eager />
+                    <Image src={data.image.src} alt={data.image.alt} aspect={data.imageAspect ?? "4/3"} eager />
                   </div>
                 </div>
               ) : data.imageShadow ? (
                 <div className="animate-fade-up shadow-[0_1px_2px_rgba(15,27,38,0.10),0_20px_32px_-8px_rgba(15,27,38,0.16)]">
-                  <Image src={data.image.src} alt={data.image.alt} aspect="4/3" eager />
+                  <Image src={data.image.src} alt={data.image.alt} aspect={data.imageAspect ?? "4/3"} eager />
                 </div>
               ) : (
-                <Image src={data.image.src} alt={data.image.alt} aspect="4/3" eager className="animate-fade-up" />
+                <div
+                  className={data.imageMaxWidth ? "ml-auto mr-8 animate-fade-up" : "animate-fade-up"}
+                  style={data.imageMaxWidth ? { maxWidth: data.imageMaxWidth } : undefined}
+                >
+                  <Image src={data.image.src} alt={data.image.alt} aspect={data.imageAspect ?? "4/3"} eager />
+                </div>
               )
             ) : (
               <MediaFrame className="animate-fade-up">
                 <Image
                   src={data.image.src}
                   alt={data.image.alt}
-                  aspect="4/3"
+                  aspect={data.imageAspect ?? "4/3"}
                   eager
                 />
               </MediaFrame>

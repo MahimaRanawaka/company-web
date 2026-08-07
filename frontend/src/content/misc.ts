@@ -11,7 +11,7 @@ export const ennoblerProducts: PageContent = {
         "Two production-ready platforms — for online selling and for tourism businesses — built, tested, and ready to customize for your brand. No blank-page development, no guesswork.",
       primaryCta: { label: "View E-commerce Product", to: "/ennobler/products/ecommerce-product" },
       secondaryCta: { label: "View Tourism Product", to: "/ennobler/products/tourism-product" },
-      chips: ["E-commerce", "Tourism", "QA-Tested", "Ready to Launch"],
+      heroArt: "products-overview-diagram",
     },
     {
       type: "productPreview",

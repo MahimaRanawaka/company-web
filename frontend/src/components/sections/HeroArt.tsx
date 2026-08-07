@@ -653,6 +653,50 @@ const DIAGRAMS: Record<string, ReactNode> = {
       </div>
     </div>
   ),
+
+  // Products overview — two ready-built product windows side by side (an
+  // E-commerce storefront grid + checkout, a Tourism listing + date picker),
+  // tied together with a small QA badge sitting between them.
+  "products-overview-diagram": (
+    <div className="absolute inset-[4%] flex items-center gap-6">
+      <div className="flex flex-1 flex-col overflow-hidden rounded-lg border border-hairline bg-canvas/95 shadow-sm">
+        <div className="flex items-center gap-1.5 border-b border-hairline bg-surface px-2.5 py-2">
+          <Icon name="shopping-cart" className="h-3 w-3 text-accent" />
+          <span className="font-mono text-[8px] uppercase tracking-wide text-subtle">E-commerce</span>
+        </div>
+        <div className="grid flex-1 grid-cols-2 gap-1.5 p-2.5">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="flex flex-col gap-1 rounded-md bg-surface p-1.5">
+              <div className="aspect-square rounded bg-hairline-strong/50" />
+              <div className="h-1 w-3/4 rounded-full bg-hairline-strong/70" />
+            </div>
+          ))}
+        </div>
+        <div className="m-2.5 mt-0 rounded bg-accent py-1.5 text-center font-mono text-[8px] text-canvas">Checkout</div>
+      </div>
+
+      <div className="absolute left-1/2 top-1/2 z-10 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-hairline bg-canvas shadow-sm">
+        <Icon name="shield-check" className="h-4 w-4 text-accent" />
+      </div>
+
+      <div className="flex flex-1 flex-col overflow-hidden rounded-lg border border-hairline bg-canvas/95 shadow-sm">
+        <div className="flex items-center gap-1.5 border-b border-hairline bg-surface px-2.5 py-2">
+          <Icon name="map-pin" className="h-3 w-3 text-accent" />
+          <span className="font-mono text-[8px] uppercase tracking-wide text-subtle">Tourism</span>
+        </div>
+        <div className="flex-1 p-2.5">
+          <div className="mb-1.5 aspect-[16/9] rounded-md bg-surface" />
+          <div className="mb-2 h-1 w-2/3 rounded-full bg-hairline-strong/70" />
+          <div className="grid grid-cols-7 gap-0.5">
+            {Array.from({ length: 14 }).map((_, i) => (
+              <div key={i} className={`aspect-square rounded-sm ${i === 9 ? "bg-accent" : "bg-surface"}`} />
+            ))}
+          </div>
+        </div>
+        <div className="m-2.5 mt-0 rounded bg-accent py-1.5 text-center font-mono text-[8px] text-canvas">Book Now</div>
+      </div>
+    </div>
+  ),
 };
 
 export function HeroArt({ name }: { name?: string }) {

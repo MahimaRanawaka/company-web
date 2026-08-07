@@ -32,7 +32,7 @@ export const ennoblerPricing: PageContent = {
     {
       type: "stats",
       items: [
-        { value: "4", label: "Engagement Models" },
+        { value: "5", label: "Engagement Models" },
         { value: "QaaS", label: "Flexible QA Delivery" },
         { value: "IT", label: "Software & Technology" },
       ],

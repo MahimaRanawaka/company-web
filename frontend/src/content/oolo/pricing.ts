@@ -32,7 +32,7 @@ export const ooloPricing: PageContent = {
     {
       type: "stats",
       items: [
-        { value: "4", label: "Engagement Models" },
+        { value: "5", label: "Engagement Models" },
         { value: "AI", label: "AI-Aided Creative Delivery" },
         { value: "Marketing", label: "Brand, Content & Growth" },
       ],

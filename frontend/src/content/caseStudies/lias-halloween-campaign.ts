@@ -6,6 +6,8 @@ export const liasHalloweenCampaign: CaseStudyDetail = {
   brand: "oolo",
   title: "LIAS Halloween Campaign — AI-Assisted Animation",
   subtitle: "Spreading Good Vibes Through Storytelling",
+  cover: "/portfolio/lias-halloween-campaign.webp",
+  accentTint: "#5E4B8B",
   client: "LIAS",
   industry: "Education & Student Community",
   services: [

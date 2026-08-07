@@ -6,6 +6,8 @@ export const ceylonRagaReserveWebsite: CaseStudyDetail = {
   brand: "ennobler",
   title: "Ceylon Raga Reserve — Premium Brand Digital Experience",
   subtitle: "UI/UX Design & Engineering for a Heritage Tea Brand Universe",
+  cover: "/portfolio/ceylon-raga-reserve-website.webp",
+  accentTint: "#1E4D3C",
   client: "Ceylon Raga Reserve / WGM Imperial Harvest",
   industry: "Premium FMCG & E-commerce",
   services: [

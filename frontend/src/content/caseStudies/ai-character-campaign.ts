@@ -6,6 +6,8 @@ export const aiCharacterCampaign: CaseStudyDetail = {
   brand: "oolo",
   title: "AI-Powered Character Campaign Production",
   subtitle: "From Concept Storytelling to Brand-Ready Video Experience",
+  cover: "/portfolio/ai-character-campaign.webp",
+  accentTint: "#3E9FD1",
   client: "Oolo Marketing Services",
   industry: "Digital Advertising & Content Production",
   services: [

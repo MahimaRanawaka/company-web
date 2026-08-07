@@ -6,6 +6,8 @@ export const bocWhatsappBanking: CaseStudyDetail = {
   brand: "oolo",
   title: "BOC WhatsApp Banking Campaign",
   subtitle: "Digital Service Promotion — X Banner Design & Print Production",
+  cover: "/portfolio/boc-whatsapp-banking.webp",
+  accentTint: "#3DA35D",
   client: "Bank of Ceylon",
   industry: "Financial Services & Banking",
   services: [

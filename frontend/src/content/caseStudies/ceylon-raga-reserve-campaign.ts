@@ -6,6 +6,8 @@ export const ceylonRagaReserveCampaign: CaseStudyDetail = {
   brand: "oolo",
   title: "Ceylon Raga Reserve — Brand Identity & Cultural Campaign System",
   subtitle: "Building a Complete Brand Universe for a New Premium Tea Category",
+  cover: "/portfolio/ceylon-raga-reserve-campaign.webp",
+  accentTint: "#1E4D3C",
   client: "WGM Imperial Harvest",
   industry: "Premium FMCG & Beverage",
   services: [

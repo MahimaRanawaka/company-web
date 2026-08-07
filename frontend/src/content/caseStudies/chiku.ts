@@ -6,6 +6,8 @@ export const chiku: CaseStudyDetail = {
   brand: "oolo",
   title: "Chiku",
   subtitle: "From Creative Energy to AI Intelligence",
+  cover: "/portfolio/chiku-brand-character.webp",
+  accentTint: "#F0821E",
   client: "Oolo × Ennobler",
   industry: "Brand Identity & AI-Assisted Design",
   services: [

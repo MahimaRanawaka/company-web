@@ -25,7 +25,16 @@ export default function CaseStudyDetailPage() {
   return (
     <main className="min-h-screen bg-canvas text-ink">
       {/* Hero */}
-      <section className="bg-surface py-16 md:py-24">
+      <section
+        className="relative overflow-hidden bg-surface py-16 md:py-24"
+        style={
+          cs.accentTint
+            ? {
+                backgroundImage: `radial-gradient(120% 120% at 15% 0%, ${cs.accentTint}22, transparent 60%), radial-gradient(120% 120% at 100% 100%, ${cs.accentTint}18, transparent 55%)`,
+              }
+            : undefined
+        }
+      >
         <Container>
           <div className="mx-auto max-w-4xl">
           <Link
@@ -70,9 +79,11 @@ export default function CaseStudyDetailPage() {
 
       {/* Cover image placeholder */}
       {cs.cover && (
-        <div className="h-64 w-full overflow-hidden md:h-96">
-          <img src={cs.cover} alt={cs.title} className="h-full w-full object-cover" />
-        </div>
+        <Container>
+          <div className="h-64 w-full overflow-hidden rounded-xl md:h-96">
+            <img src={cs.cover} alt={cs.title} className="h-full w-full object-cover" />
+          </div>
+        </Container>
       )}
 
       {/* Overview */}

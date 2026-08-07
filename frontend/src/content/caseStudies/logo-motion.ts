@@ -6,6 +6,8 @@ export const logoMotion: CaseStudyDetail = {
   brand: "oolo",
   title: "Logo Motion — Transforming Static Identities into Living Brand Experiences",
   subtitle: "Two Brands. Two Personalities. Two Unique Motion Languages.",
+  cover: "/portfolio/logo-motion.webp",
+  accentTint: "#C23B8C",
   client: "WGM & Oolo",
   industry: "Brand Identity & Motion Design",
   services: [

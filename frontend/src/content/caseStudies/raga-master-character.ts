@@ -6,6 +6,8 @@ export const ragaMasterCharacter: CaseStudyDetail = {
   brand: "oolo",
   title: "Raga Master — 3D Character Design & Concept Development",
   subtitle: "Building a Complete Brand Character Universe for Ceylon Raga Reserve",
+  cover: "/portfolio/raga-master-character.webp",
+  accentTint: "#5A6472",
   client: "Ceylon Raga Reserve",
   industry: "Premium FMCG & Brand Identity",
   services: [

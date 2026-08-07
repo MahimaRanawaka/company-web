@@ -6,6 +6,8 @@ export const animeApparelConcepts: CaseStudyDetail = {
   brand: "oolo",
   title: "Anime Apparel Concept Design",
   subtitle: "Creative Breakdown & Character Analysis",
+  cover: "/portfolio/anime-apparel-concepts.webp",
+  accentTint: "#8B8F5E",
   client: "Apparel Concept Collection",
   industry: "Fashion & Streetwear Design",
   services: [

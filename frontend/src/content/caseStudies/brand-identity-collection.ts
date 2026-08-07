@@ -6,6 +6,8 @@ export const brandIdentityCollection: CaseStudyDetail = {
   brand: "oolo",
   title: "Brand Identity Design Collection",
   subtitle: "Creating Scalable Visual Systems Through Strategy, Creativity & Purpose",
+  cover: "/portfolio/brand-identity-collection.webp",
+  accentTint: "#C9A227",
   client: "Multiple Brands",
   industry: "Brand Identity & Visual Design",
   services: [

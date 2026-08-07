@@ -8,6 +8,8 @@ export interface CaseStudyDetail {
   industry: string;
   services: string[];
   cover?: string;
+  /** soft accent wash behind the hero text, picked to match `cover`'s palette (hex, e.g. "#8B8F5E") */
+  accentTint?: string;
   overview: string;
   sections: {
     title: string;
@@ -28,6 +30,8 @@ export const ceylonRagaReserve: CaseStudyDetail = {
   brand: "oolo",
   title: "Ceylon Raga Reserve",
   subtitle: "Premium Masala Brew Packaging Design",
+  cover: "/portfolio/ceylon-raga-reserve.webp",
+  accentTint: "#1E4D3C",
   client: "Ceylon Raga Reserve",
   industry: "Premium Tea & Masala Beverage",
   services: [

@@ -6,6 +6,8 @@ export const ceylonRagaReserveQA: CaseStudyDetail = {
   brand: "ennobler",
   title: "Ceylon Raga Reserve — AI-Assisted QA & Human-Led Validation",
   subtitle: "Ensuring a Premium Digital Experience Meets Real-World Quality Standards",
+  cover: "/portfolio/ceylon-raga-reserve-qa.webp",
+  accentTint: "#3DDC5A",
   client: "Ceylon Raga Reserve / WGM Imperial Harvest",
   industry: "Premium FMCG & E-commerce",
   services: [

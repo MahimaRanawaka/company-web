@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { supabase } from "@/lib/supabase";
 import type { CareerApplicationInput } from "@/lib/schemas";
+import { trackEvent } from "@/lib/analytics";
 
 export function useCareerApplicationMutation() {
   return useMutation({
@@ -11,6 +12,7 @@ export function useCareerApplicationMutation() {
       if (!supabase) {
         // dev fallback: no backend configured
         await new Promise((r) => setTimeout(r, 600));
+        trackEvent("generate_lead", { form: "career_application" });
         return { ok: true as const, dev: true };
       }
 
@@ -31,6 +33,7 @@ export function useCareerApplicationMutation() {
         .invoke("notify-career-application", { body: input })
         .catch(() => void 0);
 
+      trackEvent("generate_lead", { form: "career_application" });
       return { ok: true as const };
     },
   });

@@ -1,12 +1,10 @@
-import { useEffect } from "react";
 import type { PageContent } from "@/content/types";
+import { useDocumentHead } from "@/hooks/useDocumentHead";
 import { SectionRenderer } from "./SectionRenderer";
 import { Reveal } from "./Reveal";
 
 export function Page({ content }: { content: PageContent }) {
-  useEffect(() => {
-    document.title = `${content.title} · En'nobler / Oolo`;
-  }, [content.title]);
+  useDocumentHead(`${content.title} · En'nobler / Oolo`, content.description, content.schema);
 
   return (
     <>

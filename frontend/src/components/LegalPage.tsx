@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import type { LegalDoc, LegalSection } from "@/content/legal/types";
+import { useDocumentHead } from "@/hooks/useDocumentHead";
 import { Container } from "@/components/primitives";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
@@ -8,9 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
  *  date, a sticky table of contents, and a readable single-column body.
  *  Built for long-form legal prose (privacy, terms, cookies). */
 export function LegalPage({ doc }: { doc: LegalDoc }) {
-  useEffect(() => {
-    document.title = `${doc.title} · En'nobler / Oolo`;
-  }, [doc.title]);
+  useDocumentHead(`${doc.title} · En'nobler / Oolo`, doc.description);
 
   return (
     <>

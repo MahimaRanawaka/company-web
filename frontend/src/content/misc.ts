@@ -2,6 +2,8 @@ import type { PageContent } from "./types";
 
 export const ennoblerProducts: PageContent = {
   title: "En'nobler — Products",
+  description:
+    "Ready-built, QA-tested digital products from En'nobler — an e-commerce platform and a tourism platform, customizable and ready to launch.",
   sections: [
     {
       type: "hero",
@@ -79,6 +81,8 @@ export const ennoblerProducts: PageContent = {
 
 export const ennoblerEcommerceProduct: PageContent = {
   title: "En'nobler — E-commerce Product",
+  description:
+    "A ready-built commerce platform for structured online selling — catalogue, checkout, order handling, and admin control, live and ready to customize.",
   sections: [
     {
       type: "hero",
@@ -168,6 +172,8 @@ export const ennoblerEcommerceProduct: PageContent = {
 
 export const ennoblerTourismProduct: PageContent = {
   title: "En'nobler — Tourism Product",
+  description:
+    "A ready-built tourism platform for bookings, property visibility, experiences, and local business connection — live and ready to customize.",
   sections: [
     {
       type: "hero",

@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { useDocumentHead } from "@/hooks/useDocumentHead";
 import { Container, Eyebrow } from "@/components/primitives";
 import { ceylonRagaReserve } from "@/content/caseStudies/ceylon-raga-reserve";
 import type { CaseStudyDetail } from "@/content/caseStudies/ceylon-raga-reserve";
@@ -19,6 +20,11 @@ const allCaseStudies: CaseStudyDetail[] = [ceylonRagaReserve, chiku, animeAppare
 export default function CaseStudyDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const cs = allCaseStudies.find((c) => c.slug === slug);
+
+  useDocumentHead(
+    cs ? `${cs.title} · En'nobler / Oolo` : "Portfolio · En'nobler / Oolo",
+    cs ? `${cs.subtitle} — a ${cs.industry} project for ${cs.client}, by En'nobler / Oolo.` : undefined,
+  );
 
   if (!cs) return <Navigate to="/portfolio" replace />;
 

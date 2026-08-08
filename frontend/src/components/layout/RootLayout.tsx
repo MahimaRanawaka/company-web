@@ -1,12 +1,15 @@
 import { useEffect } from "react";
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import { BrandProvider } from "@/brand/BrandProvider";
+import { useAnalyticsPageView } from "@/hooks/useAnalyticsPageView";
 import { AnnounceBar } from "./AnnounceBar";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { ConsentBanner } from "./ConsentBanner";
 
 function Shell() {
   const { pathname, hash } = useLocation();
+  useAnalyticsPageView();
   useEffect(() => {
     if (hash) {
       const el = document.getElementById(hash.slice(1));
@@ -27,6 +30,7 @@ function Shell() {
       </main>
       <Footer />
       <ScrollRestoration />
+      <ConsentBanner />
     </div>
   );
 }

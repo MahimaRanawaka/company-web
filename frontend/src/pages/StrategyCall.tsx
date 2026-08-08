@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2 } from "lucide-react";
 import { strategyCallSchema, type StrategyCallInput } from "@/lib/schemas";
 import { useContactMutation } from "@/hooks/useContactMutation";
+import { useDocumentHead } from "@/hooks/useDocumentHead";
 import { useBrand } from "@/brand/useBrand";
 import { Container, Eyebrow } from "@/components/primitives";
 import { Button } from "@/components/ui/button";
@@ -120,9 +121,10 @@ export default function StrategyCall() {
     setValue("helpWith", []);
   }, [brandInterest, setValue]);
 
-  useEffect(() => {
-    document.title = "Book a Strategy Call · En'nobler / Oolo";
-  }, []);
+  useDocumentHead(
+    "Book a Strategy Call · En'nobler / Oolo",
+    "Book a free strategy call with En'nobler or Oolo — tell us your stage and goals, we'll recommend the right engagement model before you commit to anything.",
+  );
 
   const onSubmit = (data: StrategyCallInput) =>
     mutation.mutate({

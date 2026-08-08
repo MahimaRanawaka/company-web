@@ -1,7 +1,21 @@
 import type { PageContent } from "../types";
 
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Quality Assurance as a Service",
+  provider: { "@type": "Organization", name: "En'nobler", url: "https://www.en-nobler.com/ennobler" },
+  areaServed: ["AE", "GCC", "EU"],
+  url: "https://www.en-nobler.com/ennobler/qaas",
+  description:
+    "End-to-end QA as a Service for product teams — project, retainer, dedicated team, or performance-based engagement.",
+};
+
 export const ennoblerQaas: PageContent = {
   title: "En'nobler.QaaS — Quality Assurance as a Service",
+  description:
+    "End-to-end QA as a Service for product teams — project, retainer, dedicated team, or performance-based engagement. First findings in 72 hours.",
+  schema: SCHEMA,
   sections: [
     // HERO
     {

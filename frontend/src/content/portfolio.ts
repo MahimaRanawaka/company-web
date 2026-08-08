@@ -2,6 +2,8 @@ import type { PageContent } from "./types";
 
 export const portfolioContent: PageContent = {
   title: "Portfolio",
+  description:
+    "Selected software, QA, automation, website, and marketing work from En'nobler and Oolo — real case studies across both brands.",
   sections: [
     {
       type: "hero",

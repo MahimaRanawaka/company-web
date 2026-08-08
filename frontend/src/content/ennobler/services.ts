@@ -2,6 +2,8 @@ import type { PageContent } from "../types";
 
 export const ennoblerServices: PageContent = {
   title: "En'nobler — Services",
+  description:
+    "Engineering, QA, AI automation, cloud, and digital transformation services from En'nobler — built to help businesses ship reliable, tested software.",
   sections: [
     {
       type: "hero",

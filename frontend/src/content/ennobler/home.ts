@@ -2,6 +2,8 @@ import type { PageContent } from "../types";
 
 export const ennoblerHome: PageContent = {
   title: "En'nobler — Engineering Digital Ecosystems",
+  description:
+    "En'nobler designs, builds, and tests software, AI, and cloud systems — QA-tested delivery, not crossed fingers. Project, retainer, or dedicated team.",
   sections: [
     // §3 HERO
     {

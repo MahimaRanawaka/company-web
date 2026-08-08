@@ -3,8 +3,21 @@ import type { PageContent } from "../types";
 const DISCLAIMER =
   "Starting prices are guidance only. Final pricing depends on scope, requirements, complexity, timeline, integrations, and QA depth.";
 
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Software Development, QA, and Digital Delivery",
+  provider: { "@type": "Organization", name: "En'nobler", url: "https://www.en-nobler.com/ennobler" },
+  url: "https://www.en-nobler.com/ennobler/pricing",
+  description:
+    "Project-based, retainer, team hiring, or performance-based engagement models for software, QA, and digital delivery.",
+};
+
 export const ennoblerPricing: PageContent = {
   title: "En'nobler — Pricing",
+  description:
+    "Clear pricing for En'nobler's software, QA, and digital delivery — project-based, retainer, team hiring, or performance-based engagement models.",
+  schema: SCHEMA,
   sections: [
     {
       type: "hero",

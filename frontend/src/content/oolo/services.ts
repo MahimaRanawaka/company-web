@@ -2,6 +2,8 @@ import type { PageContent } from "../types";
 
 export const ooloServices: PageContent = {
   title: "Oolo — Marketing Services",
+  description:
+    "Brand strategy, social media, content, creative design, campaign planning, and growth support from Oolo — creative marketing built for real results.",
   sections: [
     {
       type: "hero",

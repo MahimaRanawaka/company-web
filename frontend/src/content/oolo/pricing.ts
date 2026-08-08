@@ -3,8 +3,21 @@ import type { PageContent } from "../types";
 const DISCLAIMER =
   "Starting prices are provided as general guidance. Final pricing may vary depending on scope, quantity, complexity, timeline, production requirements, revisions, and campaign needs.";
 
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Creative Growth Marketing",
+  provider: { "@type": "Organization", name: "Oolo", url: "https://www.en-nobler.com/oolo" },
+  url: "https://www.en-nobler.com/oolo/pricing",
+  description:
+    "Project-based, monthly retainer, dedicated team, or performance-based engagement models for creative growth marketing.",
+};
+
 export const ooloPricing: PageContent = {
   title: "Oolo — Pricing",
+  description:
+    "Clear pricing for Oolo's creative growth marketing — project-based, monthly retainer, dedicated team, or performance-based engagement models.",
+  schema: SCHEMA,
   sections: [
     {
       type: "hero",

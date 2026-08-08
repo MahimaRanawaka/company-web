@@ -4,6 +4,8 @@ export const termsDoc: LegalDoc = {
   slug: "terms",
   title: "Terms of Service",
   updated: "13 June 2026",
+  description:
+    "The terms governing your use of www.en-nobler.com and En'nobler / Oolo's software, QA, AI, and marketing services — read before you engage us.",
   intro:
     "These Terms of Service (\"Terms\") govern your access to and use of the website, content, and services provided by En'nobler (Private) Limited (Company No. PV 00338862) (\"we\", \"us\", \"our\") under the En'nobler and Oolo brands. By using www.en-nobler.com or engaging our services, you agree to these Terms. If you do not agree, please do not use our website or services.",
   sections: [

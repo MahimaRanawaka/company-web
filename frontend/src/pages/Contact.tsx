@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2 } from "lucide-react";
 import { contactSchema, type ContactInput } from "@/lib/schemas";
 import { useContactMutation } from "@/hooks/useContactMutation";
+import { useDocumentHead } from "@/hooks/useDocumentHead";
 import { useBrand } from "@/brand/useBrand";
 import { Container, Eyebrow } from "@/components/primitives";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,10 @@ const field = "h-11 w-full rounded-md border border-hairline bg-surface px-3 tex
 
 export default function Contact() {
   const { brand } = useBrand();
+  useDocumentHead(
+    "Contact Us · En'nobler / Oolo",
+    "Tell us what you're trying to build, grow, fix, test, or connect. We respond within one business day — no pitch deck required.",
+  );
   const mutation = useContactMutation();
   const {
     register,

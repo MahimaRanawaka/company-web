@@ -3,6 +3,8 @@ import type { PageContent } from "../types";
 /** Ported from "Oolo landing 3.html" (marketing side) to full wireframe parity. */
 export const ooloHome: PageContent = {
   title: "Oolo — Creative Growth Marketing",
+  description:
+    "Oolo is a creative growth marketing studio — strategy-led campaigns, brand identity, content, and performance marketing built to scale brands that mean business.",
   sections: [
     // §3 HERO
     {

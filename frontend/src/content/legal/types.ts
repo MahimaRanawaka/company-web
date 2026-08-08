@@ -26,6 +26,8 @@ export interface LegalDoc {
   title: string;
   /** human-readable effective date, e.g. "13 June 2026" */
   updated: string;
+  /** short meta description, ~150-160 chars */
+  description: string;
   intro: string;
   sections: LegalSection[];
 }

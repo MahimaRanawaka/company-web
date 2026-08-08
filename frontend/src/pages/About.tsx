@@ -16,6 +16,8 @@ const scrollSections = [
 
 const about: PageContent = {
   title: "About Us",
+  description:
+    "En'nobler / Oolo is a dual-brand studio built around the bridge between creative strategy and technical execution — software, QA, and marketing under one team.",
   sections: [
     // ABOUT HERO
     {

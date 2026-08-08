@@ -557,5 +557,10 @@ export type Section =
 
 export interface PageContent {
   title: string;
+  /** meta description for this page, ~150-160 chars; omit to leave it unset */
+  description?: string;
+  /** page-specific JSON-LD (e.g. a Service block); the site-wide Organization
+   *  schema is always added on top of this, not instead of it */
+  schema?: object | object[];
   sections: Section[];
 }

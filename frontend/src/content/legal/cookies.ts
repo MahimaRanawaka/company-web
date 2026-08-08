@@ -4,6 +4,8 @@ export const cookiesDoc: LegalDoc = {
   slug: "cookies",
   title: "Cookie Policy",
   updated: "13 June 2026",
+  description:
+    "How En'nobler / Oolo uses cookies and similar technologies on www.en-nobler.com, and how to manage your preferences.",
   intro:
     "This Cookie Policy explains how En'nobler (Private) Limited (Company No. PV 00338862), operating the En'nobler and Oolo brands, uses cookies and similar technologies on www.en-nobler.com. It should be read together with our Privacy Policy and reflects our obligations under the Personal Data Protection Act, No. 9 of 2022 of Sri Lanka.",
   sections: [

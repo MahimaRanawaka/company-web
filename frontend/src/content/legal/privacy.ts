@@ -4,6 +4,8 @@ export const privacyDoc: LegalDoc = {
   slug: "privacy",
   title: "Privacy Policy",
   updated: "13 June 2026",
+  description:
+    "How En'nobler / Oolo collects, uses, shares, and protects personal data across www.en-nobler.com, in line with Sri Lanka's PDPA, GDPR, and CCPA/CPRA.",
   intro:
     "This Privacy Policy explains how En'nobler (Private) Limited (Company No. PV 00338862) (\"we\", \"us\", \"our\"), operating the En'nobler and Oolo brands, collects, uses, shares, and protects personal data when you use www.en-nobler.com, contact us, or engage our software, QA, AI, and marketing services. We handle personal data in accordance with the Personal Data Protection Act, No. 9 of 2022 of Sri Lanka (the \"PDPA\"), and — where it applies to data of individuals in those regions — the EU/UK General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA).",
   sections: [

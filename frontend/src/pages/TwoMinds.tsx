@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDocumentHead } from "@/hooks/useDocumentHead";
+import { useAnalyticsPageView } from "@/hooks/useAnalyticsPageView";
+import { ConsentBanner } from "@/components/layout/ConsentBanner";
 
 /* ------------------------------------------------------------------ *
  * The Two Minds Experience — cinematic dual-brand entry gateway.
@@ -82,9 +85,11 @@ export default function TwoMinds() {
   const [armed, setArmed] = useState<Side | null>(null);
   const [leaving, setLeaving] = useState<Side | null>(null);
 
-  useEffect(() => {
-    document.title = "En'nobler / Oolo — Choose your intelligence";
-  }, []);
+  useDocumentHead(
+    "En'nobler / Oolo — Choose your intelligence",
+    "En'nobler / Oolo is a dual-brand studio: En'nobler builds and QA-tests software, Oolo runs creative growth marketing. Pick a side to start.",
+  );
+  useAnalyticsPageView();
 
   // play the focused side's character clip, reset the other (skip if reduced)
   useEffect(() => {
@@ -345,6 +350,7 @@ export default function TwoMinds() {
           />
         </div>
       )}
+      <ConsentBanner />
     </div>
   );
 }

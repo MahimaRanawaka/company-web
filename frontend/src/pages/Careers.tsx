@@ -17,6 +17,8 @@ const scrollSections = [
 
 const careers: PageContent = {
   title: "Careers",
+  description:
+    "Careers at En'nobler / Oolo — join a team building software, QA, AI, and creative marketing for real businesses. Open roles and internships available.",
   sections: [
     // HERO
     {

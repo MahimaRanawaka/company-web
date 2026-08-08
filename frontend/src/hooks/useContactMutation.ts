@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { supabase } from "@/lib/supabase";
 import type { ContactInput } from "@/lib/schemas";
+import { trackEvent } from "@/lib/analytics";
 
 export function useContactMutation() {
   return useMutation({
@@ -11,6 +12,7 @@ export function useContactMutation() {
       if (!supabase) {
         // dev fallback: no backend configured
         await new Promise((r) => setTimeout(r, 600));
+        trackEvent("generate_lead", { form: "contact" });
         return { ok: true as const, dev: true };
       }
 
@@ -28,6 +30,7 @@ export function useContactMutation() {
         .invoke("notify-contact", { body: input })
         .catch(() => void 0);
 
+      trackEvent("generate_lead", { form: "contact" });
       return { ok: true as const };
     },
   });

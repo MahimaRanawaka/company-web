@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import { useBrand } from "@/brand/useBrand";
@@ -9,6 +9,7 @@ import { ButtonLink } from "@/components/ui/button";
 export function MobileNav({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { config } = useBrand();
   const location = useLocation();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     onClose();
@@ -21,8 +22,19 @@ export function MobileNav({ open, onClose }: { open: boolean; onClose: () => voi
     return () => document.removeEventListener("keydown", onKey);
   }, [onClose]);
 
+  // aria-hidden below would otherwise conflict with a focused descendant
+  // left over from tabbing into a nav link right before the drawer closes.
+  useEffect(() => {
+    if (open) return;
+    const active = document.activeElement;
+    if (active instanceof HTMLElement && containerRef.current?.contains(active)) {
+      active.blur();
+    }
+  }, [open]);
+
   return (
     <div
+      ref={containerRef}
       className={`fixed inset-0 z-50 overflow-hidden ${open ? "" : "pointer-events-none"}`}
       aria-hidden={!open}
     >
